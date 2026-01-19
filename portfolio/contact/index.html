@@ -1,43 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 	<head>
+		<!-- メタ情報 -->
 		<meta charset="UTF-8" />
 		<meta name="author" content="S.K" />
 		<meta
 			name="description"
 			content="HTMLフォームの設計ノートを元にしたお問い合わせフォームです。送信はモックです。"
 		/>
+
+		<!-- デザイン関連 -->
 		<meta name="viewport" content="width=device-width" />
 		<link href="../../styles/base/destyle.css" rel="stylesheet" />
 		<link href="../../styles/base/base.css" rel="stylesheet" />
+		<link href="../../styles/layout/layout.css" rel="stylesheet" />
 		<link href="../../styles/layout/header.css" rel="stylesheet" />
 		<link href="../../styles/layout/footer.css" rel="stylesheet" />
-		<link href="../../styles/pages/contactform-mockup.css" rel="stylesheet" />
+		<link href="../../styles/pages/contact.css" rel="stylesheet" />
 
-		<title>Contact（モックアップ） - S.K's Portfolio</title>
+		<title>Contact（モックアップ） - CiderTechLab</title>
 
 		<script src="../../scripts/header_footer.js" defer></script>
-		<script src="../../scripts/contact-form-mockup.js" defer></script>
+		<script src="../../scripts/contact.js" defer></script>
 	</head>
 	<body>
-		<div id="icons" style="display: none"></div>
 		<header></header>
 		<nav id="breadcrumb"></nav>
 
 		<main>
-			<section class="content__block">
+			<section class="top content__block">
 				<h2>Contact</h2>
 				<p>
-					お問い合わせフォームのモックアップです。入力内容の送信は行いません。
+					※お問い合わせフォームのモックアップです。入力内容の送信は行いません。
 				</p>
-			</section>
 
-			<section class="content__block">
-				<h3 id="form">お問い合わせフォーム</h3>
-				<form id="contactForm" class="contact-form" novalidate>
+				<form id="contactForm" novalidate>
 					<div class="form__field">
-						<label class="form__label" for="name">
-							名前 <span class="required">必須</span>
+						<label for="name">
+							名前 <span class="required">（必須）</span>
 						</label>
 						<input
 							class="form__control"
@@ -54,8 +54,8 @@
 					</div>
 
 					<div class="form__field">
-						<label class="form__label" for="email">
-							メールアドレス <span class="required">必須</span>
+						<label for="email">
+							メールアドレス <span class="required">（必須）</span>
 						</label>
 						<input
 							class="form__control"
@@ -74,7 +74,7 @@
 					</div>
 
 					<div class="form__field">
-						<label class="form__label" for="phone">電話番号</label>
+						<label for="phone">電話番号</label>
 						<input
 							class="form__control"
 							type="tel"
@@ -92,8 +92,8 @@
 					</div>
 
 					<div class="form__field">
-						<label class="form__label" for="category">
-							お問い合わせ種別 <span class="required">必須</span>
+						<label for="category">
+							お問い合わせの種類 <span class="required">（必須）</span>
 						</label>
 						<select
 							class="form__control"
@@ -112,8 +112,8 @@
 					</div>
 
 					<div class="form__field">
-						<label class="form__label" for="message">
-							お問い合わせ内容 <span class="required">必須</span>
+						<label for="message">
+							お問い合わせ内容 <span class="required">（必須）</span>
 						</label>
 						<textarea
 							class="form__control form__textarea"
@@ -131,7 +131,7 @@
 					</div>
 
 					<div class="form__field">
-						<label class="form__label" for="attachment">添付ファイル</label>
+						<label for="attachment">添付ファイル</label>
 						<input
 							class="form__control"
 							type="file"
@@ -148,7 +148,7 @@
 					</div>
 
 					<div class="form__actions">
-						<button type="submit" class="form__submit">送信する</button>
+						<button type="submit" class="form__submit">確認</button>
 						<p id="form-status" class="form__status" role="status"></p>
 					</div>
 				</form>

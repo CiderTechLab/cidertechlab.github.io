@@ -1,0 +1,21 @@
+@charset "UTF-8";
+:root {
+	--height-header: 8rem;
+	--width-breakpoint-tb: 1280px;
+	--width-breakpoint-sp: 500px;
+
+	scroll-padding-top: var(--height-header);
+	scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 1280px) {
+	:root {
+		--height-header: 8rem;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	:root {
+		--height-header: 8rem;
+	}
+}

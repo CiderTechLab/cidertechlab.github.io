@@ -1,51 +1,30 @@
 :root {
-	--form-accent: #4a7c59;
-	--form-accent-soft: #d9e8dd;
-	--form-error: #c0392b;
+	--form-accent-soft: khaki;
 	--form-border: #c7c2ba;
 	--form-muted: #6d6a63;
-	--form-bg: #f4f1ec;
 }
 
-.content__block {
-	align-items: stretch;
-	max-width: 48rem;
-}
-
-.contact-form {
-	background: white;
-	border: 1px solid var(--form-border);
-	border-radius: 20px;
-	box-shadow: 0 24px 40px rgba(25, 21, 16, 0.08);
-	padding: 2rem;
+#contactForm {
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
 }
 
 .form__field {
-	display: grid;
-	gap: 0.5rem;
+	display: flex;
+	flex-direction: column;
 }
 
-.form__label {
+label {
 	font-size: 1.1rem;
 	font-weight: 600;
-	color: #1f1b16;
 }
 
 .required {
-	display: inline-block;
-	margin-left: 0.5rem;
-	padding: 0.1rem 0.5rem;
-	border-radius: 999px;
-	background: var(--form-accent-soft);
-	color: #294233;
-	font-size: 0.75rem;
+	color: red;
 }
 
 .form__control {
-	border: 1px solid var(--form-border);
+	border: 1px solid var(--color-border-main);
 	border-radius: 12px;
 	padding: 0.75rem 1rem;
 	font-size: 1rem;
@@ -54,11 +33,9 @@
 		border-color 0.2s ease,
 		box-shadow 0.2s ease;
 }
-
 .form__control:focus {
 	outline: none;
-	border-color: var(--form-accent);
-	box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.2);
+	border: 2px solid var(--color-form-hover);
 }
 
 .form__textarea {
@@ -82,12 +59,12 @@
 }
 
 .char-count.is-limit {
-	color: var(--form-error);
+	color: var(--color-form-error);
 	font-weight: 600;
 }
 
 .form__error {
-	color: var(--form-error);
+	color: var(--color-form-error);
 	font-size: 0.95rem;
 	min-height: 1.2rem;
 }
@@ -109,21 +86,17 @@
 }
 
 .form__submit {
-	border: none;
 	border-radius: 999px;
 	padding: 0.75rem 2rem;
-	background: var(--form-accent);
-	color: white;
+	background-color: var(--color-secondary);
+	color: var(--color-text-main);
 	font-size: 1rem;
 	cursor: pointer;
-	transition:
-		transform 0.2s ease,
-		box-shadow 0.2s ease;
 }
 
 .form__submit:hover {
-	transform: translateY(-1px);
-	box-shadow: 0 10px 20px rgba(74, 124, 89, 0.2);
+	background: var(--color-primary);
+	color: var(--color-text-sub);
 }
 
 .form__status {
@@ -132,7 +105,7 @@
 }
 
 .form__status.is-success {
-	color: var(--form-accent);
+	color: var(--color-form-hover);
 	font-weight: 600;
 }
 

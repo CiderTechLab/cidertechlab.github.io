@@ -10,7 +10,7 @@ const icons = `
 `;
 
 const headerContent = `
-  <h1><a class="logo" href="/"><img src="https://portfoliobysk.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a></h1>
+  <h1><a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a></h1>
   <div class="nav__wrapper">
     <input type="checkbox" id="nav__toggle" hidden>
     <label class="nav__icon" for="nav__toggle">
@@ -27,7 +27,7 @@ const headerContent = `
         <a href="/index.html#career__link">Career</a>
       </div>
       <div id="header__nav__links">
-        <a href="https://github.com/portfoliobysk/">
+        <a href="https://github.com/cidertechlab/">
           <svg class="icon" aria-hidden="true">
              <use href="#icon__github"></use>
           </svg>
@@ -56,13 +56,13 @@ const breadcrumbContent = () => {
 	pathSegments.forEach((segment, index) => {
 		currentPath += segment + '/';
 		const isLast = index === pathSegments.length - 1;
-		const linkText = document.title.replace(" - S.K's Portfolio", '');
+		const linkText = document.title.replace(' - CiderTechLab', '');
 
 		if (!isLast) {
 			breadcrumbHTML += `<li><a href="${currentPath}">${linkText}</a></li>&nbsp;&gt;&nbsp;`;
 		} else {
 			breadcrumbHTML +=
-				`<li>` + document.title.replace(" - S.K's Portfolio", '') + `</li>`;
+				`<li>` + document.title.replace(' - CiderTechLab', '') + `</li>`;
 		}
 	});
 
@@ -73,7 +73,7 @@ const breadcrumbContent = () => {
 
 const footerContent = `
   <div id="footer__copy">
-    <a class="logo" href="/"><img src="https://portfoliobysk.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a>
+    <a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a>
     <small>&#169; 2025-2026 S.K</small>
   </div>
   <div id="footer__nav__contents">
@@ -82,7 +82,7 @@ const footerContent = `
     <a href="/index.html#portfolio__link">Portfolio</a>
     <a href="/index.html#career__link">Career</a>
     <div id="footer__nav__links">
-      <a class="icon__link" href="https://github.com/portfoliobysk/">
+      <a class="icon__link" href="https://github.com/cidertechlab/">
         <svg class="icon" aria-hidden="true">
           <use href="#icon__github"></use>
         </svg>  

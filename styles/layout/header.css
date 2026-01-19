@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* headder styles */
 header {
 	padding: 0 2vw;
 	width: 100svw;
@@ -64,14 +63,16 @@ div#header__nav__links a {
 	align-items: center;
 }
 
-/* nav breadcrumb styles */
+/* nav breadcrumb */
 nav#breadcrumb {
 	width: 100%;
 	padding: 8rem 0 0 2rem;
-	background-color: lightblue;
+	background-color: var(--color-secondary);
 	border-radius: 0 0 2rem 2rem;
+	position: fixed;
 	display: flex;
 	justify-content: left;
+	z-index: 99;
 }
 nav#breadcrumb ol li {
 	padding: 0;
@@ -80,7 +81,7 @@ nav#breadcrumb ol li {
 	display: inline-block;
 }
 
-/* Tablet Contents Style */
+/* TB Contents */
 @media screen and (max-width: 1280px) {
 	header img[src$='.svg'] {
 		transform: scale(1.2);
@@ -114,7 +115,7 @@ nav#breadcrumb ol li {
 	}
 }
 
-/* SmartPhone Image styles */
+/* SP Contents */
 @media screen and (max-width: 500px) {
 	h1 {
 		padding: 0;

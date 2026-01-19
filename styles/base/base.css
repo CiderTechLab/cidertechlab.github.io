@@ -1,10 +1,18 @@
 @charset "UTF-8";
 :root {
-	--header-hight: 8rem;
-	scroll-padding-top: var(--header-hight);
+	/* color var*/
+	--color-primary: DeepSkyBlue;
+	--color-secondary: LightSkyBlue;
+	--color-bg-main: whitesmoke;
+	--color-bg-sub: dimgray;
+	--color-border-main: dimgray;
+	--color-text-main: dimgray;
+	--color-text-sub: white;
+	--color-form-error: red;
+	--color-form-hover: gray;
+
 	font-family: 'Century Gothic', sans-serif;
 	line-height: 1.5;
-	scroll-behavior: smooth;
 }
 
 body {
@@ -12,10 +20,10 @@ body {
 	padding: 0;
 }
 
-/* Contents styles */
+/* Contents */
 main {
-	background-color: whitesmoke;
-	color: dimgray;
+	background-color: var(--color-bg-main);
+	color: var(--color-text-main);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -24,7 +32,7 @@ main {
 	z-index: 1;
 }
 
-/* Section styles */
+/* Section */
 section {
 	padding: 1rem;
 	/* 
@@ -40,8 +48,11 @@ section {
 	align-items: center;
 	flex-wrap: wrap;
 }
+section.top {
+	margin-top: var(--height-header);
+}
 
-/* Font styles */
+/* Font */
 h1 {
 	margin: 1rem;
 	padding: 1rem;
@@ -60,7 +71,7 @@ h4 {
 	text-align: center;
 }
 
-/* List styles */
+/* List */
 ul {
 	list-style: square;
 	padding: 2rem;
@@ -76,14 +87,13 @@ li {
 	height: auto;
 	font-size: 1rem;
 	font-weight: normal;
-	color: black;
 	background-color: transparent;
 	border-radius: 0;
 	box-shadow: none;
 	display: initial;
 }
 
-/* Link styles */
+/* Link */
 a {
 	text-decoration: underline;
 }
@@ -92,7 +102,7 @@ a:hover {
 	text-decoration: none;
 }
 
-/* Table styles */
+/* Table */
 table {
 	margin: 0.5rem 0;
 	width: 100%;
@@ -102,14 +112,14 @@ table {
 th,
 td {
 	padding: 0.75rem;
-	border: 1px solid dimgray;
+	border: 1px solid var(--color-border-main);
 	text-align: left;
 	word-break: break-word;
 	overflow-wrap: break-word;
 	white-space: normal;
 }
 
-/* SVG Contents Style */
+/* SVG Contents */
 .icon {
 	width: 24px;
 	height: 24px;
@@ -117,18 +127,34 @@ td {
 	justify-content: center;
 }
 
-/* Tablet Contents Style */
+/* TB Contents */
 @media screen and (max-width: 1280px) {
 	:root {
-		--header-hight: 8rem;
-		scroll-behavior: smooth;
+		/* color var*/
+		--color-primary: DeepSkyBlue;
+		--color-secondary: LightSkyBlue;
+		--color-bg-main: whitesmoke;
+		--color-bg-sub: dimgray;
+		--color-border-main: dimgray;
+		--color-text-main: dimgray;
+		--color-text-sub: white;
+		--color-form-error: red;
+		--color-form-hover: gray;
 	}
 }
 
-/* SmartPhone Image styles */
+/* SP Contents */
 @media screen and (max-width: 500px) {
 	:root {
-		--header-hight: 5rem;
-		scroll-behavior: smooth;
+		/* color var*/
+		--color-primary: DeepSkyBlue;
+		--color-secondary: LightSkyBlue;
+		--color-bg-main: whitesmoke;
+		--color-bg-sub: dimgray;
+		--color-border-main: dimgray;
+		--color-text-main: dimgray;
+		--color-text-sub: white;
+		--color-form-error: red;
+		--color-form-hover: gray;
 	}
 }
