@@ -1,34 +1,28 @@
-:root {
-	--form-accent-soft: khaki;
-	--form-border: #c7c2ba;
-	--form-muted: #6d6a63;
-}
-
 #contactForm {
 	display: flex;
 	flex-direction: column;
 }
 
+.contactForm_explain {
+	margin: 1rem;
+}
+
 .form__field {
+	margin: 0.5rem 0 0.5rem 0;
 	display: flex;
 	flex-direction: column;
 }
 
-label {
-	font-size: 1.1rem;
-	font-weight: 600;
-}
-
 .required {
-	color: red;
+	color: orange;
 }
 
 .form__control {
 	border: 1px solid var(--color-border-main);
-	border-radius: 12px;
+	border-radius: 1rem;
 	padding: 0.75rem 1rem;
 	font-size: 1rem;
-	background: #fffdf9;
+	background: var(--color-form-bg);
 	transition:
 		border-color 0.2s ease,
 		box-shadow 0.2s ease;
@@ -44,7 +38,7 @@ label {
 }
 
 .form__help {
-	color: var(--form-muted);
+	color: var(--color-text-main);
 	font-size: 0.95rem;
 }
 
@@ -55,27 +49,18 @@ label {
 
 .char-count {
 	font-size: 0.95rem;
-	color: var(--form-muted);
+	color: var(--color-text-main);
 }
 
 .char-count.is-limit {
 	color: var(--color-form-error);
-	font-weight: 600;
+	font-weight: bold;
 }
 
 .form__error {
 	color: var(--color-form-error);
 	font-size: 0.95rem;
 	min-height: 1.2rem;
-}
-
-.file-name {
-	font-size: 0.95rem;
-	color: #2f2b26;
-	background: #f2f0ea;
-	padding: 0.5rem 0.75rem;
-	border-radius: 10px;
-	border: 1px dashed var(--form-border);
 }
 
 .form__actions {
@@ -86,27 +71,28 @@ label {
 }
 
 .form__submit {
+	width: 100%;
 	border-radius: 999px;
 	padding: 0.75rem 2rem;
-	background-color: var(--color-secondary);
-	color: var(--color-text-main);
+	background-color: var(--color-primary);
+	text-align: center;
+	color: var(--color-text-sub);
 	font-size: 1rem;
 	cursor: pointer;
 }
-
 .form__submit:hover {
-	background: var(--color-primary);
-	color: var(--color-text-sub);
+	background: var(--color-secondary);
+	color: var(--color-text-main);
 }
 
 .form__status {
 	font-size: 0.95rem;
-	color: var(--form-muted);
+	color: var(--color-text-main);
 }
 
 .form__status.is-success {
 	color: var(--color-form-hover);
-	font-weight: 600;
+	font-weight: bold;
 }
 
 @media screen and (max-width: 500px) {

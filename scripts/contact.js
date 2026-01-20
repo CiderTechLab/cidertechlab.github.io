@@ -1,10 +1,14 @@
 const form = document.getElementById('contactForm');
-const status = document.getElementById('form-status');
+const formStatus = document.getElementById('form-status');
 
 const fields = {
 	name: {
 		input: document.getElementById('name'),
 		error: document.getElementById('name-error'),
+	},
+	gender: {
+		input: document.querySelector('input[name="gender"]'),
+		error: document.getElementById('gender-error'),
 	},
 	email: {
 		input: document.getElementById('email'),
@@ -31,22 +35,40 @@ const fields = {
 
 const isBlank = (value) => value.trim().length === 0;
 
+/**
+ * エラーメッセージの設定
+ */
 const setError = (field, message) => {
 	field.error.textContent = message;
 	field.input.setAttribute('aria-invalid', 'true');
 };
 
+/**
+ * エラーメッセージのクリア
+ */
 const clearError = (field) => {
 	field.error.textContent = '';
 	field.input.removeAttribute('aria-invalid');
 };
 
+/**
+ * バリテーションチェック
+ */
 const validateName = () => {
 	if (isBlank(fields.name.input.value)) {
 		setError(fields.name, '名前を入力してください');
 		return false;
 	}
 	clearError(fields.name);
+	return true;
+};
+
+const validateGender = () => {
+	if (!fields.gender.input.checked) {
+		setError(fields.gender, '性別を選択してください');
+		return false;
+	}
+	clearError(fields.gender);
 	return true;
 };
 
@@ -123,6 +145,9 @@ const validateAttachment = () => {
 	return true;
 };
 
+/**
+ * メッセージ入力欄の文字数カウント
+ */
 const updateMessageCount = () => {
 	const count = document.getElementById('message-count');
 	const maxLength = Number(fields.message.input.getAttribute('maxlength'));
@@ -134,8 +159,8 @@ const updateMessageCount = () => {
 };
 
 const resetStatus = () => {
-	status.textContent = '';
-	status.classList.remove('is-success');
+	formStatus.textContent = '';
+	formStatus.classList.remove('is-success');
 };
 
 fields.name.input.addEventListener('blur', validateName);
@@ -161,6 +186,7 @@ form.addEventListener('submit', (event) => {
 
 	const validations = [
 		validateName(),
+		validateGender(),
 		validateEmail(),
 		validatePhone(),
 		validateCategory(),
@@ -169,8 +195,8 @@ form.addEventListener('submit', (event) => {
 	];
 
 	if (validations.every(Boolean)) {
-		status.textContent = '送信はモックです。内容は送信されません。';
-		status.classList.add('is-success');
+		formStatus.textContent = '内容は送信されません。';
+		formStatus.classList.add('is-success');
 		form.reset();
 		updateMessageCount();
 		fields.attachment.name.textContent = '未選択';
@@ -178,3 +204,51 @@ form.addEventListener('submit', (event) => {
 });
 
 updateMessageCount();
+
+/**
+ * 入力内容のダイアログ表示
+ */
+const confirmBtn = document.getElementById('confirmBtn');
+
+const collectFormValues = () => {
+	// 性別の未選択対応
+	const checkedGender = document.querySelector('input[name="gender"]:checked');
+
+	return {
+		name: fields.name.input.value.trim(),
+		gender: checkedGender ? checkedGender.value : '',
+		email: fields.email.input.value.trim(),
+		phone: fields.phone.input.value.trim(),
+		category: fields.category.input.value,
+		message: fields.message.input.value,
+		attachment: fields.attachment.input.files[0]?.name ?? '未選択',
+	};
+};
+
+confirmBtn.addEventListener('click', () => {
+	const validations = [
+		validateName(),
+		validateGender(),
+		validateEmail(),
+		validatePhone(),
+		validateCategory(),
+		validateMessage(),
+		validateAttachment(),
+	];
+
+	if (!validations.every(Boolean)) return;
+
+	const v = collectFormValues();
+
+	alert(
+		[
+			`名前: ${v.name}`,
+			`性別: ${v.gender || '未選択'}`,
+			`メール: ${v.email}`,
+			`電話: ${v.phone || '未入力'}`,
+			`種別: ${v.category}`,
+			`内容: ${v.message}`,
+			`添付: ${v.attachment}`,
+		].join('\n')
+	);
+});

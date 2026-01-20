@@ -8,6 +8,7 @@
 	--color-border-main: dimgray;
 	--color-text-main: dimgray;
 	--color-text-sub: white;
+	--color-form-bg: ivory;
 	--color-form-error: red;
 	--color-form-hover: gray;
 
@@ -18,11 +19,11 @@
 body {
 	margin: 0;
 	padding: 0;
+	background-color: var(--color-bg-main);
 }
 
 /* Contents */
 main {
-	background-color: var(--color-bg-main);
 	color: var(--color-text-main);
 	display: flex;
 	flex-direction: column;
@@ -40,7 +41,7 @@ section {
      * 画面幅が狭い場合に自動的に縮むようにする。
      */
 	width: 100%;
-	max-width: 60rem;
+	max-width: 80svw;
 	font-size: 1.2rem;
 	display: flex;
 	flex-direction: column;
@@ -98,7 +99,6 @@ a {
 	text-decoration: underline;
 }
 a:hover {
-	font-weight: bold;
 	text-decoration: none;
 }
 
@@ -117,6 +117,11 @@ td {
 	word-break: break-word;
 	overflow-wrap: break-word;
 	white-space: normal;
+}
+
+/* Form */
+input {
+	appearance: auto;
 }
 
 /* SVG Contents */
@@ -138,8 +143,13 @@ td {
 		--color-border-main: dimgray;
 		--color-text-main: dimgray;
 		--color-text-sub: white;
+		--color-form-bg: ivory;
 		--color-form-error: red;
 		--color-form-hover: gray;
+	}
+
+	section {
+		max-width: inherit;
 	}
 }
 
@@ -154,7 +164,12 @@ td {
 		--color-border-main: dimgray;
 		--color-text-main: dimgray;
 		--color-text-sub: white;
+		--color-form-bg: ivory;
 		--color-form-error: red;
 		--color-form-hover: gray;
+	}
+
+	section {
+		max-width: inherit;
 	}
 }

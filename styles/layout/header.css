@@ -117,6 +117,10 @@ nav#breadcrumb ol li {
 
 /* SP Contents */
 @media screen and (max-width: 500px) {
+	:root {
+		--top-nav-icon: 15px;
+	}
+
 	h1 {
 		padding: 0;
 		margin: 0;
@@ -126,12 +130,9 @@ nav#breadcrumb ol li {
 		transform: scale(0.7);
 	}
 
-	/*
+	/**
    * ハンバーガーメニュー
    */
-	div.nav__wrapper {
-		--nav__icon-top: 10px;
-	}
 	.nav__wrapper {
 		position: relative;
 	}
@@ -139,7 +140,7 @@ nav#breadcrumb ol li {
 		width: 40px;
 		height: 30px;
 		position: fixed;
-		top: var(--nav__icon-top);
+		top: var(--top-nav-icon);
 		left: 20px;
 		cursor: pointer;
 		z-index: 3;
@@ -150,7 +151,7 @@ nav#breadcrumb ol li {
 		display: block;
 		height: 4px;
 		margin: 6px 0;
-		background: dimgray;
+		background: var(--color-bg-sub);
 		border-radius: 2px;
 		transition: 0.4s;
 	}
@@ -179,8 +180,8 @@ nav#breadcrumb ol li {
 	}
 	/* メニュー本体 */
 	nav {
-		margin: var(--nav__icon-top) 0 0 0;
-		padding: var(--nav__icon-top) 0 0 0;
+		margin: var(--top-nav-icon) 0 0 0;
+		padding: var(--top-nav-icon) 0 0 0;
 		position: fixed;
 		right: 100%;
 		width: 100%;
@@ -199,7 +200,7 @@ nav#breadcrumb ol li {
 	}
 
 	header a {
-		border-top: 1px solid dimgray;
+		border-top: 1px solid var(--color-border-main);
 		border-right: 0;
 		border-bottom: 0;
 		border-left: 0;
@@ -207,7 +208,7 @@ nav#breadcrumb ol li {
 		padding: 0.5rem;
 		width: 100%;
 		font-size: 2rem;
-		color: dimgray;
+		color: var(--color-text-main);
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;

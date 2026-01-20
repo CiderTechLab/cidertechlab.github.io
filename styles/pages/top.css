@@ -6,7 +6,7 @@ section.hero__section {
 	min-height: 100svh;
 	color: var(--color-text-sub);
 	background-image:
-		url('../../images/mountain.svg'), linear-gradient(deepskyblue, green);
+		url('../../images/mountain.svg'), linear-gradient(deepskyblue, whitesmoke);
 	background-size:
 		clamp(160px, 100vw, 800px) auto,
 		cover;
@@ -25,27 +25,19 @@ h2.slogan {
 	text-align: left;
 	line-height: 1;
 }
-span.slogan__main {
+.slogan__main {
 	font-size: 6rem;
 	font-weight: bold;
 }
-span.slogan__sub {
+.slogan__sub {
 	font-size: 3rem;
 }
-p.slogan__explain {
+.slogan__explain {
 	margin: 0 0 0 5rem;
+	color: var(--color-text-main);
 }
 
 /* About Me Section */
-div#AboutMe__img {
-	width: 300px;
-	height: 300px;
-	border-radius: 20rem;
-	background-color: lightgray;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
 section.AboutMe__section p {
 	padding: 1.5rem;
 	width: 100%;

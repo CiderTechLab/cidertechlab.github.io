@@ -96,7 +96,9 @@ const footerContent = `
   </div>
 `;
 
-// ページロード後に実行
+/**
+ * ページロード後に実行
+ */
 document.addEventListener('DOMContentLoaded', () => {
 	const iconsPlaceholder = document.getElementById('icons');
 	if (iconsPlaceholder) {
@@ -118,7 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		footerPlaceholder.innerHTML = footerContent;
 	}
 
-	/*
+	/**
 	 * ハンバーガーメニューのページ内リンクでオーバーレイを閉じるためのスクリプト
 	 */
 	const toggle = document.getElementById('nav__toggle');
