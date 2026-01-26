@@ -1,4 +1,8 @@
 @charset "UTF-8";
+/**
+ * 「どのページか分からないと意味が変わるCSS」はbaseに置かない
+ *  ex) .note-layout__content
+ */
 :root {
 	/* color var*/
 	--color-primary: DeepSkyBlue;
@@ -31,26 +35,6 @@ main {
 	align-items: center;
 	position: relative;
 	z-index: 1;
-}
-
-/* Section */
-section {
-	padding: 1rem;
-	/* 
-     * width を 100% にしておき、max-width で最大幅を指定することで、
-     * 画面幅が狭い場合に自動的に縮むようにする。
-     */
-	width: 100%;
-	max-width: 80svw;
-	font-size: 1.2rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-}
-section.top {
-	margin-top: var(--height-header);
 }
 
 /* Font */
@@ -146,6 +130,12 @@ input {
 		--color-form-bg: ivory;
 		--color-form-error: red;
 		--color-form-hover: gray;
+
+		/* radius var*/
+		--radius-border-main: 0 0 2rem 2rem;
+		--radius-border-sub: 0;
+		--radius-footer-main: 2rem 2rem 0 0;
+		--radius-footer-sub: 0;
 	}
 
 	section {
@@ -167,6 +157,12 @@ input {
 		--color-form-bg: ivory;
 		--color-form-error: red;
 		--color-form-hover: gray;
+
+		/* radius var*/
+		--radius-header-main: 0 0 2rem 2rem;
+		--radius-header-sub: 0;
+		--radius-footer-main: 2rem 2rem 0 0;
+		--radius-footer-sub: 0;
 	}
 
 	section {
