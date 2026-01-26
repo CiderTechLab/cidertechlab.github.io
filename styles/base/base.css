@@ -1,21 +1,34 @@
 @charset "UTF-8";
+/**
+ * 「どのページか分からないと意味が変わるCSS」はbaseに置かない
+ *  ex) .note-layout__content
+ */
 :root {
-	--header-hight: 8rem;
-	scroll-padding-top: var(--header-hight);
+	/* color var*/
+	--color-primary: DeepSkyBlue;
+	--color-secondary: LightSkyBlue;
+	--color-bg-main: whitesmoke;
+	--color-bg-sub: dimgray;
+	--color-border-main: dimgray;
+	--color-text-main: dimgray;
+	--color-text-sub: white;
+	--color-form-bg: ivory;
+	--color-form-error: red;
+	--color-form-hover: gray;
+
 	font-family: 'Century Gothic', sans-serif;
 	line-height: 1.5;
-	scroll-behavior: smooth;
 }
 
 body {
 	margin: 0;
 	padding: 0;
+	background-color: var(--color-bg-main);
 }
 
-/* Contents styles */
+/* Contents */
 main {
-	background-color: whitesmoke;
-	color: dimgray;
+	color: var(--color-text-main);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -24,24 +37,7 @@ main {
 	z-index: 1;
 }
 
-/* Section styles */
-section {
-	padding: 1rem;
-	/* 
-     * width を 100% にしておき、max-width で最大幅を指定することで、
-     * 画面幅が狭い場合に自動的に縮むようにする。
-     */
-	width: 100%;
-	max-width: 60rem;
-	font-size: 1.2rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-}
-
-/* Font styles */
+/* Font */
 h1 {
 	margin: 1rem;
 	padding: 1rem;
@@ -60,7 +56,7 @@ h4 {
 	text-align: center;
 }
 
-/* List styles */
+/* List */
 ul {
 	list-style: square;
 	padding: 2rem;
@@ -76,23 +72,21 @@ li {
 	height: auto;
 	font-size: 1rem;
 	font-weight: normal;
-	color: black;
 	background-color: transparent;
 	border-radius: 0;
 	box-shadow: none;
 	display: initial;
 }
 
-/* Link styles */
+/* Link */
 a {
 	text-decoration: underline;
 }
 a:hover {
-	font-weight: bold;
 	text-decoration: none;
 }
 
-/* Table styles */
+/* Table */
 table {
 	margin: 0.5rem 0;
 	width: 100%;
@@ -102,14 +96,19 @@ table {
 th,
 td {
 	padding: 0.75rem;
-	border: 1px solid dimgray;
+	border: 1px solid var(--color-border-main);
 	text-align: left;
 	word-break: break-word;
 	overflow-wrap: break-word;
 	white-space: normal;
 }
 
-/* SVG Contents Style */
+/* Form */
+input {
+	appearance: auto;
+}
+
+/* SVG Contents */
 .icon {
 	width: 24px;
 	height: 24px;
@@ -117,18 +116,56 @@ td {
 	justify-content: center;
 }
 
-/* Tablet Contents Style */
+/* TB Contents */
 @media screen and (max-width: 1280px) {
 	:root {
-		--header-hight: 8rem;
-		scroll-behavior: smooth;
+		/* color var*/
+		--color-primary: DeepSkyBlue;
+		--color-secondary: LightSkyBlue;
+		--color-bg-main: whitesmoke;
+		--color-bg-sub: dimgray;
+		--color-border-main: dimgray;
+		--color-text-main: dimgray;
+		--color-text-sub: white;
+		--color-form-bg: ivory;
+		--color-form-error: red;
+		--color-form-hover: gray;
+
+		/* radius var*/
+		--radius-border-main: 0 0 2rem 2rem;
+		--radius-border-sub: 0;
+		--radius-footer-main: 2rem 2rem 0 0;
+		--radius-footer-sub: 0;
+	}
+
+	section {
+		max-width: inherit;
 	}
 }
 
-/* SmartPhone Image styles */
+/* SP Contents */
 @media screen and (max-width: 500px) {
 	:root {
-		--header-hight: 5rem;
-		scroll-behavior: smooth;
+		/* color var*/
+		--color-primary: DeepSkyBlue;
+		--color-secondary: LightSkyBlue;
+		--color-bg-main: whitesmoke;
+		--color-bg-sub: dimgray;
+		--color-border-main: dimgray;
+		--color-text-main: dimgray;
+		--color-text-sub: white;
+		--color-form-bg: ivory;
+		--color-form-error: red;
+		--color-form-hover: gray;
+
+		/* radius var*/
+		--radius-header-main: 0 0 2rem 2rem;
+		--radius-header-sub: 0;
+		--radius-footer-main: 2rem 2rem 0 0;
+		--radius-footer-sub: 0;
+	}
+
+	section {
+		max-width: inherit;
 	}
 }

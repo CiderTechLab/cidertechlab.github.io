@@ -1,4 +1,4 @@
-/* Card Component Styles */
+@charset "UTF-8";
 ul.cards {
 	width: 100%;
 	max-width: 60rem;
@@ -19,7 +19,7 @@ li.card {
 	min-width: 20rem;
 	height: 20rem;
 	border-radius: 1rem;
-	border: 1px solid dimgray;
+	border: 1px solid var(--main-border-color);
 	text-align: center;
 	font-size: 3rem;
 	font-weight: bold;

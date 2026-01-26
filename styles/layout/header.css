@@ -1,10 +1,9 @@
 @charset "UTF-8";
-/* headder styles */
 header {
+	grid-area: header;
 	padding: 0 2vw;
 	width: 100svw;
-	min-height: var(--header-height);
-	border-radius: 0 0 2rem 2rem;
+	min-height: var(--height-header);
 	background-color: white;
 	display: flex;
 	justify-content: space-evenly;
@@ -17,8 +16,8 @@ header img[src$='.svg'] {
 	transform: scale(1.8);
 }
 
-div#header__nav__contents,
-div#header__nav__links {
+.header__nav__contents,
+.header__nav__links {
 	display: flex;
 }
 
@@ -56,7 +55,7 @@ nav {
 	display: flex;
 }
 
-div#header__nav__links a {
+.header__nav__links a {
 	padding: 0.5rem 0 0.5rem 0;
 	border: 0;
 	display: flex;
@@ -64,23 +63,27 @@ div#header__nav__links a {
 	align-items: center;
 }
 
-/* nav breadcrumb styles */
-nav#breadcrumb {
+/* nav breadcrumb */
+.breadcrumb {
+	grid-area: breadcrumb;
 	width: 100%;
 	padding: 8rem 0 0 2rem;
-	background-color: lightblue;
-	border-radius: 0 0 2rem 2rem;
+	min-height: var(--height-header);
+	background-color: var(--color-secondary);
+	border-radius: var(--radius-border-main);
+	position: fixed;
 	display: flex;
 	justify-content: left;
+	z-index: 99;
 }
-nav#breadcrumb ol li {
+.breadcrumb ol li {
 	padding: 0;
 	margin: 0;
 	list-style: none;
 	display: inline-block;
 }
 
-/* Tablet Contents Style */
+/* TB Contents */
 @media screen and (max-width: 1280px) {
 	header img[src$='.svg'] {
 		transform: scale(1.2);
@@ -114,8 +117,12 @@ nav#breadcrumb ol li {
 	}
 }
 
-/* SmartPhone Image styles */
+/* SP Contents */
 @media screen and (max-width: 500px) {
+	:root {
+		--top-nav-icon: 15px;
+	}
+
 	h1 {
 		padding: 0;
 		margin: 0;
@@ -125,12 +132,9 @@ nav#breadcrumb ol li {
 		transform: scale(0.7);
 	}
 
-	/*
+	/**
    * ハンバーガーメニュー
    */
-	div.nav__wrapper {
-		--nav__icon-top: 10px;
-	}
 	.nav__wrapper {
 		position: relative;
 	}
@@ -138,7 +142,7 @@ nav#breadcrumb ol li {
 		width: 40px;
 		height: 30px;
 		position: fixed;
-		top: var(--nav__icon-top);
+		top: var(--top-nav-icon);
 		left: 20px;
 		cursor: pointer;
 		z-index: 3;
@@ -149,7 +153,7 @@ nav#breadcrumb ol li {
 		display: block;
 		height: 4px;
 		margin: 6px 0;
-		background: dimgray;
+		background: var(--color-bg-sub);
 		border-radius: 2px;
 		transition: 0.4s;
 	}
@@ -178,8 +182,8 @@ nav#breadcrumb ol li {
 	}
 	/* メニュー本体 */
 	nav {
-		margin: var(--nav__icon-top) 0 0 0;
-		padding: var(--nav__icon-top) 0 0 0;
+		margin: var(--top-nav-icon) 0 0 0;
+		padding: var(--top-nav-icon) 0 0 0;
 		position: fixed;
 		right: 100%;
 		width: 100%;
@@ -198,7 +202,7 @@ nav#breadcrumb ol li {
 	}
 
 	header a {
-		border-top: 1px solid dimgray;
+		border-top: 1px solid var(--color-border-main);
 		border-right: 0;
 		border-bottom: 0;
 		border-left: 0;
@@ -206,7 +210,7 @@ nav#breadcrumb ol li {
 		padding: 0.5rem;
 		width: 100%;
 		font-size: 2rem;
-		color: dimgray;
+		color: var(--color-text-main);
 		text-align: center;
 		text-decoration: none;
 		display: inline-block;

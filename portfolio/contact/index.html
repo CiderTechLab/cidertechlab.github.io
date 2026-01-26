@@ -1,61 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 	<head>
+		<!-- メタ情報 -->
 		<meta charset="UTF-8" />
 		<meta name="author" content="S.K" />
 		<meta
 			name="description"
 			content="HTMLフォームの設計ノートを元にしたお問い合わせフォームです。送信はモックです。"
 		/>
+
+		<!-- デザイン関連 -->
 		<meta name="viewport" content="width=device-width" />
 		<link href="../../styles/base/destyle.css" rel="stylesheet" />
 		<link href="../../styles/base/base.css" rel="stylesheet" />
+		<link href="../../styles/layout/layout.css" rel="stylesheet" />
 		<link href="../../styles/layout/header.css" rel="stylesheet" />
 		<link href="../../styles/layout/footer.css" rel="stylesheet" />
-		<link href="../../styles/pages/contactform-mockup.css" rel="stylesheet" />
+		<link href="../../styles/pages/contact.css" rel="stylesheet" />
+		<link rel="icon" href="../../images/favicon.ico" sizes="32x32" />
+		<link rel="apple-touch-icon" href="../../images/favicon.png" />
 
-		<title>Contact（モックアップ） - S.K's Portfolio</title>
+		<title>Contact（モックアップ） - CiderTechLab</title>
 
 		<script src="../../scripts/header_footer.js" defer></script>
-		<script src="../../scripts/contact-form-mockup.js" defer></script>
+		<script src="../../scripts/contact.js" defer></script>
 	</head>
 	<body>
-		<div id="icons" style="display: none"></div>
-		<header></header>
-		<nav id="breadcrumb"></nav>
+		<header class="basic-layout__header"></header>
+		<nav class="basic-layout__header breadcrumb"></nav>
 
 		<main>
-			<section class="content__block">
+			<section class="top content__block">
 				<h2>Contact</h2>
-				<p>
+				<p class="contactForm_explain">
 					お問い合わせフォームのモックアップです。入力内容の送信は行いません。
+					<br />一番下の「確認」ボタンを押すと、送信内容（入力内容ではありません。）のダイアログが表示されます。
 				</p>
-			</section>
 
-			<section class="content__block">
-				<h3 id="form">お問い合わせフォーム</h3>
-				<form id="contactForm" class="contact-form" novalidate>
+				<form id="contactForm">
 					<div class="form__field">
-						<label class="form__label" for="name">
-							名前 <span class="required">必須</span>
+						<label for="name">
+							<span class="required">（必須）</span>名前
 						</label>
 						<input
 							class="form__control"
 							type="text"
 							id="name"
 							name="name"
-							required
 							maxlength="50"
 							autocomplete="name"
 							aria-describedby="name-hint name-error"
+							required
 						/>
-						<p id="name-hint" class="form__help">空白のみは不可です。</p>
+						<p id="name-hint" class="form__help">
+							例）山田　太郎。空白のみは不可です。
+						</p>
 						<p id="name-error" class="form__error" aria-live="polite"></p>
 					</div>
 
 					<div class="form__field">
-						<label class="form__label" for="email">
-							メールアドレス <span class="required">必須</span>
+						<fieldset>
+							<legend><span class="required">（必須）</span>性別</legend>
+							<label>
+								<input
+									type="radio"
+									name="gender"
+									id="gender-men"
+									value="men"
+									required
+								/>
+								男性
+							</label>
+							<label>
+								<input
+									type="radio"
+									name="gender"
+									id="gender-women"
+									value="women"
+								/>
+								女性
+							</label>
+							<label>
+								<input
+									type="radio"
+									name="gender"
+									id="gender-other"
+									value="other"
+								/>
+								その他
+							</label>
+						</fieldset>
+						<p id="gender-error" class="form__error" aria-live="polite"></p>
+					</div>
+
+					<div class="form__field">
+						<label for="email">
+							<span class="required">（必須）</span>メールアドレス
 						</label>
 						<input
 							class="form__control"
@@ -68,13 +108,13 @@
 							aria-describedby="email-hint email-error"
 						/>
 						<p id="email-hint" class="form__help">
-							ブラウザ標準のemail形式チェックを利用します。
+							例）mail@example.com。ブラウザ標準のemail形式チェックを利用します。
 						</p>
 						<p id="email-error" class="form__error" aria-live="polite"></p>
 					</div>
 
 					<div class="form__field">
-						<label class="form__label" for="phone">電話番号</label>
+						<label for="phone">（任意）電話番号</label>
 						<input
 							class="form__control"
 							type="tel"
@@ -86,14 +126,14 @@
 							aria-describedby="phone-hint phone-error"
 						/>
 						<p id="phone-hint" class="form__help">
-							数字・+ - ( ) space を許容します。
+							例）0120-555-555。数字・+ - ( ) space を許容します。
 						</p>
 						<p id="phone-error" class="form__error" aria-live="polite"></p>
 					</div>
 
 					<div class="form__field">
-						<label class="form__label" for="category">
-							お問い合わせ種別 <span class="required">必須</span>
+						<label for="category">
+							<span class="required">（必須）</span>お問い合わせの種類
 						</label>
 						<select
 							class="form__control"
@@ -102,8 +142,7 @@
 							required
 							aria-describedby="category-error"
 						>
-							<option value="" selected disabled>選択してください</option>
-							<option value="general">一般的なお問い合わせ</option>
+							<option value="" selected disabled>選択してください▼</option>
 							<option value="estimate">お見積り</option>
 							<option value="feedback">ご意見・ご感想</option>
 							<option value="other">その他</option>
@@ -112,26 +151,27 @@
 					</div>
 
 					<div class="form__field">
-						<label class="form__label" for="message">
-							お問い合わせ内容 <span class="required">必須</span>
+						<label for="message">
+							<span class="required">（必須）</span>お問い合わせ内容
 						</label>
 						<textarea
 							class="form__control form__textarea"
 							id="message"
 							name="message"
-							required
 							maxlength="500"
 							rows="6"
 							aria-describedby="message-count message-error"
+							required
 						></textarea>
 						<div class="form__meta">
+							<!-- <progress max="500"></progress> -->
 							<p id="message-count" class="char-count">残り 500 文字</p>
 						</div>
 						<p id="message-error" class="form__error" aria-live="polite"></p>
 					</div>
 
 					<div class="form__field">
-						<label class="form__label" for="attachment">添付ファイル</label>
+						<label for="attachment">（任意）添付ファイル</label>
 						<input
 							class="form__control"
 							type="file"
@@ -143,12 +183,13 @@
 						<p id="attachment-hint" class="form__help">
 							jpg / png / pdf のみ対応（最大1ファイル）。
 						</p>
-						<p id="attachment-name" class="file-name">未選択</p>
 						<p id="attachment-error" class="form__error" aria-live="polite"></p>
 					</div>
 
 					<div class="form__actions">
-						<button type="submit" class="form__submit">送信する</button>
+						<button type="button" id="confirmBtn" class="form__submit">
+							確認
+						</button>
 						<p id="form-status" class="form__status" role="status"></p>
 					</div>
 				</form>

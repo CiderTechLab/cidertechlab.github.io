@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 	<head>
 		<!-- メタ情報 -->
@@ -12,30 +12,31 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="styles/base/destyle.css" rel="stylesheet" />
 		<link href="styles/base/base.css" rel="stylesheet" />
+		<link href="styles/layout/layout.css" rel="stylesheet" />
 		<link href="styles/layout/header.css" rel="stylesheet" />
 		<link href="styles/layout/footer.css" rel="stylesheet" />
 		<link href="styles/components/card.css" rel="stylesheet" />
 		<link href="styles/pages/top.css" rel="stylesheet" />
+		<link rel="icon" href="images/favicon.ico" sizes="32x32" />
+		<link rel="apple-touch-icon" href="images/favicon.png" />
 
-		<title>S.K's Portfolio</title>
+		<title>CiderTechLab</title>
 
 		<!-- スクリプト -->
 		<script src="scripts/header_footer.js" defer></script>
 		<script src="scripts/card.js" defer></script>
 	</head>
 	<body>
-		<div id="icons" style="display: none"></div>
-
-		<header></header>
+		<header class="basic-layout__header"></header>
 
 		<main>
 			<section class="hero__section">
 				<h2 class="slogan">
-					<span class="slogan__top">Build the Web</span><br />
+					<span class="slogan__main">Build the Web</span><br />
 					<span class="slogan__sub">with meaning.</span>
 				</h2>
 				<p class="slogan__explain">
-					ようこそ、S.K's Portfolioへ！<br />
+					ようこそ、CiderTechLabへ！<br />
 					このサイトでは私の
 					<br /><strong
 						>プロフィール、スキルセット、ポートフォリオ、キャリア</strong
@@ -46,7 +47,7 @@
 
 			<section class="AboutMe__section">
 				<h2 id="AboutMe__link">About Me</h2>
-				<div id="AboutMe__img">※サムネイル予定地</div>
+				<img src="images/profile_pic.svg" alt="プロフィール画像" />
 				<h3>S.K</h3>
 				<p>
 					大学の理工系学科卒業後、システムエンジニアとして6年間従事して参りました。主に業務系のシステムを担当し、運用及び一部開発を経験しました。特にデータベース周りの知識を深めることができました。現在はフロントエンドエンジニアを目指し、HTML、CSS、JavaScriptを中心に学習しております。また、設計にも携われるエンジニアを目指しておりUIやUX、ツール（Figma）について日々勉強しています。生成AIにも興味があり、駆使できる人材を目指しております。<br />皆様どうぞ、よろしくお願いいたします。
@@ -73,7 +74,8 @@
 								<li class="css">#Flexレイアウト</li>
 								<li class="css">#Gridレイアウト</li>
 								<li class="css">#レスポンシブデザイン</li>
-								<li class="css">#アニメーション</li>
+								<li class="css">#BEM記法</li>
+								<li class="css">#コンポーネント指向</li>
 							</ul>
 						</li>
 						<li class="js card">
@@ -94,10 +96,8 @@
 								<li class="sql">#サブクエリ</li>
 							</ul>
 						</li>
-						<li class="card">UI</li>
-						<li class="card">UX</li>
 						<li class="card">
-							Figma
+							Figma（UI/UX）
 							<ul>
 								<li>#ワイヤーフレーム</li>
 							</ul>
@@ -210,6 +210,13 @@
 						<a href="portfolio/js/">JavaScript Knowledge Notes</a>
 						<p>
 							JavaScriptの学習の中で気づいた点や、注意点をまとめたページです。
+						</p>
+					</dd>
+					<dt>※サムネイル予定地</dt>
+					<dd>
+						<a href="portfolio/contact/">Contact（モックアップ）</a>
+						<p>
+							Form関連タグの練習として制作したものです。入力チェックに手を焼きました。
 						</p>
 					</dd>
 				</dl>

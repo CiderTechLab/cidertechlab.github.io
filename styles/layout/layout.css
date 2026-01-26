@@ -1,0 +1,124 @@
+@charset "UTF-8";
+:root {
+	/**
+	 * アンカーリンクのためのヘッダー高さ変数
+	 */
+	/* height var*/
+	--height-header: 8rem;
+	scroll-padding-top: var(--height-header);
+	scroll-behavior: smooth;
+
+	/* radius var*/
+	--radius-border-main: 0 0 2rem 2rem;
+	--radius-border-sub: 0;
+	--radius-footer-main: 2rem 2rem 0 0;
+	--radius-footer-sub: 0;
+}
+
+/* section */
+section {
+	padding: 1rem;
+	/* 
+	 * width を 100% にしておき、max-width で最大幅を指定することで、
+	 * 画面幅が狭い場合に自動的に縮むようにする。
+	 */
+	width: 100%;
+	max-width: 80svw;
+	font-size: 1.2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.note-layout {
+	display: grid;
+	grid-template-columns: 250px 1fr;
+	grid-template-rows: auto auto 1fr auto;
+	grid-template-areas:
+		'header  header'
+		'breadcrumb breadcrumb'
+		'aside   main'
+		'footer  footer';
+	align-self: flex-start;
+}
+
+.basic-layout__header {
+	border-radius: var(--radius-border-main);
+}
+
+.note-layout__header {
+	border-radius: var(--radius-border-sub);
+}
+
+main {
+	grid-area: main;
+	padding-top: var(--height-header);
+	background-color: white;
+	justify-content: flex-start;
+	counter-reset: section-counter;
+}
+
+aside {
+	grid-area: aside;
+	padding: 1rem;
+	padding-top: var(--height-header);
+	width: 100%;
+	border-right: 1px solid gray;
+}
+
+pre {
+	padding: 1rem;
+	color: white;
+	background-color: black;
+	font-family: Consolas, sans-serif;
+	border-radius: 1rem;
+}
+
+/* font */
+h3 {
+	margin: 2rem 0;
+	font-size: 3rem;
+	counter-increment: section-counter;
+}
+h3::before {
+	content: counter(section-counter) '. ';
+}
+
+@media screen and (max-width: 1280px) {
+	:root {
+		/* height var*/
+		--height-header: 8rem;
+
+		/* radius var*/
+		--radius-border-main: 0 0 2rem 2rem;
+		--radius-border-sub: 0;
+		--radius-footer-main: 2rem 2rem 0 0;
+		--radius-footer-sub: 0;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	:root {
+		/* height var*/
+		--height-header: 8rem;
+
+		/* radius var*/
+		--radius-border-main: 0 0 2rem 2rem;
+		--radius-border-sub: 0;
+		--radius-footer-main: 2rem 2rem 0 0;
+		--radius-footer-sub: 0;
+	}
+
+	body {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto 1fr auto auto;
+		grid-template-areas:
+			'header'
+			'aside'
+			'main'
+			'breadcrumb'
+			'footer';
+	}
+}
