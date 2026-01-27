@@ -26,176 +26,182 @@
 		<script src="../../scripts/contact.js" defer></script>
 	</head>
 	<body>
-		<header class="basic-layout__header"></header>
-		<nav class="basic-layout__header breadcrumb"></nav>
+		<div class="basic-layout">
+			<header class="basic-layout__header"></header>
+			<nav class="basic-layout__header breadcrumb"></nav>
 
-		<main>
-			<section class="top content__block">
-				<h2>Contact</h2>
-				<p class="contactForm_explain">
-					お問い合わせフォームのモックアップです。入力内容の送信は行いません。
-					<br />一番下の「確認」ボタンを押すと、送信内容（入力内容ではありません。）のダイアログが表示されます。
-				</p>
+			<main class="main--with-breadcrumb">
+				<section class="top content__block">
+					<h2>Contact</h2>
+					<p class="contactForm_explain">
+						お問い合わせフォームのモックアップです。入力内容の送信は行いません。
+						<br />一番下の「確認」ボタンを押すと、送信内容（入力内容ではありません。）のダイアログが表示されます。
+					</p>
 
-				<form id="contactForm">
-					<div class="form__field">
-						<label for="name">
-							<span class="required">（必須）</span>名前
-						</label>
-						<input
-							class="form__control"
-							type="text"
-							id="name"
-							name="name"
-							maxlength="50"
-							autocomplete="name"
-							aria-describedby="name-hint name-error"
-							required
-						/>
-						<p id="name-hint" class="form__help">
-							例）山田　太郎。空白のみは不可です。
-						</p>
-						<p id="name-error" class="form__error" aria-live="polite"></p>
-					</div>
-
-					<div class="form__field">
-						<fieldset>
-							<legend><span class="required">（必須）</span>性別</legend>
-							<label>
-								<input
-									type="radio"
-									name="gender"
-									id="gender-men"
-									value="men"
-									required
-								/>
-								男性
+					<form id="contactForm">
+						<div class="form__field">
+							<label for="name">
+								<span class="required">（必須）</span>名前
 							</label>
-							<label>
-								<input
-									type="radio"
-									name="gender"
-									id="gender-women"
-									value="women"
-								/>
-								女性
-							</label>
-							<label>
-								<input
-									type="radio"
-									name="gender"
-									id="gender-other"
-									value="other"
-								/>
-								その他
-							</label>
-						</fieldset>
-						<p id="gender-error" class="form__error" aria-live="polite"></p>
-					</div>
-
-					<div class="form__field">
-						<label for="email">
-							<span class="required">（必須）</span>メールアドレス
-						</label>
-						<input
-							class="form__control"
-							type="email"
-							id="email"
-							name="email"
-							required
-							maxlength="254"
-							autocomplete="email"
-							aria-describedby="email-hint email-error"
-						/>
-						<p id="email-hint" class="form__help">
-							例）mail@example.com。ブラウザ標準のemail形式チェックを利用します。
-						</p>
-						<p id="email-error" class="form__error" aria-live="polite"></p>
-					</div>
-
-					<div class="form__field">
-						<label for="phone">（任意）電話番号</label>
-						<input
-							class="form__control"
-							type="tel"
-							id="phone"
-							name="phone"
-							maxlength="20"
-							inputmode="tel"
-							autocomplete="tel"
-							aria-describedby="phone-hint phone-error"
-						/>
-						<p id="phone-hint" class="form__help">
-							例）0120-555-555。数字・+ - ( ) space を許容します。
-						</p>
-						<p id="phone-error" class="form__error" aria-live="polite"></p>
-					</div>
-
-					<div class="form__field">
-						<label for="category">
-							<span class="required">（必須）</span>お問い合わせの種類
-						</label>
-						<select
-							class="form__control"
-							id="category"
-							name="category"
-							required
-							aria-describedby="category-error"
-						>
-							<option value="" selected disabled>選択してください▼</option>
-							<option value="estimate">お見積り</option>
-							<option value="feedback">ご意見・ご感想</option>
-							<option value="other">その他</option>
-						</select>
-						<p id="category-error" class="form__error" aria-live="polite"></p>
-					</div>
-
-					<div class="form__field">
-						<label for="message">
-							<span class="required">（必須）</span>お問い合わせ内容
-						</label>
-						<textarea
-							class="form__control form__textarea"
-							id="message"
-							name="message"
-							maxlength="500"
-							rows="6"
-							aria-describedby="message-count message-error"
-							required
-						></textarea>
-						<div class="form__meta">
-							<!-- <progress max="500"></progress> -->
-							<p id="message-count" class="char-count">残り 500 文字</p>
+							<input
+								class="form__control"
+								type="text"
+								id="name"
+								name="name"
+								maxlength="50"
+								autocomplete="name"
+								aria-describedby="name-hint name-error"
+								required
+							/>
+							<p id="name-hint" class="form__help">
+								例）山田　太郎。空白のみは不可です。
+							</p>
+							<p id="name-error" class="form__error" aria-live="polite"></p>
 						</div>
-						<p id="message-error" class="form__error" aria-live="polite"></p>
-					</div>
 
-					<div class="form__field">
-						<label for="attachment">（任意）添付ファイル</label>
-						<input
-							class="form__control"
-							type="file"
-							id="attachment"
-							name="attachment"
-							accept=".jpg,.jpeg,.png,.pdf"
-							aria-describedby="attachment-hint attachment-error"
-						/>
-						<p id="attachment-hint" class="form__help">
-							jpg / png / pdf のみ対応（最大1ファイル）。
-						</p>
-						<p id="attachment-error" class="form__error" aria-live="polite"></p>
-					</div>
+						<div class="form__field">
+							<fieldset>
+								<legend><span class="required">（必須）</span>性別</legend>
+								<label>
+									<input
+										type="radio"
+										name="gender"
+										id="gender-men"
+										value="men"
+										required
+									/>
+									男性
+								</label>
+								<label>
+									<input
+										type="radio"
+										name="gender"
+										id="gender-women"
+										value="women"
+									/>
+									女性
+								</label>
+								<label>
+									<input
+										type="radio"
+										name="gender"
+										id="gender-other"
+										value="other"
+									/>
+									その他
+								</label>
+							</fieldset>
+							<p id="gender-error" class="form__error" aria-live="polite"></p>
+						</div>
 
-					<div class="form__actions">
-						<button type="button" id="confirmBtn" class="form__submit">
-							確認
-						</button>
-						<p id="form-status" class="form__status" role="status"></p>
-					</div>
-				</form>
-			</section>
-		</main>
+						<div class="form__field">
+							<label for="email">
+								<span class="required">（必須）</span>メールアドレス
+							</label>
+							<input
+								class="form__control"
+								type="email"
+								id="email"
+								name="email"
+								required
+								maxlength="254"
+								autocomplete="email"
+								aria-describedby="email-hint email-error"
+							/>
+							<p id="email-hint" class="form__help">
+								例）mail@example.com。ブラウザ標準のemail形式チェックを利用します。
+							</p>
+							<p id="email-error" class="form__error" aria-live="polite"></p>
+						</div>
 
-		<footer></footer>
+						<div class="form__field">
+							<label for="phone">（任意）電話番号</label>
+							<input
+								class="form__control"
+								type="tel"
+								id="phone"
+								name="phone"
+								maxlength="20"
+								inputmode="tel"
+								autocomplete="tel"
+								aria-describedby="phone-hint phone-error"
+							/>
+							<p id="phone-hint" class="form__help">
+								例）0120-555-555。数字・+ - ( ) space を許容します。
+							</p>
+							<p id="phone-error" class="form__error" aria-live="polite"></p>
+						</div>
+
+						<div class="form__field">
+							<label for="category">
+								<span class="required">（必須）</span>お問い合わせの種類
+							</label>
+							<select
+								class="form__control"
+								id="category"
+								name="category"
+								required
+								aria-describedby="category-error"
+							>
+								<option value="" selected disabled>選択してください▼</option>
+								<option value="estimate">お見積り</option>
+								<option value="feedback">ご意見・ご感想</option>
+								<option value="other">その他</option>
+							</select>
+							<p id="category-error" class="form__error" aria-live="polite"></p>
+						</div>
+
+						<div class="form__field">
+							<label for="message">
+								<span class="required">（必須）</span>お問い合わせ内容
+							</label>
+							<textarea
+								class="form__control form__textarea"
+								id="message"
+								name="message"
+								maxlength="500"
+								rows="6"
+								aria-describedby="message-count message-error"
+								required
+							></textarea>
+							<div class="form__meta">
+								<!-- <progress max="500"></progress> -->
+								<p id="message-count" class="char-count">残り 500 文字</p>
+							</div>
+							<p id="message-error" class="form__error" aria-live="polite"></p>
+						</div>
+
+						<div class="form__field">
+							<label for="attachment">（任意）添付ファイル</label>
+							<input
+								class="form__control"
+								type="file"
+								id="attachment"
+								name="attachment"
+								accept=".jpg,.jpeg,.png,.pdf"
+								aria-describedby="attachment-hint attachment-error"
+							/>
+							<p id="attachment-hint" class="form__help">
+								jpg / png / pdf のみ対応（最大1ファイル）。
+							</p>
+							<p
+								id="attachment-error"
+								class="form__error"
+								aria-live="polite"
+							></p>
+						</div>
+
+						<div class="form__actions">
+							<button type="button" id="confirmBtn" class="form__submit">
+								確認
+							</button>
+							<p id="form-status" class="form__status" role="status"></p>
+						</div>
+					</form>
+				</section>
+			</main>
+
+			<footer class="basic-layout__footer"></footer>
+		</div>
 	</body>
 </html>

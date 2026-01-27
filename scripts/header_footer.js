@@ -10,7 +10,7 @@ const icons = `
 `;
 
 const headerContent = `
-  <h1><a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a></h1>
+  <h1><a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="CiderTechLabo Logo"></a></h1>
   <div class="nav__wrapper">
     <input type="checkbox" id="nav__toggle" hidden>
     <label class="nav__icon" for="nav__toggle">
@@ -42,35 +42,6 @@ const headerContent = `
   </div>
 `;
 
-document.addEventListener('DOMContentLoaded', () => {});
-
-const breadcrumbContent = () => {
-	const path = window.location.pathname;
-	const pathSegments = path.split('/').filter((segment) => segment.length > 0);
-
-	let currentPath = '/';
-	let breadcrumbHTML = '<ol>';
-
-	breadcrumbHTML += '<li><a href="/">Home</a></li>&nbsp;&gt;&nbsp;';
-
-	pathSegments.forEach((segment, index) => {
-		currentPath += segment + '/';
-		const isLast = index === pathSegments.length - 1;
-		const linkText = document.title.replace(' - CiderTechLab', '');
-
-		if (!isLast) {
-			breadcrumbHTML += `<li><a href="${currentPath}">${linkText}</a></li>&nbsp;&gt;&nbsp;`;
-		} else {
-			breadcrumbHTML +=
-				`<li>` + document.title.replace(' - CiderTechLab', '') + `</li>`;
-		}
-	});
-
-	breadcrumbHTML += '</ol>';
-
-	return breadcrumbHTML;
-};
-
 const footerContent = `
   <div id="footer__copy">
     <a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a>
@@ -97,12 +68,57 @@ const footerContent = `
 `;
 
 /**
+ * SVGスプライトページ先頭挿入用関数
+ * @returns {HTMLElement}
+ */
+function ensureSpriteRoot() {
+	let spriteRoot = document.getElementById('svg-sprite');
+	if (!spriteRoot) {
+		spriteRoot = document.createElement('div');
+		spriteRoot.id = 'svg-sprite';
+		spriteRoot.setAttribute('aria-hidden', 'true');
+		document.body.prepend(spriteRoot);
+	}
+	return spriteRoot;
+}
+
+/**
+ * パンくずリスト自動生成関数
+ * @returns {string} パンくずリストのHTML文字列
+ */
+function createBreadcrumbContent() {
+	const path = window.location.pathname;
+	const pathSegments = path.split('/').filter((segment) => segment.length > 0);
+
+	let currentPath = '/';
+	let breadcrumbHTML = '<ol>';
+
+	breadcrumbHTML += '<li><a href="/">Home</a></li>&nbsp;&gt;&nbsp;';
+
+	pathSegments.forEach((segment, index) => {
+		currentPath += segment + '/';
+		const isLast = index === pathSegments.length - 1;
+		const linkText = document.title.replace(' - CiderTechLab', '');
+
+		if (!isLast) {
+			breadcrumbHTML += `<li><a href="${currentPath}">${linkText}</a></li>&nbsp;&gt;&nbsp;`;
+		} else {
+			breadcrumbHTML +=
+				`<li>` + document.title.replace(' - CiderTechLab', '') + `</li>`;
+		}
+	});
+
+	breadcrumbHTML += '</ol>';
+	return breadcrumbHTML;
+}
+
+/**
  * ページロード後に実行
  */
 document.addEventListener('DOMContentLoaded', () => {
-	const iconsPlaceholder = document.querySelector('.icon');
-	if (iconsPlaceholder) {
-		iconsPlaceholder.innerHTML = icons;
+	const spritePlaceholder = ensureSpriteRoot();
+	if (!document.getElementById('icon-github')) {
+		spritePlaceholder.innerHTML = icons;
 	}
 
 	const headerPlaceholder = document.querySelector('header');
@@ -110,9 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		headerPlaceholder.innerHTML = headerContent;
 	}
 
-	const breadcrumbPlaceholder = document.querySelector('.breadcrumb');
+	const breadcrumbPlaceholder = document.querySelector(
+		'.note-layout__breadcrumb'
+	);
 	if (breadcrumbPlaceholder) {
-		breadcrumbPlaceholder.innerHTML = breadcrumbContent();
+		breadcrumbPlaceholder.innerHTML = createBreadcrumbContent();
 	}
 
 	const footerPlaceholder = document.querySelector('footer');

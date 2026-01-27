@@ -4,7 +4,7 @@
  *  ex) .note-layout__content
  */
 :root {
-	/* color var*/
+	/** color var*/
 	--color-primary: DeepSkyBlue;
 	--color-secondary: LightSkyBlue;
 	--color-bg-main: whitesmoke;
@@ -26,18 +26,12 @@ body {
 	background-color: var(--color-bg-main);
 }
 
-/* Contents */
+/** Contents */
 main {
 	color: var(--color-text-main);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	z-index: 1;
 }
 
-/* Font */
+/** Font */
 h1 {
 	margin: 1rem;
 	padding: 1rem;
@@ -56,7 +50,15 @@ h4 {
 	text-align: center;
 }
 
-/* List */
+/** headeing numbered */
+.section__heading--numbered {
+	counter-increment: section-counter;
+}
+.section__heading--numbered::before {
+	content: counter(section-counter) '. ';
+}
+
+/** List */
 ul {
 	list-style: square;
 	padding: 2rem;
@@ -78,7 +80,7 @@ li {
 	display: initial;
 }
 
-/* Link */
+/** Link */
 a {
 	text-decoration: underline;
 }
@@ -86,7 +88,7 @@ a:hover {
 	text-decoration: none;
 }
 
-/* Table */
+/** Table */
 table {
 	margin: 0.5rem 0;
 	width: 100%;
@@ -103,7 +105,7 @@ td {
 	white-space: normal;
 }
 
-/* Form */
+/** Form */
 input {
 	appearance: auto;
 }
@@ -114,12 +116,20 @@ input {
 	height: 24px;
 	display: block;
 	justify-content: center;
+	color: #000;
 }
 
-/* TB Contents */
+#svg-sprite svg {
+	position: absolute;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+/** TB Contents */
 @media screen and (max-width: 1280px) {
 	:root {
-		/* color var*/
+		/** color var*/
 		--color-primary: DeepSkyBlue;
 		--color-secondary: LightSkyBlue;
 		--color-bg-main: whitesmoke;
@@ -130,12 +140,6 @@ input {
 		--color-form-bg: ivory;
 		--color-form-error: red;
 		--color-form-hover: gray;
-
-		/* radius var*/
-		--radius-border-main: 0 0 2rem 2rem;
-		--radius-border-sub: 0;
-		--radius-footer-main: 2rem 2rem 0 0;
-		--radius-footer-sub: 0;
 	}
 
 	section {
@@ -146,7 +150,7 @@ input {
 /* SP Contents */
 @media screen and (max-width: 500px) {
 	:root {
-		/* color var*/
+		/** color var*/
 		--color-primary: DeepSkyBlue;
 		--color-secondary: LightSkyBlue;
 		--color-bg-main: whitesmoke;
@@ -157,12 +161,6 @@ input {
 		--color-form-bg: ivory;
 		--color-form-error: red;
 		--color-form-hover: gray;
-
-		/* radius var*/
-		--radius-header-main: 0 0 2rem 2rem;
-		--radius-header-sub: 0;
-		--radius-footer-main: 2rem 2rem 0 0;
-		--radius-footer-sub: 0;
 	}
 
 	section {

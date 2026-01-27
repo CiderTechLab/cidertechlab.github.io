@@ -5,10 +5,17 @@ footer {
 	width: 100%;
 	color: white;
 	background-color: var(--color-bg-sub);
-	border-radius: 2rem 2rem 0 0;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+}
+
+.basic-layout__footer {
+	border-radius: var(--radius-footer-basic);
+}
+
+.note-layout__footer {
+	border-radius: var(--radius-footer-sub);
 }
 
 div#footer__copy {
