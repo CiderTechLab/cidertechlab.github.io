@@ -18,7 +18,7 @@ footer {
 	border-radius: var(--radius-footer-sub);
 }
 
-div#footer__copy {
+.copy__footer {
 	flex: 1 1 0;
 	flex-grow: 1;
 	padding: 0 2rem 0 2rem;
@@ -29,7 +29,7 @@ div#footer__copy {
 	align-items: center;
 }
 
-div#footer__nav__contents {
+.menu__footer {
 	flex: 1 1 0;
 	flex-grow: 1;
 	padding: 0 2rem 0 2rem;
@@ -39,7 +39,7 @@ div#footer__nav__contents {
 	flex-direction: column;
 }
 
-div#footer__nav__links {
+.footer-nav__external {
 	padding: 0 2rem 0 2rem;
 	height: 100%;
 	display: flex;
@@ -69,6 +69,7 @@ footer a.logo {
 	border: 0;
 	padding: 0;
 	width: auto;
+	height: auto;
 	color: inherit;
 }
 footer a.logo:hover {
@@ -80,7 +81,7 @@ footer a.logo:hover {
 
 /* TB Contents*/
 @media screen and (max-width: 1280px) {
-	div#footer__copy img[src$='.svg'] {
+	.logo {
 		transform: scale(0.8);
 	}
 	footer a:hover {
@@ -96,6 +97,9 @@ footer a.logo:hover {
 	footer {
 		flex-direction: column;
 	}
+	.logo {
+		transform: scale(0.8);
+	}
 	footer a:hover {
 		border-radius: 2rem;
 		color: inherit;
@@ -103,18 +107,18 @@ footer a.logo:hover {
 		font-weight: inherit;
 	}
 
-	div#footer__copy {
+	.copy__footer {
 		margin-bottom: 1rem;
 	}
 
-	div#footer__nav__contents,
-	div#footer__nav__links {
+	.menu__footer {
 		border-left: 0;
 	}
-	div#footer__nav__links {
+	.footer-nav__external {
 		width: 100%;
+		border-left: 0;
 	}
-	div#footer__nav__links a {
+	.footer-nav__external a {
 		margin: 1rem 0.5rem 0 0.5rem;
 		border: 0;
 		transform: scale(1.8);

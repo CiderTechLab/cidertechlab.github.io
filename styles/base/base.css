@@ -141,10 +141,6 @@ input {
 		--color-form-error: red;
 		--color-form-hover: gray;
 	}
-
-	section {
-		max-width: inherit;
-	}
 }
 
 /* SP Contents */
@@ -161,9 +157,5 @@ input {
 		--color-form-bg: ivory;
 		--color-form-error: red;
 		--color-form-hover: gray;
-	}
-
-	section {
-		max-width: inherit;
 	}
 }

@@ -11,7 +11,7 @@ const icons = `
 
 const headerContent = `
   <h1><a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="CiderTechLabo Logo"></a></h1>
-  <div class="nav__wrapper">
+  <div class="header-nav">
     <input type="checkbox" id="nav__toggle" hidden>
     <label class="nav__icon" for="nav__toggle">
       <span></span>
@@ -20,13 +20,13 @@ const headerContent = `
     </label>
     <div class="overlay"></div>
     <nav>
-      <div class="header__nav__contents">
+      <div class="header-nav__menu">
         <a href="/index.html#AboutMe__link">About Me</a>
         <a href="/index.html#skills__link">Skill's</a>
         <a href="/index.html#portfolio__link">Portfolio</a>
         <a href="/index.html#career__link">Career</a>
       </div>
-      <div class="header__nav__links">
+      <div class="header-nav__external">
         <a href="https://github.com/cidertechlab/">
           <svg class="icon" aria-hidden="true">
              <use href="#icon-github"></use>
@@ -43,16 +43,16 @@ const headerContent = `
 `;
 
 const footerContent = `
-  <div id="footer__copy">
+  <div class="copy__footer">
     <a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a>
     <small>&#169; 2025-2026 S.K</small>
   </div>
-  <div id="footer__nav__contents">
+  <div class="menu__footer">
     <a href="/index.html#AboutMe__link">About Me</a>
     <a href="/index.html#skills__link">Skill's</a>
     <a href="/index.html#portfolio__link">Portfolio</a>
     <a href="/index.html#career__link">Career</a>
-    <div id="footer__nav__links">
+    <div class="footer-nav__external">
       <a class="icon__link" href="https://github.com/cidertechlab/">
         <svg class="icon" aria-hidden="true">
           <use href="#icon-github"></use>
