@@ -10,8 +10,8 @@ const icons = `
 `;
 
 const headerContent = `
-  <h1><a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a></h1>
-  <div class="nav__wrapper">
+  <h1><a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="CiderTechLabo Logo"></a></h1>
+  <div class="header-nav">
     <input type="checkbox" id="nav__toggle" hidden>
     <label class="nav__icon" for="nav__toggle">
       <span></span>
@@ -20,13 +20,13 @@ const headerContent = `
     </label>
     <div class="overlay"></div>
     <nav>
-      <div class="header__nav__contents">
+      <div class="header-nav__menu">
         <a href="/index.html#AboutMe__link">About Me</a>
         <a href="/index.html#skills__link">Skill's</a>
         <a href="/index.html#portfolio__link">Portfolio</a>
         <a href="/index.html#career__link">Career</a>
       </div>
-      <div class="header__nav__links">
+      <div class="header-nav__external">
         <a href="https://github.com/cidertechlab/">
           <svg class="icon" aria-hidden="true">
              <use href="#icon-github"></use>
@@ -42,9 +42,51 @@ const headerContent = `
   </div>
 `;
 
-document.addEventListener('DOMContentLoaded', () => {});
+const footerContent = `
+  <div class="copy__footer">
+    <a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a>
+    <small>&#169; 2025-2026 S.K</small>
+  </div>
+  <div class="menu__footer">
+    <a href="/index.html#AboutMe__link">About Me</a>
+    <a href="/index.html#skills__link">Skill's</a>
+    <a href="/index.html#portfolio__link">Portfolio</a>
+    <a href="/index.html#career__link">Career</a>
+    <div class="footer-nav__external">
+      <a class="icon__link" href="https://github.com/cidertechlab/">
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-github"></use>
+        </svg>  
+      </a>
+      <a class="icon__link" href="https://forms.gle/CALFLhAjRGj49LZC6">
+        <svg class="icon" aria-hidden="true">
+          <use href="#icon-mail"></use>
+        </svg>
+      </a>
+    </div>
+  </div>
+`;
 
-const breadcrumbContent = () => {
+/**
+ * SVGスプライトページ先頭挿入用関数
+ * @returns {HTMLElement}
+ */
+function ensureSpriteRoot() {
+	let spriteRoot = document.getElementById('svg-sprite');
+	if (!spriteRoot) {
+		spriteRoot = document.createElement('div');
+		spriteRoot.id = 'svg-sprite';
+		spriteRoot.setAttribute('aria-hidden', 'true');
+		document.body.prepend(spriteRoot);
+	}
+	return spriteRoot;
+}
+
+/**
+ * パンくずリスト自動生成関数
+ * @returns {string} パンくずリストのHTML文字列
+ */
+function createBreadcrumbContent() {
 	const path = window.location.pathname;
 	const pathSegments = path.split('/').filter((segment) => segment.length > 0);
 
@@ -67,42 +109,16 @@ const breadcrumbContent = () => {
 	});
 
 	breadcrumbHTML += '</ol>';
-
 	return breadcrumbHTML;
-};
-
-const footerContent = `
-  <div id="footer__copy">
-    <a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a>
-    <small>&#169; 2025-2026 S.K</small>
-  </div>
-  <div id="footer__nav__contents">
-    <a href="/index.html#AboutMe__link">About Me</a>
-    <a href="/index.html#skills__link">Skill's</a>
-    <a href="/index.html#portfolio__link">Portfolio</a>
-    <a href="/index.html#career__link">Career</a>
-    <div id="footer__nav__links">
-      <a class="icon__link" href="https://github.com/cidertechlab/">
-        <svg class="icon" aria-hidden="true">
-          <use href="#icon-github"></use>
-        </svg>  
-      </a>
-      <a class="icon__link" href="https://forms.gle/CALFLhAjRGj49LZC6">
-        <svg class="icon" aria-hidden="true">
-          <use href="#icon-mail"></use>
-        </svg>
-      </a>
-    </div>
-  </div>
-`;
+}
 
 /**
  * ページロード後に実行
  */
 document.addEventListener('DOMContentLoaded', () => {
-	const iconsPlaceholder = document.querySelector('.icon');
-	if (iconsPlaceholder) {
-		iconsPlaceholder.innerHTML = icons;
+	const spritePlaceholder = ensureSpriteRoot();
+	if (!document.getElementById('icon-github')) {
+		spritePlaceholder.innerHTML = icons;
 	}
 
 	const headerPlaceholder = document.querySelector('header');
@@ -110,9 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		headerPlaceholder.innerHTML = headerContent;
 	}
 
-	const breadcrumbPlaceholder = document.querySelector('.breadcrumb');
+	const breadcrumbPlaceholder = document.querySelector(
+		'.note-layout__breadcrumb'
+	);
 	if (breadcrumbPlaceholder) {
-		breadcrumbPlaceholder.innerHTML = breadcrumbContent();
+		breadcrumbPlaceholder.innerHTML = createBreadcrumbContent();
 	}
 
 	const footerPlaceholder = document.querySelector('footer');

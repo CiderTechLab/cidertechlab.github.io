@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* hero Section */
+/** hero Section */
 section.hero__section {
 	padding: 0 1rem 5rem 1rem;
 	max-width: 100%;
