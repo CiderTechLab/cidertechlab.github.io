@@ -1,20 +1,23 @@
 @charset "UTF-8";
-/** hero Section */
+/** 
+ * hero Section
+ * @description
+ * min-height: ビューポートMAX高さ - ヘッダー高さ + ヘッダー半径を確保する* ことで、ヘッダー半径分だけ重なるようにする。
+ */
 section.hero__section {
 	padding: 0 1rem 5rem 1rem;
 	max-width: 100%;
-	min-height: 100svh;
+	min-height: calc(100svh - var(--height-header) + 2rem);
 	color: var(--color-text-sub);
 	background-image:
 		url('../../images/mountain.svg'), linear-gradient(deepskyblue, whitesmoke);
 	background-size:
-		clamp(160px, 100vw, 800px) auto,
+		clamp(160px, calc(100svh - var(--height-header) + 2rem), 800px) auto,
 		cover;
 	background-repeat: no-repeat;
 	background-position:
 		100% bottom,
 		center;
-	border-radius: 0 0 2rem 2rem;
 	justify-content: center;
 	align-items: flex-start;
 }

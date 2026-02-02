@@ -4,8 +4,8 @@
 	 * アンカーリンクのためのヘッダー高さ変数
 	 */
 	/** height var*/
-	--height-header: 8rem;
-	--height-breadcrumb: 10rem;
+	--height-header: 15svh;
+	--height-breadcrumb: 15svh;
 
 	scroll-padding-top: var(--height-header);
 	scroll-behavior: smooth;
@@ -17,15 +17,15 @@
 	--radius-footer-sub: 0;
 }
 
-/** section */
+/**
+* section
+* width を 100% にしておき、max-width で最大幅を指定することで、
+* 画面幅が狭い場合に自動的に縮むようにする。
+*/
 section {
 	padding: 1rem;
-	/**
-	 * width を 100% にしておき、max-width で最大幅を指定することで、
-	 * 画面幅が狭い場合に自動的に縮むようにする。
-	 */
 	width: 100%;
-	max-width: 80svw;
+	max-width: 80vw;
 	font-size: 1.2rem;
 	display: flex;
 	flex-direction: column;
@@ -62,7 +62,7 @@ section {
 
 main {
 	grid-area: main;
-	padding-top: var(--height-header);
+	padding-top: calc(var(--height-header) - 2rem);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -88,9 +88,10 @@ main {
 aside {
 	grid-area: aside;
 	padding: 1rem;
-	padding-top: 13rem;
+	padding-top: calc(var(--height-breadcrumb) + 5vh);
 	width: 100%;
 	border-right: 1px solid gray;
+	background-color: var(--color-bg-aside);
 }
 
 .sidebar__ol {
@@ -109,8 +110,8 @@ pre {
 @media screen and (max-width: 1280px) {
 	:root {
 		/** height var*/
-		--height-header: 8rem;
-		--height-breadcrumb: 10rem;
+		--height-header: 15svh;
+		--height-breadcrumb: 17svh;
 
 		/** radius var*/
 		--radius-header-basic: 0 0 2rem 2rem;
@@ -120,15 +121,15 @@ pre {
 	}
 
 	section {
-		max-width: 100svw;
+		max-width: 100vw;
 	}
 }
 
 @media screen and (max-width: 500px) {
 	:root {
 		/** height var*/
-		--height-header: 8rem;
-		--height-breadcrumb: 10rem;
+		--height-header: 8svh;
+		--height-breadcrumb: 10svh;
 
 		/** radius var*/
 		--radius-header-basic: 0 0 2rem 2rem;
@@ -149,6 +150,6 @@ pre {
 	}
 
 	section {
-		max-width: 100svw;
+		max-width: 100vw;
 	}
 }

@@ -22,7 +22,7 @@ const headerContent = `
     <nav>
       <div class="header-nav__menu">
         <a href="/index.html#AboutMe__link">About Me</a>
-        <a href="/index.html#skills__link">Skill's</a>
+        <a href="/index.html#skills__link">Skills</a>
         <a href="/index.html#portfolio__link">Portfolio</a>
         <a href="/index.html#career__link">Career</a>
       </div>
@@ -49,7 +49,7 @@ const footerContent = `
   </div>
   <div class="menu__footer">
     <a href="/index.html#AboutMe__link">About Me</a>
-    <a href="/index.html#skills__link">Skill's</a>
+    <a href="/index.html#skills__link">Skills</a>
     <a href="/index.html#portfolio__link">Portfolio</a>
     <a href="/index.html#career__link">Career</a>
     <div class="footer-nav__external">
