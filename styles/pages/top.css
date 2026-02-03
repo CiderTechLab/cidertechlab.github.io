@@ -147,8 +147,6 @@ section.portfolio dl {
 }
 
 section.portfolio dt {
-	grid-column: span 1;
-	grid-row: auto;
 	padding: 2rem;
 	background-color: var(--color-bg-main);
 	border-radius: 1rem;
@@ -160,8 +158,6 @@ section.portfolio dt {
 }
 
 section.portfolio dd {
-	grid-column: span 1;
-	grid-row: auto;
 	padding: 1rem;
 	margin: 0;
 	display: flex;
