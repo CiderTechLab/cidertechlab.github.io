@@ -67,7 +67,7 @@ li.programming {
 li.tools {
 	border: 0;
 	color: var(--color-text-sub);
-	background: linear-gradient(135deg, mediumpurple 50%, coral 50%);
+	background: linear-gradient(135deg, MediumPurple 50%, Coral 50%);
 }
 li.html {
 	border: 0;
