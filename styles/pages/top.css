@@ -55,6 +55,20 @@ section.skills__section {
 section.lang__area h4 {
 	align-self: center;
 }
+li.markup {
+	border: 0;
+	color: var(--color-text-sub);
+	background: linear-gradient(135deg, MediumSeaGreen 50%, Indigo 50%);
+}
+li.programming {
+	border: 0;
+	background: linear-gradient(135deg, yellow 50%, DodgerBlue 50%);
+}
+li.tools {
+	border: 0;
+	color: var(--color-text-sub);
+	background: linear-gradient(135deg, mediumpurple 50%, coral 50%);
+}
 li.html {
 	border: 0;
 	color: var(--color-text-sub);
