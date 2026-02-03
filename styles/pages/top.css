@@ -2,7 +2,8 @@
 /** 
  * hero Section
  * @description
- * min-height: ビューポートMAX高さ - ヘッダー高さ + ヘッダー半径を確保する* ことで、ヘッダー半径分だけ重なるようにする。
+ * min-height: ビューポートMAX高さ - ヘッダー高さ + ヘッダー半径を確保する
+ * ことで、ヘッダー半径分だけ重なるようにする。
  */
 section.hero__section {
 	padding: 0 1rem 5rem 1rem;
@@ -58,6 +59,25 @@ section.skills__section {
 section.lang__area h4 {
 	align-self: center;
 }
+.card--ml {
+	border: 0;
+	color: var(--color-text-sub);
+	background-color: mediumseagreen;
+}
+.card--pg {
+	border: 0;
+	color: var(--color-text-sub);
+	background-color: DodgerBlue;
+}
+.card--fw {
+	border: 0;
+	color: DeepSkyBlue;
+	background-color: var(--color-bg-sub);
+}
+.card--fw-tag {
+	border: 0;
+	color: DeepSkyBlue;
+}
 li.html {
 	border: 0;
 	color: var(--color-text-sub);
@@ -77,7 +97,7 @@ li.ts {
 	color: var(--color-text-sub);
 	background-color: DodgerBlue;
 }
-li.sql {
+.card--sql {
 	border: 0;
 	color: var(--color-text-sub);
 	background-color: darkred;
@@ -85,6 +105,12 @@ li.sql {
 li.react {
 	border: 0;
 	background-color: DeepSkyBlue;
+}
+
+.tools {
+	border: 0;
+	color: var(--color-text-sub);
+	background-color: purple;
 }
 
 /* learn area */
