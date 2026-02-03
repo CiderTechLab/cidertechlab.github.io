@@ -79,6 +79,7 @@ main {
 
 .note-layout__main {
 	counter-reset: section-counter;
+	align-items: flex-start;
 }
 
 .main--with-breadcrumb {
@@ -146,6 +147,17 @@ pre {
 			'aside'
 			'main'
 			'breadcrumb'
+			'footer';
+	}
+
+	.note-layout {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto 1fr auto;
+		grid-template-areas:
+			'header'
+			'breadcrumb'
+			'aside'
+			'main'
 			'footer';
 	}
 
