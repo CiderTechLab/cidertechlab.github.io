@@ -134,20 +134,45 @@ section.portfolio {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 2rem;
 }
 
 section.portfolio dl {
 	display: grid;
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+	width: 100%;
+	max-width: 90rem;
+	margin-top: 2rem;
 }
+
 section.portfolio dt {
-	margin: 2rem;
-}
-section.portfolio dd {
 	padding: 2rem;
+	background-color: var(--color-bg-main);
+	border-radius: 1rem;
+	text-align: center;
+	min-height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
+
+section.portfolio dd {
+	padding: 1rem;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
 section.portfolio a {
 	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+section.portfolio dd p {
+	margin: 0;
+	line-height: 1.6;
 }
 
 /* Career Section */
@@ -170,7 +195,7 @@ section.career dd {
 }
 
 /* TB Contents */
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 501px) and (max-width: 1280px) {
 	h2.slogan {
 		margin: 0 0 2rem 2rem;
 	}
@@ -187,6 +212,10 @@ section.career dd {
 
 	li:hover {
 		pointer-events: none;
+	}
+
+	section.portfolio dl {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -212,8 +241,7 @@ section.career dd {
 	}
 
 	section.portfolio dl {
-		display: flex;
-		flex-direction: column;
+		grid-template-columns: 1fr;
 	}
 
 	section.career dl {
