@@ -60,6 +60,10 @@ section {
 	justify-content: flex-start;
 }
 
+.note-layout__section {
+	align-items: flex-start;
+}
+
 main {
 	grid-area: main;
 	padding-top: calc(var(--height-header) - 2rem);

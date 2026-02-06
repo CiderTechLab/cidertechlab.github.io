@@ -146,7 +146,7 @@ section.portfolio dl {
 	margin-top: 2rem;
 }
 
-section.portfolio dt {
+.portfolio__item-title {
 	padding: 2rem;
 	background-color: var(--color-bg-main);
 	border-radius: 1rem;
@@ -157,7 +157,7 @@ section.portfolio dt {
 	justify-content: center;
 }
 
-section.portfolio dd {
+.portfolio__item-content {
 	padding: 1rem;
 	margin: 0;
 	display: flex;
