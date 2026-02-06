@@ -99,6 +99,10 @@ aside {
 	flex-direction: column;
 }
 
+.toc-h3 {
+	margin-left: 1rem;
+}
+
 pre {
 	padding: 1rem;
 	color: white;
