@@ -1,0 +1,9 @@
+# Q.What about is .gitignore?
+# A.The .gitignore file specifies files that should not be included in Git management. 
+
+# Node.js
+node_modules/
+package-lock.json
+
+# JavaScript Knowledge Note
+portfolio/js/

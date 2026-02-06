@@ -64,7 +64,8 @@ const validateName = () => {
 };
 
 const validateGender = () => {
-	if (!fields.gender.input.checked) {
+	const checkedGender = document.querySelector('input[name="gender"]:checked');
+	if (!checkedGender) {
 		setError(fields.gender, '性別を選択してください');
 		return false;
 	}

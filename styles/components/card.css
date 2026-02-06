@@ -1,5 +1,5 @@
 @charset "UTF-8";
-ul.cards {
+.cards {
 	width: 100%;
 	max-width: 60rem;
 	display: flex;
@@ -9,24 +9,25 @@ ul.cards {
 	user-select: none;
 	cursor: grab;
 }
-ul.cards.is-dragging {
+.cards.is-dragging {
 	cursor: grabbing;
 }
-li.card {
+.card {
 	margin: 1rem;
 	padding: 1rem;
-	width: 20rem;
-	min-width: 20rem;
-	height: 20rem;
+	width: 30vw;
+	min-width: 30vw;
 	border-radius: 1rem;
-	border: 1px solid var(--main-border-color);
 	text-align: center;
-	font-size: 3rem;
+	font-size: 1rem;
 	font-weight: bold;
 }
-li.card:hover {
-	transform: scale(1.05);
-	transition: all 0.5s ease-out 0.1s;
+
+.card_title {
+	font-size: 2rem;
+}
+.card__title-section {
+	font-size: 1.5rem;
 }
 
 /* Tablet Contents Style */
@@ -35,8 +36,8 @@ li.card:hover {
 
 /* SmartPhone Image styles */
 @media screen and (max-width: 500px) {
-	li.card {
-		width: 15rem;
-		min-width: 15rem;
+	.card {
+		width: 15vw;
+		min-width: 15vw;
 	}
 }

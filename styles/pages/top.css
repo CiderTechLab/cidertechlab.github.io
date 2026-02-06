@@ -1,20 +1,24 @@
 @charset "UTF-8";
-/** hero Section */
+/** 
+ * hero Section
+ * @description
+ * min-height: ビューポートMAX高さ - ヘッダー高さ + ヘッダー半径を確保する
+ * ことで、ヘッダー半径分だけ重なるようにする。
+ */
 section.hero__section {
 	padding: 0 1rem 5rem 1rem;
 	max-width: 100%;
-	min-height: 100svh;
+	min-height: calc(100svh - var(--height-header) + 2rem);
 	color: var(--color-text-sub);
 	background-image:
 		url('../../images/mountain.svg'), linear-gradient(deepskyblue, whitesmoke);
 	background-size:
-		clamp(160px, 100vw, 800px) auto,
+		clamp(160px, calc(100svh - var(--height-header) + 2rem), 800px) auto,
 		cover;
 	background-repeat: no-repeat;
 	background-position:
 		100% bottom,
 		center;
-	border-radius: 0 0 2rem 2rem;
 	justify-content: center;
 	align-items: flex-start;
 }
@@ -55,6 +59,25 @@ section.skills__section {
 section.lang__area h4 {
 	align-self: center;
 }
+.card--ml {
+	border: 0;
+	color: var(--color-text-sub);
+	background-color: mediumseagreen;
+}
+.card--pg {
+	border: 0;
+	color: var(--color-text-sub);
+	background-color: DodgerBlue;
+}
+.card--fw {
+	border: 0;
+	color: DeepSkyBlue;
+	background-color: var(--color-bg-sub);
+}
+.card--fw-tag {
+	border: 0;
+	color: DeepSkyBlue;
+}
 li.html {
 	border: 0;
 	color: var(--color-text-sub);
@@ -74,7 +97,7 @@ li.ts {
 	color: var(--color-text-sub);
 	background-color: DodgerBlue;
 }
-li.sql {
+.card--sql {
 	border: 0;
 	color: var(--color-text-sub);
 	background-color: darkred;
@@ -82,6 +105,12 @@ li.sql {
 li.react {
 	border: 0;
 	background-color: DeepSkyBlue;
+}
+
+.tools {
+	border: 0;
+	color: var(--color-text-sub);
+	background-color: purple;
 }
 
 /* learn area */
@@ -105,20 +134,45 @@ section.portfolio {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding: 2rem;
 }
 
 section.portfolio dl {
 	display: grid;
-	grid-template-columns: 1fr 2fr;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
+	width: 100%;
+	max-width: 90rem;
+	margin-top: 2rem;
 }
-section.portfolio dt {
-	margin: 2rem;
-}
-section.portfolio dd {
+
+.portfolio__item-title {
 	padding: 2rem;
+	background-color: var(--color-bg-main);
+	border-radius: 1rem;
+	text-align: center;
+	min-height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
+
+.portfolio__item-content {
+	padding: 1rem;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
 section.portfolio a {
 	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+section.portfolio dd p {
+	margin: 0;
+	line-height: 1.6;
 }
 
 /* Career Section */
@@ -141,7 +195,7 @@ section.career dd {
 }
 
 /* TB Contents */
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 501px) and (max-width: 1280px) {
 	h2.slogan {
 		margin: 0 0 2rem 2rem;
 	}
@@ -158,6 +212,10 @@ section.career dd {
 
 	li:hover {
 		pointer-events: none;
+	}
+
+	section.portfolio dl {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -183,8 +241,7 @@ section.career dd {
 	}
 
 	section.portfolio dl {
-		display: flex;
-		flex-direction: column;
+		grid-template-columns: 1fr;
 	}
 
 	section.career dl {
