@@ -15,26 +15,26 @@
 .card {
 	margin: 1rem;
 	padding: 1rem;
-	width: 30vw;
-	min-width: 30vw;
+	min-width: 20vw;
 	border-radius: 1rem;
 	text-align: center;
 	font-size: 1rem;
 	font-weight: bold;
 }
 
-.card_title {
-	font-size: 2rem;
+.card__title {
+	font-weight: bold;
+	font-size: 1.2rem;
 }
 .card__title-section {
 	font-size: 1.5rem;
 }
 
-/* Tablet Contents Style */
+/** TB Contents */
 @media screen and (max-width: 1280px) {
 }
 
-/* SmartPhone Image styles */
+/** SP Contents */
 @media screen and (max-width: 500px) {
 	.card {
 		width: 15vw;

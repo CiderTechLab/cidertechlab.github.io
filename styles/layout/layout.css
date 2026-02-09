@@ -11,6 +11,7 @@
 	scroll-behavior: smooth;
 
 	/** radius var*/
+	--radius-basic: 2rem;
 	--radius-header-basic: 0 0 2rem 2rem;
 	--radius-header-sub: 0;
 	--radius-footer-basic: 2rem 2rem 0 0;
@@ -122,6 +123,7 @@ pre {
 		--height-breadcrumb: 17svh;
 
 		/** radius var*/
+		--radius-basic: 2rem;
 		--radius-header-basic: 0 0 2rem 2rem;
 		--radius-header-sub: 0;
 		--radius-footer-basic: 2rem 2rem 0 0;
@@ -140,6 +142,7 @@ pre {
 		--height-breadcrumb: 10svh;
 
 		/** radius var*/
+		--radius-basic: 2rem;
 		--radius-header-basic: 0 0 2rem 2rem;
 		--radius-header-sub: 0;
 		--radius-footer-basic: 2rem 2rem 0 0;

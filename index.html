@@ -15,6 +15,7 @@
 		<link href="styles/layout/layout.css" rel="stylesheet" />
 		<link href="styles/layout/header.css" rel="stylesheet" />
 		<link href="styles/layout/footer.css" rel="stylesheet" />
+		<link href="styles/components/tile.css" rel="stylesheet" />
 		<link href="styles/components/card.css" rel="stylesheet" />
 		<link href="styles/pages/top.css" rel="stylesheet" />
 		<link rel="icon" href="images/favicon.ico" sizes="32x32" />
@@ -30,12 +31,12 @@
 		<div class="basic-layout">
 			<header class="basic-layout__header"></header>
 			<main>
-				<section class="hero__section">
-					<h2 class="slogan">
-						<span class="slogan__main">Build the Web</span><br />
-						<span class="slogan__sub">with meaning.</span>
+				<section class="hero-section">
+					<h2 class="hero-section__slogan">
+						<span class="hero-section__slogan-main">Build the Web</span><br />
+						<span class="hero-section__slogan-sub">with meaning.</span>
 					</h2>
-					<p class="slogan__explain">
+					<p class="hero-section__slogan-explain">
 						ようこそ、CiderTechLabへ！<br />
 						このサイトでは私の
 						<br /><strong
@@ -45,210 +46,198 @@
 					</p>
 				</section>
 
-				<section class="AboutMe__section">
-					<h2 id="AboutMe__link">About Me</h2>
+				<section class="aboutme-section">
+					<h2 id="aboutme-section__cta">About Me</h2>
 					<img src="images/profile_pic.svg" alt="プロフィール画像" />
 					<h3>S.K</h3>
-					<p>
+					<p class="aboutme-section__explain">
 						大学の理工系学科卒業後、システムエンジニアとして6年間従事して参りました。主に業務系のシステムを担当し、運用及び一部開発を経験しました。特にデータベース周りの知識を深めることができました。現在はフロントエンドエンジニアを目指し、HTML、CSS、JavaScriptを中心に学習しております。また、設計にも携われるエンジニアを目指しておりUIやUX、ツール（Figma）について日々勉強しています。生成AIにも興味があり、駆使できる人材を目指しております。<br />皆様どうぞ、よろしくお願いいたします。
 					</p>
 				</section>
 
-				<section id="skills__secton">
-					<h2 id="skills__link">Skills</h2>
-					<section class="lang__area">
-						<h3>Language & Framework</h3>
-						<ul class="cards">
-							<li class="card--ml card">
-								<h4 class="card__title">Markup Language</h4>
-								<h5 class="card__title-section">HTML</h5>
+				<section class="skills-section">
+					<h2 id="skills-section__cta">Skills</h2>
+					<section class="skills-section__languages">
+						<h3>Languages</h3>
+						<ul class="tiles--3col">
+							<li class="tile tile--html">
+								<h4 class="tile__title">HTML</h4>
 								<ul>
-									<li class="markup">#セマンティックタグ</li>
-								</ul>
-								<h5 class="card__title-section">CSS</h5>
-								<ul>
-									<li class="markup">#レスポンシブデザイン</li>
-									<li class="markup">#アクセシビリティ</li>
+									<li>#セマンティックタグ</li>
 								</ul>
 							</li>
-							<li class="card--pg card">
-								<h4 class="card__title">Programming Language</h4>
-								<h5 class="card__title-section">JavaScript</h5>
+							<li class="tile tile--css">
+								<h4 class="tile__title">CSS</h4>
 								<ul>
-									<li class="programming">#DOM操作</li>
-									<li class="programming">#非同期処理</li>
-								</ul>
-								<h5 class="card__title-section">TypeScript</h5>
-								<ul>
-									<li class="programming">#型定義</li>
-									<li class="programming">#インターフェース</li>
-									<li class="programming">#ジェネリクス</li>
+									<li>#レスポンシブデザイン</li>
+									<li>#アクセシビリティ</li>
 								</ul>
 							</li>
-							<li class="card--fw card">
-								<h4 class="card__title">Framework & Library</h4>
-								<h5 class="card__title-section">React</h5>
+							<li class="tile tile--js">
+								<h4 class="tile__title">JavaScript</h4>
 								<ul>
-									<li class="framework">#コンポーネント設計</li>
-								</ul>
-								<h5 class="card__title-section">Tailwind CSS</h5>
-								<ul>
-									<li class="framework">#GitHub Copilot連携</li>
+									<li>#DOM操作</li>
+									<li>#非同期処理</li>
 								</ul>
 							</li>
-							<li class="card--sql card">
-								<h4 class="card__title">Database & Query</h4>
-								<h5 class="card__title-section">SQL</h5>
+							<li class="tile tile--ts">
+								<h4 class="tile__title">TypeScript</h4>
 								<ul>
-									<li class="sql">#CRUD操作</li>
-									<li class="sql">#JOIN句</li>
+									<li>#型定義</li>
+									<li>#インターフェース</li>
+									<li>#ジェネリクス</li>
 								</ul>
 							</li>
-							<li class="card--tools card">
-								<h4 class="card__title">Design & AI Tools</h4>
-								<h5 class="card__title-section">Figma</h5>
+							<li class="tile tile--sql">
+								<h4 class="tile__title">SQL</h4>
 								<ul>
-									<li class="tools">#UI/UX設計</li>
-									<li class="tools">#ChatGPT</li>
-									<li class="tools">#GitHub Copilot</li>
-								</ul>
-								<h5 class="card__title-section">ChatGPT</h5>
-								<ul>
-									<li class="tools">#プロンプト設計</li>
-								</ul>
-								<h5 class="card__title-section">GitHub Copilot</h5>
-								<ul>
-									<li class="tools">#コード補完</li>
-									<li class="tools">#コードレビュー</li>
+									<li>#CRUD操作</li>
+									<li>#JOIN句</li>
+									<li>#サブクエリ</li>
 								</ul>
 							</li>
 						</ul>
 					</section>
 
-					<section class="dev__area">
-						<h3>Development Environment</h3>
-						<dl>
-							<dt class="title">OS</dt>
-							<dd class="item">Windows11、Android 16</dd>
-							<dd class="explain">
-								PC上での確認はWindows11で、スマートフォン上での確認はAndroid
-								16で行いました。
-							</dd>
-							<dt class="title">エディタ</dt>
-							<dd class="item">Visual Studio Code</dd>
-							<dd class="explain">
-								エディタのデファクトスタンダードである点、拡張機能導入で開発環境を整えやすいという点で採用しました。
-							</dd>
-							<dt class="title">JavaScript 実行環境</dt>
-							<dd class="item">Node.js</dd>
-							<dd class="explain">
-								JavaScriptのパッケージ管理ツールであるnpmも同時に使える点で採用しました。
-							</dd>
-							<dt class="title">整形ツール、解析ツール</dt>
-							<dd class="item">Prettier、stylelint、ESLint</dd>
-							<dd class="explain">
-								コードの可読性向上、品質向上のために導入しました。
-							</dd>
-							<dt class="title">デザインツール</dt>
-							<dd class="item">Figma</dd>
-							<dd class="explain">
-								軸はマークアップ、プログラミングとしつつもUIの設計や確認に用いたいと考え採用しました。Adobe
-								Illustratorも候補にありましたが、学習コストを考えFigmaにしました。
-							</dd>
-							<dt class="title">ブラウザ</dt>
-							<dd class="item">Google Chrome、Firefox</dd>
-							<dd class="explain">
-								Google
-								ChromeはBlink、FirefoxはGeckoエンジンを採用しているため、両方での動作確認を行うことでなるべく多くの環境での動作を保証できると考え採用しました。
-							</dd>
-							<dt class="title">バージョン管理</dt>
-							<dd class="item">GitHub、Git</dd>
-							<dd class="explain">
-								コードのバージョン管理、変更履歴の管理、バックアップのために導入しました。
-							</dd>
-							<dt class="title">プロジェクト管理</dt>
-							<dd class="item">GitHub Project</dd>
-							<dd class="explain">
-								タスクの見える化、進捗管理のために導入しました。
-							</dd>
-							<dt class="title">AIツール</dt>
-							<dd class="item">ChatGPT、GitHub Copilot</dd>
-							<dd class="explain">
-								ChatGPTはアイデアの壁打ち、GitHubCopilotはコード補完やレビューに活用しています。
-							</dd>
-						</dl>
+					<section class="skills-section__frameworks">
+						<h3>Frameworks</h3>
+						<ul class="tiles--3col">
+							<li class="tile tile--react">
+								<h4 class="tile__title">React</h4>
+								<ul>
+									<li>#コンポーネント設計</li>
+								</ul>
+							</li>
+							<li class="tile tile--twcss">
+								<h4 class="tile__title">Tailwind CSS</h4>
+								<ul>
+									<li>#生成AIを活用したプロトタイプ制作</li>
+								</ul>
+							</li>
+						</ul>
 					</section>
 
-					<section class="learn__area">
-						<h4>Learn</h4>
-						<dl>
-							<dt class="title">WebSites</dt>
-							<dd class="item">
-								<a
-									href="https://developer.mozilla.org/ja/docs/Learn_web_development"
-									>ウェブ開発の学習 | MDN</a
-								>
-							</dd>
-							<dd class="explain">
-								HTML、CSS、JavaScriptの基礎を学ぶために活用しました。各技術の基礎から応用まで幅広く解説されており、非常に参考になりました。
-							</dd>
-							<dt class="title">Books</dt>
-							<dd class="item">
-								イラスト図解式　この一冊で全部わかるWeb制作と運用の基本（SBクリエイティブ）
-							</dd>
-							<dd class="explain">
-								Web制作がどのような流れで行われているのか知りたくて読みました。企画から実装まで書かれており、全体の流れを理解することができました。
-							</dd>
-							<dd class="item">
-								この一冊で全部わかる　ChatGPT &
-								Copilotの教科書（SBクリエイティブ）
-							</dd>
-							<dd class="explain">
-								生成AIツールの基礎的な仕組みから、良い結果を得るためのプロンプトの書き方まで分かりやすく紹介されており、とても読みやすいです。初めて生成AIツールを使う方におススメの一冊です。
-							</dd>
-						</dl>
+					<section class="skills-section__others">
+						<h3>Others（Environment/Tools/Quality）</h3>
+						<ul class="tiles--3col">
+							<li class="tile tile--other">
+								<h4 class="tile__title">Environment</h4>
+								<ul>
+									<li class="item">Windows11、Android 16、Node.js</li>
+									<li class="explain">
+										PC上での確認はWindows11で、スマートフォン上での確認はAndroid
+										16で行いました。Node.jsはJavaScriptのパッケージ管理ツールであるnpmも同時に使える点で採用しました。
+									</li>
+								</ul>
+							</li>
+							<li class="tile tile--other">
+								<h4 class="tile__title">Tools</h4>
+								<ul>
+									<li class="item">
+										Visual Studio Code、Figma、git/GitHub、ChatGPT、GitHub
+										Copilot、GitHub Projects
+									</li>
+									<li class="explain">
+										エディタのデファクトスタンダードである点、拡張機能導入で開発環境を整えやすいという点で採用しました。FigmaはUI/UX設計に使用しました。Prettier、stylelint、ESLintはコードの可読性向上、品質向上のために導入しました。git/コードのバージョン管理、変更履歴の管理、バックアップのために導入しました。ChatGPTはアイデアの壁打ち、GitHub
+										Copilotはコード補完やレビューに活用しています。GitHub
+										Projectsはタスク管理に使用しています。
+									</li>
+								</ul>
+							</li>
+							<li class="tile tile--other">
+								<h4 class="tile__title">Quality</h4>
+								<ul>
+									<li class="item">
+										Prettier、stylelint、ESLint、Google Chrome、Firefox
+									</li>
+									<li class="explain">
+										Google
+										ChromeはBlink、FirefoxはGeckoエンジンを採用しているため、両方での動作確認を行うことでなるべく多くの環境での動作を保証できると考え採用しました。
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</section>
-				</section>
 
-				<section class="portfolio">
-					<h2 id="portfolio__link">Portfolio</h2>
-					各作品の仕様書については<a
-						href="https://github.com/CiderTechLab/cidertechlab.github.io/wiki"
-						>GitHub Wiki</a
-					>をご覧ください
-					<dl>
-						<div class="portfolio__item">
-							<dt class="portfolio__item-title">※サムネイル予定地</dt>
-							<dd class="portfolio__item-content">
+					<section class="skills-section__learn">
+						<h3>Learn</h3>
+						<ul class="tiles--2col">
+							<li class="tile tile--websites">
+								<h4>WebSites</h4>
+								<ul>
+									<li class="item">
+										<a
+											href="https://developer.mozilla.org/ja/docs/Learn_web_development"
+											>ウェブ開発の学習 | MDN</a
+										>
+									</li>
+									<li class="explain">
+										HTML、CSS、JavaScriptの基礎を学ぶために活用しました。各技術の基礎から応用まで幅広く解説されており、非常に参考になりました。
+									</li>
+								</ul>
+							</li>
+							<li class="tile tile--books">
+								<h4>Books</h4>
+								<ul>
+									<li class="item">
+										イラスト図解式　この一冊で全部わかるWeb制作と運用の基本（SBクリエイティブ）
+									</li>
+									<li class="explain">
+										Web制作がどのような流れで行われているのか知りたくて読みました。企画から実装まで書かれており、全体の流れを理解することができました。
+									</li>
+									<li class="item">
+										この一冊で全部わかる　ChatGPT &
+										Copilotの教科書（SBクリエイティブ）
+									</li>
+									<li class="explain">
+										生成AIツールの基礎的な仕組みから、良い結果を得るためのプロンプトの書き方まで分かりやすく紹介されており、とても読みやすいです。初めて生成AIツールを使う方におススメの一冊です。
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+				<section class="portfolio-section">
+					<h2 id="portfolio-section__cta">Portfolio</h2>
+					<ul class="cards">
+						<li class="portfolio-section__item card">
+							<p>
+								各作品の仕様書については<a
+									href="https://github.com/CiderTechLab/cidertechlab.github.io/wiki"
+									>GitHub Wiki</a
+								>をご覧ください
+							</p>
+						</li>
+						<li class="portfolio-section__item card">
+							<div class="portfolio-section__item-img">※サムネイル予定地</div>
+							<h3 class="card__title">
 								<a href="portfolio/html/">HTML Knowledge Notes</a>
-								<p>
-									HTMLの学習の中で気づいた点や、注意点をまとめたページです。
-								</p>
-							</dd>
-						</div>
-						<div class="portfolio__item">
-							<dt class="portfolio__item-title">※サムネイル予定地</dt>
-							<dd class="portfolio__item-content">
+							</h3>
+							<p>HTML学習の中で気づいた点や、注意点をまとめたページです。</p>
+						</li>
+						<li class="portfolio-section__item card">
+							<div class="portfolio-section__item-img">※サムネイル予定地</div>
+							<h3 class="card__title">
 								<a href="portfolio/contact/">Contact（モックアップ）</a>
-								<p>
-									Form関連タグの練習として制作したものです。入力チェックに手を焼きました。
-								</p>
-							</dd>
-						</div>
-						<div class="portfolio__item">
-							<dt class="portfolio__item-title">※サムネイル予定地</dt>
-							<dd class="portfolio__item-content">
+							</h3>
+							<p>
+								Form関連タグの練習として制作したものです。入力チェックに手を焼きました。
+							</p>
+						</li>
+						<li class="portfolio-section__item card">
+							<div class="portfolio-section__item-img">※サムネイル予定地</div>
+							<h3 class="card__title">
 								<a href="RoadToTypeScript/">RoadToTypeScript</a>
-								<p>
-									「TypeScriptへの道」と題した、TypeScript学習の歩みを記録したサイトです。
-								</p>
-							</dd>
-						</div>
-					</dl>
+							</h3>
+							<p>
+								「TypeScriptへの道」と題した、TypeScript学習の歩みを記録したサイトです。
+							</p>
+						</li>
+					</ul>
 				</section>
 
-				<section class="career">
-					<h2 id="career__link">Career</h2>
+				<section class="career-section">
+					<h2 id="career-section__cta">Career</h2>
 					<dl>
 						<dt>1年目～2年目<br />商品・サービスの管理システム運用PJ</dt>
 						<dd>

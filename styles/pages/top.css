@@ -5,7 +5,7 @@
  * min-height: ビューポートMAX高さ - ヘッダー高さ + ヘッダー半径を確保する
  * ことで、ヘッダー半径分だけ重なるようにする。
  */
-section.hero__section {
+.hero-section {
 	padding: 0 1rem 5rem 1rem;
 	max-width: 100%;
 	min-height: calc(100svh - var(--height-header) + 2rem);
@@ -22,134 +22,95 @@ section.hero__section {
 	justify-content: center;
 	align-items: flex-start;
 }
-h2.slogan {
+.hero-section__slogan {
 	margin: 0 0 2rem 5rem;
 	font-size: 6rem;
 	color: white;
 	text-align: left;
 	line-height: 1;
 }
-.slogan__main {
+.hero-section__slogan-main {
 	font-size: 6rem;
 	font-weight: bold;
 }
-.slogan__sub {
+.hero-section__slogan-sub {
 	font-size: 3rem;
 }
-.slogan__explain {
+.hero-section__slogan-explain {
 	margin: 0 0 0 5rem;
 	color: var(--color-text-main);
 }
 
-/* About Me Section */
-section.AboutMe__section p {
+/** About Me Section */
+.aboutme-section__explain {
 	padding: 1.5rem;
 	width: 100%;
 	max-width: 60rem;
 }
 
-/* skills Section */
-section.skills__section {
+/** Skills Section */
+.skills-section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	border-radius: var(--radius-basic);
+	background-color: white;
 }
-
-/* lang area */
-section.lang__area h4 {
-	align-self: center;
-}
-.card--ml {
-	border: 0;
+.tile--html {
 	color: var(--color-text-sub);
 	background-color: mediumseagreen;
 }
-.card--pg {
-	border: 0;
+.tile--css {
+	color: var(--color-text-sub);
+	background-color: #663399;
+}
+.tile--js {
+	color: var(--color-text-main);
+	background-color: #f3df49;
+}
+.tile--ts {
 	color: var(--color-text-sub);
 	background-color: DodgerBlue;
 }
-.card--fw {
-	border: 0;
-	color: DeepSkyBlue;
-	background-color: var(--color-bg-sub);
-}
-.card--fw-tag {
-	border: 0;
-	color: DeepSkyBlue;
-}
-li.html {
-	border: 0;
-	color: var(--color-text-sub);
-	background-color: MediumSeaGreen;
-}
-li.css {
-	border: 0;
-	color: var(--color-text-sub);
-	background-color: Indigo;
-}
-li.js {
-	border: 0;
-	background-color: yellow;
-}
-li.ts {
-	border: 0;
-	color: var(--color-text-sub);
-	background-color: DodgerBlue;
-}
-.card--sql {
-	border: 0;
+.tile--sql {
 	color: var(--color-text-sub);
 	background-color: darkred;
 }
-li.react {
-	border: 0;
-	background-color: DeepSkyBlue;
-}
-
-.tools {
-	border: 0;
+.tile--twcss {
 	color: var(--color-text-sub);
-	background-color: purple;
+	background-color: #38bdf8;
 }
-
-/* learn area */
-dt.title {
-	border-bottom: 1px solid var(--color-border-main);
+.tile--react {
+	color: DeepSkyBlue;
+	background-color: var(--color-bg-sub);
 }
-dd.item {
-	padding: 1rem 0 1rem 0;
-	font-size: 2rem;
-	font-weight: bold;
+.tile--other {
+	color: var(--color-text-sub);
+	background-color: var(--color-bg-sub);
 }
-dd.explain {
-	margin: 0 0 2rem 0;
+.tile--websites,
+.tile--books {
+	border: 1px solid var(--color-border-main);
 }
 
 /* portfolio Section */
-section.portfolio {
+.portfolio-section {
 	max-width: 90%;
-	background-color: var(--color-secondary);
-	border-radius: 2rem;
+	border-radius: var(--radius-basic);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding: 2rem;
 }
 
-section.portfolio dl {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 2rem;
-	width: 100%;
-	max-width: 90rem;
-	margin-top: 2rem;
+.portfolio-section__item {
+	background-color: var(--color-primary);
 }
 
-.portfolio__item-title {
+.portfolio-section__item-img {
 	padding: 2rem;
 	background-color: var(--color-bg-main);
-	border-radius: 1rem;
+	border-radius: var(--radius-basic);
 	text-align: center;
 	min-height: 150px;
 	display: flex;
@@ -157,56 +118,38 @@ section.portfolio dl {
 	justify-content: center;
 }
 
-.portfolio__item-content {
-	padding: 1rem;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
-
-section.portfolio a {
-	font-weight: bold;
-	font-size: 1.2rem;
-}
-
-section.portfolio dd p {
-	margin: 0;
-	line-height: 1.6;
-}
-
 /* Career Section */
-section.career {
+.career-section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-section.career dl {
+.career-section dl {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 }
-section.career dt {
+.career-section dt {
 	margin: 2rem;
 	font-weight: bold;
 }
-section.career dd {
+.career-section dd {
 	margin: 2rem;
 }
 
 /* TB Contents */
 @media screen and (min-width: 501px) and (max-width: 1280px) {
-	h2.slogan {
+	.hero-section__slogan {
 		margin: 0 0 2rem 2rem;
 	}
-	span.slogan__top {
+	.hero-section__slogan-main {
 		font-size: 4rem;
 		font-weight: bold;
 	}
-	span.slogan__sub {
+	.hero-section__slogan-sub {
 		font-size: 3rem;
 	}
-	p.slogan__explain {
+	.hero-section__slogan-explain {
 		margin: 0 0 0 2rem;
 	}
 
@@ -214,24 +157,24 @@ section.career dd {
 		pointer-events: none;
 	}
 
-	section.portfolio dl {
+	.portfolio-section dl {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
 /* SP Contents */
 @media screen and (max-width: 500px) {
-	h2.slogan {
+	.hero-section__slogan {
 		margin: 0 0 2rem 0;
 	}
-	span.slogan__top {
+	.hero-section__slogan-main {
 		font-size: 3rem;
 		font-weight: bold;
 	}
-	span.slogan__sub {
+	.hero-section__slogan-sub {
 		font-size: 2rem;
 	}
-	p.slogan__explain {
+	.hero-section__slogan-explain {
 		margin: 0;
 		font-size: 1rem;
 	}
@@ -240,11 +183,11 @@ section.career dd {
 		pointer-events: none;
 	}
 
-	section.portfolio dl {
+	.portfolio-section dl {
 		grid-template-columns: 1fr;
 	}
 
-	section.career dl {
+	.career-section dl {
 		display: flex;
 		flex-direction: column;
 	}

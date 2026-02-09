@@ -1,0 +1,37 @@
+@charset "UTF-8";
+.tiles--3col {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+.tiles--2col {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.tile {
+	margin: 0.5rem;
+	padding: 1rem;
+	width: calc(100% - 1rem);
+	min-width: 20vw;
+	min-height: 20vh;
+	text-align: left;
+	font-size: 0.8rem;
+	font-weight: bold;
+}
+.tile__title {
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+/** TB Contents */
+@media screen and (max-width: 1280px) {
+}
+
+/** SP Contents */
+@media screen and (max-width: 500px) {
+	.tiles--2col,
+	.tiles--3col {
+		display: flex;
+		flex-direction: column;
+	}
+}
