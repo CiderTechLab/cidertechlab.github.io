@@ -13,8 +13,12 @@ header {
 	overflow: hidden;
 }
 
-.note-layout__header img[src$='.svg'] {
-	transform: scale(0.8);
+.logo {
+	border: 0;
+	padding: 0;
+	width: auto;
+	color: inherit;
+	transform: scale(1);
 }
 
 .header-nav__menu,
@@ -22,11 +26,11 @@ header {
 	display: flex;
 }
 
-header a {
+.header-nav-link {
 	border: 1px solid dimgray;
 	border-radius: 2rem;
 	padding: 0.5rem;
-	width: 6rem;
+	min-width: 6rem;
 	color: dimgray;
 	text-align: center;
 	text-decoration: none;
@@ -35,27 +39,11 @@ header a {
 	align-items: center;
 	transition: 0.5s;
 }
-header a:hover {
+.header-nav-link:hover {
 	border-radius: 2rem;
 	color: white;
 	background-color: dimgrey;
 	font-weight: bold;
-}
-header a.logo {
-	border: 0;
-	padding: 0;
-	width: auto;
-	color: inherit;
-}
-header a.logo:hover {
-	border: 0;
-	color: inherit;
-	background-color: inherit;
-	font-weight: inherit;
-}
-
-nav {
-	display: flex;
 }
 
 .header-nav__external a {
@@ -99,25 +87,17 @@ nav {
 
 /** TB Contents */
 @media screen and (max-width: 1280px) {
-	header a.logo {
+	.logo {
 		transform: scale(0.8);
 	}
 
 	.header-nav {
 		display: block;
 	}
-	.header-nav a {
+	.header-nav-link {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border: 0;
-		background-color: white;
-		font-weight: normal;
-	}
-	.header-nav a:hover {
-		border: 0;
-		border-radius: 2rem;
-		color: dimgray;
 		background-color: white;
 		font-weight: normal;
 	}
@@ -134,17 +114,17 @@ nav {
 		margin: 0;
 	}
 
-	header a.logo {
+	.logo {
 		transform: scale(0.5);
 	}
 
 	/**
    * ハンバーガーメニュー
    */
-	.nav__wrapper {
+	.header-nav {
 		position: relative;
 	}
-	.nav__icon {
+	.header-nav__icon {
 		width: 40px;
 		height: 30px;
 		position: fixed;
@@ -155,7 +135,7 @@ nav {
 		display: inline-block;
 	}
 	/** 三本線 */
-	.nav__icon span {
+	.header-nav__line {
 		display: block;
 		height: 4px;
 		margin: 6px 0;
@@ -164,16 +144,16 @@ nav {
 		transition: 0.4s;
 	}
 	/** X線に変形 */
-	#nav__toggle:checked + .nav__icon span:nth-child(1) {
+	#header-nav__toggle:checked + .nav__icon span:nth-child(1) {
 		transform: translateY(10px) rotate(45deg);
 	}
-	#nav__toggle:checked + .nav__icon span:nth-child(2) {
+	#header-nav__toggle:checked + .nav__icon span:nth-child(2) {
 		opacity: 0;
 	}
-	#nav__toggle:checked + .nav__icon span:nth-child(3) {
+	#header-nav__toggle:checked + .nav__icon span:nth-child(3) {
 		transform: translateY(-10px) rotate(-45deg);
 	}
-	.overlay {
+	.header-nav--overlay {
 		position: fixed;
 		inset: 0;
 		background: white;
@@ -182,7 +162,7 @@ nav {
 		transition: 0.4s;
 		z-index: 1;
 	}
-	#nav__toggle:checked ~ .overlay {
+	#header-nav__toggle:checked ~ .overlay {
 		opacity: 1;
 		pointer-events: auto;
 	}
@@ -203,7 +183,7 @@ nav {
 		display: flex;
 		flex-direction: column;
 	}
-	#nav__toggle:checked ~ nav {
+	#header-nav__toggle:checked ~ nav {
 		right: 0;
 	}
 
@@ -226,7 +206,7 @@ nav {
 		color: inherit;
 		font-weight: inherit;
 	}
-	svg.icon {
+	.icon {
 		margin: 0.5rem 0 0.5rem 0;
 		transform: scale(1.2);
 	}

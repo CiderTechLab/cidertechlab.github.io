@@ -11,15 +11,15 @@
 	scroll-behavior: smooth;
 
 	/** radius var*/
-	--radius-basic: 2rem;
-	--radius-header-basic: 0 0 2rem 2rem;
+	--radius-basic: 1rem;
+	--radius-header-basic: 0 0 1rem 1rem;
 	--radius-header-sub: 0;
-	--radius-footer-basic: 2rem 2rem 0 0;
+	--radius-footer-basic: 1rem 1rem 0 0;
 	--radius-footer-sub: 0;
 }
 
 /**
-* section
+* MEMO: section
 * width を 100% にしておき、max-width で最大幅を指定することで、
 * 画面幅が狭い場合に自動的に縮むようにする。
 */
@@ -123,10 +123,10 @@ pre {
 		--height-breadcrumb: 17svh;
 
 		/** radius var*/
-		--radius-basic: 2rem;
-		--radius-header-basic: 0 0 2rem 2rem;
+		--radius-basic: 1rem;
+		--radius-header-basic: 0 0 1rem 1rem;
 		--radius-header-sub: 0;
-		--radius-footer-basic: 2rem 2rem 0 0;
+		--radius-footer-basic: 1rem 1rem 0 0;
 		--radius-footer-sub: 0;
 	}
 
@@ -142,10 +142,10 @@ pre {
 		--height-breadcrumb: 10svh;
 
 		/** radius var*/
-		--radius-basic: 2rem;
-		--radius-header-basic: 0 0 2rem 2rem;
+		--radius-basic: 1rem;
+		--radius-header-basic: 0 0 1rem 1rem;
 		--radius-header-sub: 0;
-		--radius-footer-basic: 2rem 2rem 0 0;
+		--radius-footer-basic: 1rem 1rem 0 0;
 		--radius-footer-sub: 0;
 	}
 

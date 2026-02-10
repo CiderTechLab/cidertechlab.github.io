@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /** 
- * hero Section
+ * hero-Section
  * @description
  * min-height: ビューポートMAX高さ - ヘッダー高さ + ヘッダー半径を確保する
  * ことで、ヘッダー半径分だけ重なるようにする。
@@ -50,12 +50,14 @@
 
 /** Skills Section */
 .skills-section {
+	margin: 1rem 0 1rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	border-radius: var(--radius-basic);
 	background-color: white;
 }
+
 .tile--html {
 	color: var(--color-text-sub);
 	background-color: mediumseagreen;
@@ -63,6 +65,10 @@
 .tile--css {
 	color: var(--color-text-sub);
 	background-color: #663399;
+}
+.tile--md {
+	color: var(--color-text-sub);
+	background-color: #303030;
 }
 .tile--js {
 	color: var(--color-text-main);
@@ -93,14 +99,12 @@
 	border: 1px solid var(--color-border-main);
 }
 
-/* portfolio Section */
+/** portfolio Section */
 .portfolio-section {
-	max-width: 90%;
-	border-radius: var(--radius-basic);
+	padding: 2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding: 2rem;
 }
 
 .portfolio-section__item {
@@ -118,27 +122,32 @@
 	justify-content: center;
 }
 
-/* Career Section */
+/** Career Section */
 .career-section {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.career-section dl {
+.career-section__table {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 }
-.career-section dt {
+.career-section__table-title {
 	margin: 2rem;
 	font-weight: bold;
 }
-.career-section dd {
+.career-section__table-content {
 	margin: 2rem;
 }
 
-/* TB Contents */
+/** TB Contents */
 @media screen and (min-width: 501px) and (max-width: 1280px) {
+	.hero-section {
+		background-size:
+			clamp(160px, calc(100svh - var(--height-header) + 2rem), 600px) auto,
+			cover;
+	}
 	.hero-section__slogan {
 		margin: 0 0 2rem 2rem;
 	}
@@ -153,17 +162,18 @@
 		margin: 0 0 0 2rem;
 	}
 
-	li:hover {
-		pointer-events: none;
-	}
-
-	.portfolio-section dl {
+	.portfolio-section__table {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
-/* SP Contents */
+/** SP Contents */
 @media screen and (max-width: 500px) {
+	.hero-section {
+		background-size:
+			clamp(160px, calc(100svh - var(--height-header) + 2rem), 300px) auto,
+			cover;
+	}
 	.hero-section__slogan {
 		margin: 0 0 2rem 0;
 	}
@@ -179,15 +189,11 @@
 		font-size: 1rem;
 	}
 
-	li:hover {
-		pointer-events: none;
-	}
-
-	.portfolio-section dl {
+	.portfolio-section {
 		grid-template-columns: 1fr;
 	}
 
-	.career-section dl {
+	.career-section__table {
 		display: flex;
 		flex-direction: column;
 	}
