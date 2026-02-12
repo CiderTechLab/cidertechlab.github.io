@@ -28,16 +28,13 @@
 	color: white;
 	text-align: left;
 	line-height: 1;
-}
-.hero-section__slogan-main {
-	font-size: 6rem;
-	font-weight: bold;
-}
-.hero-section__slogan-sub {
-	font-size: 3rem;
+	font-weight: 1000;
+	text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+	letter-spacing: 0.05em;
 }
 .hero-section__slogan-explain {
 	margin: 0 0 0 5rem;
+	font-size: 1.5rem;
 	color: var(--color-text-main);
 }
 
@@ -90,13 +87,38 @@
 	color: DeepSkyBlue;
 	background-color: var(--color-bg-sub);
 }
-.tile--other {
+.tile-other {
 	color: var(--color-text-sub);
 	background-color: var(--color-bg-sub);
 }
-.tile--websites,
-.tile--books {
+
+.tile-other__item {
+	margin: 1rem 0 0 0;
+	padding: 0 0 0 0.1rem;
+	background-color: var(--color-bg-main);
+	font-size: 1.2rem;
+	font-weight: normal;
+	color: var(--color-text-main);
+}
+.tile-other__explain {
+	font-weight: normal;
+}
+.tile-websites,
+.tile-books {
 	border: 1px solid var(--color-border-main);
+}
+
+.tile-websites__item,
+.tile-books__item {
+	margin-top: 1rem;
+	border-top: 1px solid var(--color-border-main);
+	font-size: 1.2rem;
+	font-weight: normal;
+}
+.tile-websites__explain,
+.tile-books__explain {
+	margin-top: 0.5rem;
+	font-weight: normal;
 }
 
 /** portfolio Section */

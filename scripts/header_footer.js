@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (!toggle || !nav) return;
 
 	nav.addEventListener('click', (e) => {
-		const a = e.target.closest('a[href^="#"]');
+		const a = e.target.closest('a[href*="#"]');
 		if (!a) return;
 
 		toggle.checked = false;

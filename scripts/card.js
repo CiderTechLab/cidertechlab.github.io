@@ -39,8 +39,10 @@ cardLists.forEach((el) => {
 	el.addEventListener(
 		'click',
 		(e) => {
+			// aタグをクリックした場合はスキップ
+			if (e.target.closest('a')) return;
 			if (moved > 5) e.preventDefault();
 		},
-		true
+		false
 	);
 });

@@ -27,7 +27,6 @@ section {
 	padding: 1rem;
 	width: 100%;
 	max-width: 80vw;
-	font-size: 1.2rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -117,19 +116,6 @@ pre {
 }
 
 @media screen and (max-width: 1280px) {
-	:root {
-		/** height var*/
-		--height-header: 15svh;
-		--height-breadcrumb: 17svh;
-
-		/** radius var*/
-		--radius-basic: 1rem;
-		--radius-header-basic: 0 0 1rem 1rem;
-		--radius-header-sub: 0;
-		--radius-footer-basic: 1rem 1rem 0 0;
-		--radius-footer-sub: 0;
-	}
-
 	section {
 		max-width: 100vw;
 	}
@@ -140,13 +126,6 @@ pre {
 		/** height var*/
 		--height-header: 8svh;
 		--height-breadcrumb: 10svh;
-
-		/** radius var*/
-		--radius-basic: 1rem;
-		--radius-header-basic: 0 0 1rem 1rem;
-		--radius-header-sub: 0;
-		--radius-footer-basic: 1rem 1rem 0 0;
-		--radius-footer-sub: 0;
 	}
 
 	body {

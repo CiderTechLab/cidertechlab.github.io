@@ -17,12 +17,11 @@
 	min-width: 20vw;
 	min-height: 20vh;
 	text-align: left;
-	font-size: 0.8rem;
 	font-weight: bold;
 }
 .tile__title {
 	font-weight: bold;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 }
 
 /** TB Contents */

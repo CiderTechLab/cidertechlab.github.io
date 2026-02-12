@@ -32,6 +32,9 @@
 
 /** TB Contents */
 @media screen and (max-width: 1280px) {
+	.card {
+		min-width: 30vw;
+	}
 	.card:hover {
 		pointer-events: none;
 	}
