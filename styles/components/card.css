@@ -29,14 +29,14 @@
 .card__title-section {
 	font-size: 1.5rem;
 }
+.portfolio-section__item-explain {
+	color: var(--color-text-sub);
+}
 
 /** TB Contents */
 @media screen and (max-width: 1280px) {
 	.card {
 		min-width: 30vw;
-	}
-	.card:hover {
-		pointer-events: none;
 	}
 }
 
@@ -45,8 +45,5 @@
 	.card {
 		width: 50vw;
 		min-width: 50vw;
-	}
-	.card:hover {
-		pointer-events: none;
 	}
 }
