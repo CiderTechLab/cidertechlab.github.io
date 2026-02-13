@@ -1,11 +1,11 @@
 @charset "UTF-8";
 /** 
- * hero Section
+ * hero-Section
  * @description
  * min-height: ビューポートMAX高さ - ヘッダー高さ + ヘッダー半径を確保する
  * ことで、ヘッダー半径分だけ重なるようにする。
  */
-section.hero__section {
+.hero-section {
 	padding: 0 1rem 5rem 1rem;
 	max-width: 100%;
 	min-height: calc(100svh - var(--height-header) + 2rem);
@@ -22,229 +22,197 @@ section.hero__section {
 	justify-content: center;
 	align-items: flex-start;
 }
-h2.slogan {
+.hero-section__slogan {
 	margin: 0 0 2rem 5rem;
 	font-size: 6rem;
 	color: white;
 	text-align: left;
 	line-height: 1;
+	font-weight: 1000;
+	text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+	letter-spacing: 0.05em;
 }
-.slogan__main {
-	font-size: 6rem;
-	font-weight: bold;
-}
-.slogan__sub {
-	font-size: 3rem;
-}
-.slogan__explain {
+.hero-section__slogan-explain {
 	margin: 0 0 0 5rem;
+	font-size: 1.5rem;
 	color: var(--color-text-main);
 }
 
-/* About Me Section */
-section.AboutMe__section p {
+/** About Me Section */
+.aboutme-section__explain {
 	padding: 1.5rem;
 	width: 100%;
 	max-width: 60rem;
 }
 
-/* skills Section */
-section.skills__section {
+/** Skills Section */
+.skills-section {
+	margin: 1rem 0 1rem 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	border-radius: var(--radius-basic);
+	background-color: white;
 }
 
-/* lang area */
-section.lang__area h4 {
-	align-self: center;
-}
-.card--ml {
-	border: 0;
+.tile--html {
 	color: var(--color-text-sub);
 	background-color: mediumseagreen;
 }
-.card--pg {
-	border: 0;
+.tile--css {
+	color: var(--color-text-sub);
+	background-color: #663399;
+}
+.tile--md {
+	color: var(--color-text-sub);
+	background-color: #303030;
+}
+.tile--js {
+	color: var(--color-text-main);
+	background-color: #f3df49;
+}
+.tile--ts {
 	color: var(--color-text-sub);
 	background-color: DodgerBlue;
 }
-.card--fw {
-	border: 0;
-	color: DeepSkyBlue;
-	background-color: var(--color-bg-sub);
-}
-.card--fw-tag {
-	border: 0;
-	color: DeepSkyBlue;
-}
-li.html {
-	border: 0;
-	color: var(--color-text-sub);
-	background-color: MediumSeaGreen;
-}
-li.css {
-	border: 0;
-	color: var(--color-text-sub);
-	background-color: Indigo;
-}
-li.js {
-	border: 0;
-	background-color: yellow;
-}
-li.ts {
-	border: 0;
-	color: var(--color-text-sub);
-	background-color: DodgerBlue;
-}
-.card--sql {
-	border: 0;
+.tile--sql {
 	color: var(--color-text-sub);
 	background-color: darkred;
 }
-li.react {
-	border: 0;
-	background-color: DeepSkyBlue;
-}
-
-.tools {
-	border: 0;
+.tile--twcss {
 	color: var(--color-text-sub);
-	background-color: purple;
+	background-color: #38bdf8;
+}
+.tile--react {
+	color: DeepSkyBlue;
+	background-color: var(--color-bg-sub);
+}
+.tile-other {
+	color: var(--color-text-sub);
+	background-color: var(--color-bg-sub);
 }
 
-/* learn area */
-dt.title {
-	border-bottom: 1px solid var(--color-border-main);
-}
-dd.item {
-	padding: 1rem 0 1rem 0;
-	font-size: 2rem;
-	font-weight: bold;
-}
-dd.explain {
-	margin: 0 0 2rem 0;
-}
-
-/* portfolio Section */
-section.portfolio {
-	max-width: 90%;
-	background-color: var(--color-secondary);
-	border-radius: 2rem;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 2rem;
-}
-
-section.portfolio dl {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 2rem;
-	width: 100%;
-	max-width: 90rem;
-	margin-top: 2rem;
-}
-
-.portfolio__item-title {
-	padding: 2rem;
+.tile-other__item {
+	margin: 1rem 0 0 0;
+	padding: 0 0 0 0.1rem;
 	background-color: var(--color-bg-main);
-	border-radius: 1rem;
-	text-align: center;
-	min-height: 150px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.portfolio__item-content {
-	padding: 1rem;
-	margin: 0;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
-
-section.portfolio a {
-	font-weight: bold;
 	font-size: 1.2rem;
+	font-weight: normal;
+	color: var(--color-text-main);
+}
+.tile-other__explain {
+	font-weight: normal;
+}
+.tile-websites,
+.tile-books {
+	border: 1px solid var(--color-border-main);
 }
 
-section.portfolio dd p {
-	margin: 0;
-	line-height: 1.6;
+.tile-websites__item,
+.tile-books__item {
+	margin-top: 1rem;
+	border-top: 1px solid var(--color-border-main);
+	font-size: 1.2rem;
+	font-weight: normal;
+}
+.tile-websites__explain,
+.tile-books__explain {
+	margin-top: 0.5rem;
+	font-weight: normal;
 }
 
-/* Career Section */
-section.career {
+/** portfolio Section */
+.portfolio-section {
+	padding: 2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-section.career dl {
+.portfolio-section__item {
+	background-color: var(--color-primary);
+}
+.portfolio-section__item-explain {
+	color: var(--color-text-sub);
+}
+
+/** Career Section */
+.career-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.career-section__table {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
 }
-section.career dt {
+.career-section__table-title {
 	margin: 2rem;
 	font-weight: bold;
 }
-section.career dd {
+.career-section__table-content {
 	margin: 2rem;
 }
 
-/* TB Contents */
+/** TB Contents */
 @media screen and (min-width: 501px) and (max-width: 1280px) {
-	h2.slogan {
-		margin: 0 0 2rem 2rem;
+	.hero-section {
+		background-size:
+			clamp(160px, calc(100svh - var(--height-header) + 2rem), 600px) auto,
+			cover;
 	}
-	span.slogan__top {
+	.hero-section__slogan {
+		margin: 0 0 2rem 2rem;
+		display: flex;
+		flex-direction: column;
+	}
+	.hero-section__slogan-main {
 		font-size: 4rem;
 		font-weight: bold;
 	}
-	span.slogan__sub {
+	.hero-section__slogan-sub {
 		font-size: 3rem;
 	}
-	p.slogan__explain {
+	.hero-section__slogan-explain {
 		margin: 0 0 0 2rem;
 	}
 
-	li:hover {
-		pointer-events: none;
-	}
-
-	section.portfolio dl {
+	.portfolio-section__table {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
-/* SP Contents */
+/** SP Contents */
 @media screen and (max-width: 500px) {
-	h2.slogan {
-		margin: 0 0 2rem 0;
+	.hero-section {
+		background-size:
+			clamp(160px, calc(100svh - var(--height-header) + 2rem), 300px) auto,
+			cover;
 	}
-	span.slogan__top {
+	.hero-section__slogan {
+		margin: 0 0 2rem 0;
+		font-size: 3.5rem;
+		display: flex;
+		flex-direction: column;
+	}
+	.hero-section__slogan-main {
 		font-size: 3rem;
 		font-weight: bold;
 	}
-	span.slogan__sub {
+	.hero-section__slogan-sub {
 		font-size: 2rem;
 	}
-	p.slogan__explain {
+	.hero-section__slogan-explain {
 		margin: 0;
 		font-size: 1rem;
 	}
 
-	li:hover {
-		pointer-events: none;
-	}
-
-	section.portfolio dl {
+	.portfolio-section {
 		grid-template-columns: 1fr;
 	}
 
-	section.career dl {
+	.career-section__table {
 		display: flex;
 		flex-direction: column;
 	}

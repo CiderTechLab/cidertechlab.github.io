@@ -10,29 +10,29 @@ const icons = `
 `;
 
 const headerContent = `
-  <h1><a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="CiderTechLabo Logo"></a></h1>
+  <h1><a href="/"><img class="logo" src="https://cidertechlab.github.io/images/logo.svg" alt="CiderTechLabo Logo"></a></h1>
   <div class="header-nav">
-    <input type="checkbox" id="nav__toggle" hidden>
-    <label class="nav__icon" for="nav__toggle">
-      <span></span>
-      <span></span>
-      <span></span>
+    <input type="checkbox" id="header-nav__toggle" hidden>
+    <label class="header-nav__icon" for="header-nav__toggle">
+      <span class="header-nav__line"></span>
+      <span class="header-nav__line"></span>
+      <span class="header-nav__line"></span>
     </label>
-    <div class="overlay"></div>
+    <div class="header-nav--overlay"></div>
     <nav>
       <div class="header-nav__menu">
-        <a href="/index.html#AboutMe__link">About Me</a>
-        <a href="/index.html#skills__link">Skills</a>
-        <a href="/index.html#portfolio__link">Portfolio</a>
-        <a href="/index.html#career__link">Career</a>
+        <a class="header-nav-link" href="/index.html#aboutme-section__cta">About Me</a>
+        <a class="header-nav-link" href="/index.html#skills-section__cta">Skills</a>
+        <a class="header-nav-link" href="/index.html#portfolio-section__cta">Portfolio</a>
+        <a class="header-nav-link" href="/index.html#career-section__cta">Career</a>
       </div>
       <div class="header-nav__external">
-        <a href="https://github.com/cidertechlab/">
+        <a class="header-nav-link" href="https://github.com/cidertechlab/">
           <svg class="icon" aria-hidden="true">
              <use href="#icon-github"></use>
           </svg>
         </a>
-        <a href="https://forms.gle/CALFLhAjRGj49LZC6">
+        <a class="header-nav-link" href="https://forms.gle/CALFLhAjRGj49LZC6">
           <svg class="icon" aria-hidden="true">
              <use href="#icon-mail"></use>
           </svg>
@@ -43,22 +43,22 @@ const headerContent = `
 `;
 
 const footerContent = `
-  <div class="copy__footer">
-    <a class="logo" href="/"><img src="https://cidertechlab.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a>
+  <div class="footer-copy">
+    <a href="/"><img class="footer-logo" src="https://cidertechlab.github.io/images/logo.svg" alt="CiderTechLabo Logo"></a>
     <small>&#169; 2025-2026 S.K</small>
   </div>
-  <div class="menu__footer">
-    <a href="/index.html#AboutMe__link">About Me</a>
-    <a href="/index.html#skills__link">Skills</a>
-    <a href="/index.html#portfolio__link">Portfolio</a>
-    <a href="/index.html#career__link">Career</a>
+  <div class="footer-menu">
+    <a class="footer-link" href="/index.html#aboutme-section__cta">About Me</a>
+    <a class="footer-link" href="/index.html#skills-section__cta">Skills</a>
+    <a class="footer-link" href="/index.html#portfolio-section__cta">Portfolio</a>
+    <a class="footer-link" href="/index.html#career-section__cta">Career</a>
     <div class="footer-nav__external">
-      <a class="icon__link" href="https://github.com/cidertechlab/">
+      <a class="footer-link footer-nav__external-link" href="https://github.com/cidertechlab/">
         <svg class="icon" aria-hidden="true">
           <use href="#icon-github"></use>
         </svg>  
       </a>
-      <a class="icon__link" href="https://forms.gle/CALFLhAjRGj49LZC6">
+      <a class="footer-link footer-nav__external-link" href="https://forms.gle/CALFLhAjRGj49LZC6">
         <svg class="icon" aria-hidden="true">
           <use href="#icon-mail"></use>
         </svg>
@@ -141,13 +141,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	/**
 	 * ハンバーガーメニューのページ内リンクでオーバーレイを閉じるためのスクリプト
 	 */
-	const toggle = document.getElementById('nav__toggle');
+	const toggle = document.querySelector('#header-nav__toggle');
 	const nav = document.querySelector('nav');
 
 	if (!toggle || !nav) return;
 
 	nav.addEventListener('click', (e) => {
-		const a = e.target.closest('a[href^="#"]');
+		const a = e.target.closest('a[href*="#"]');
 		if (!a) return;
 
 		toggle.checked = false;
