@@ -32,7 +32,9 @@
 			<header class="basic-layout__header"></header>
 			<main>
 				<section class="hero-section">
-					<h2 class="hero-section__slogan">Keep_Learning,<br>Keep_Growing.</h2>
+					<h2 class="hero-section__slogan">
+						<span>Keep_</span><span>Learning,</span> <span>Keep_</span
+						><span>Growing.</span>
 					</h2>
 					<p class="hero-section__slogan-explain">
 						ようこそ、CiderTechLabへ！<br />
@@ -48,28 +50,42 @@
 					<h2 id="aboutme-section__cta">About Me</h2>
 					<img src="images/profile_pic.svg" alt="プロフィール画像" />
 					<h3>S.K</h3>
-				<dl class="aboutme-section__explain">
-					<dt>経歴</dt>
-					<dd>大学の理工系学科卒業後、システムエンジニアとして6年間従事しました。<a href="#career-section__cta">詳細はCareerをご覧ください。</a></dd>
-					
-					<dt>実務経験</dt>
-					<dd>主に業務系システムを担当、運用及び一部開発を経験。特にデータベース周りの知識を深めることができました。</dd>
-					
-					<dt>現在の目標</dt>
-					<dd>フロントエンドエンジニアを目指し、HTML/CSS/JavaScript/TypeScriptを中心に学習し、Tailwind CSSやReactも学習中です。また、SE経験を活かし、バックエンド領域（特にデータベース）の理解も深めたいと考えています。</dd>
-					
-					<dt>関心分野</dt>
-					<dd>構造化と体系的な設計に関心があります。BEM記法、Tailwindのユーティリティクラス設計、Reactのコンポーネント設計といった、体系的な設計アプローチに魅力を感じています。</dd>
+					<dl class="aboutme-section__explain">
+						<dt>経歴</dt>
+						<dd>
+							大学の理工系学科卒業後、システムエンジニアとして6年間従事しました。<a
+								href="#career-section__cta"
+								>詳細はCareerをご覧ください。</a
+							>
+						</dd>
 
-					<dt>趣味</dt>
-					<dd>登山です。富士山登頂は5回経験済み。また、生成AIに関心があり、プロンプトエンジニアリングやローカルLLM（gemma系）の実験など、楽しみながら技術を深めています。</dd>
-				</dl>
+						<dt>実務経験</dt>
+						<dd>
+							主に業務系システムを担当、運用及び一部開発を経験。特にデータベース周りの知識を深めることができました。
+						</dd>
+
+						<dt>現在の目標</dt>
+						<dd>
+							フロントエンドエンジニアを目指し、HTML/CSS/JavaScript/TypeScriptを中心に学習し、Tailwind
+							CSSやReactも学習中です。また、SE経験を活かし、バックエンド領域（特にデータベース）の理解も深めたいと考えています。
+						</dd>
+
+						<dt>関心分野</dt>
+						<dd>
+							構造化と体系的な設計に関心があります。BEM記法、Tailwindのユーティリティクラス設計、Reactのコンポーネント設計といった、体系的な設計アプローチに魅力を感じています。
+						</dd>
+
+						<dt>趣味</dt>
+						<dd>
+							登山です。富士山登頂は5回経験済み。また、生成AIに関心があり、プロンプトエンジニアリングやローカルLLM（gemma系）の実験など、楽しみながら技術を深めています。
+						</dd>
+					</dl>
 				</section>
 
 				<section class="skills-section">
 					<h2 id="skills-section__cta">Skills</h2>
 					<section class="skills-section__languages">
-						<h3>Languages<br>(Markup/Styling/Programming/Query)</h3>
+						<h3>Languages<br />(Markup/Styling/Programming/Query)</h3>
 						<ul class="tiles--3col">
 							<li class="tile tile--html">
 								<h4 class="tile__title">HTML</h4>
@@ -146,7 +162,7 @@
 					</section>
 
 					<section class="skills-section__others">
-						<h3>Others<br>（Environment/Tools/Quality）</h3>
+						<h3>Others<br />（Environment/Tools/Quality）</h3>
 						<ul class="tiles--3col">
 							<li class="tile tile-other">
 								<h4 class="tile__title">Environment</h4>
@@ -155,34 +171,51 @@
 									<dd class="tile-other__explain">
 										PC上での確認はWindows11で、スマートフォン上での確認はAndroid
 										16で行いました。
+									</dd>
 									<dt class="tile-other__item">Node.js</dt>
-									<dd class="tile-other__explain">JavaScriptのパッケージ管理ツールであるnpmも同時に使える点で採用しました。</dd>
+									<dd class="tile-other__explain">
+										JavaScriptのパッケージ管理ツールであるnpmも同時に使える点で採用しました。
+									</dd>
 								</dl>
 							</li>
 							<li class="tile tile-other">
 								<h4 class="tile__title">Tools</h4>
 								<dl>
 									<dt class="tile-other__item">Visual Studio Code</dt>
-									<dd class="tile-other__explain">エディタのデファクトスタンダードである点、拡張機能導入で開発環境を整えやすいという点で採用しました。</dd>
+									<dd class="tile-other__explain">
+										拡張機能導入で開発環境を整えやすく、GitHub連携、生成AIとのペアプログラミングもし易いという点で採用しました。
+									</dd>
 									<dt class="tile-other__item">Figma</dt>
 									<dd class="tile-other__explain">UI/UX設計に使用しました。</dd>
 									<dt class="tile-other__item">git、GitHub</dt>
-									<dd class="tile-other__explain">コードのバージョン管理、変更履歴の管理、バックアップのために導入しました。ChatGPTはアイデアの壁打ち、
-									<dt class="tile-other__item">ChatGPT</dd>
-									<dd class="tile-other__explain">アイデア出し等、思考の壁打ちとして利用しました。</dd>
+									<dd class="tile-other__explain">
+										コードのバージョン管理、変更履歴の管理、バックアップのために導入しました。
+									</dd>
+									<dt class="tile-other__item">ChatGPT</dt>
+									<dd class="tile-other__explain">
+										アイデア出し等、思考の壁打ちとして利用しました。
+									</dd>
 									<dt class="tile-other__item">GitHub Copilot</dt>
-									<dd class="tile-other__explain">コード補完やレビュー等、ペアプログラミングに近い形で使用しました。。</dd>
+									<dd class="tile-other__explain">
+										コード補完やレビュー等、ペアプログラミングに近い形で使用しました。。
+									</dd>
 									<dt class="tile-other__item">GitHub Projects</dt>
-									<dd class="tile-other__explain">バグ管理、タスク管理に使用しました。</dd>
+									<dd class="tile-other__explain">
+										バグ管理、タスク管理に使用しました。
+									</dd>
 								</dl>
 							</li>
 							<li class="tile tile-other">
 								<h4 class="tile__title">Quality</h4>
 								<dl>
 									<dt class="tile-other__item">Prettier、stylelint、ESLint</dt>
-									<dd class="tile-other__explain">コードの可読性向上、品質向上のために導入しました。</dd>
+									<dd class="tile-other__explain">
+										コードの可読性向上、品質向上のために導入しました。
+									</dd>
 									<dt class="tile-other__item">Google Chrome、Firefox</dt>
-									<dd class="tile-other__explain">Google ChromeはBlink、FirefoxはGeckoエンジンを採用しているため、両方での動作確認を行うことでなるべく多くの環境での動作を保証できると考え採用しました。
+									<dd class="tile-other__explain">
+										Google
+										ChromeはBlink、FirefoxはGeckoエンジンを採用しているため、両方での動作確認を行うことでなるべく多くの環境での動作を保証できると考え採用しました。
 									</dd>
 								</dl>
 							</li>
@@ -198,16 +231,16 @@
 									<dt class="tile-websites__item">
 										<a
 											href="https://developer.mozilla.org/ja/docs/Learn_web_development"
-											 target="_blank">ウェブ開発の学習 | MDN</a
+											target="_blank"
+											>ウェブ開発の学習 | MDN</a
 										>
 									</dt>
 									<dd class="tile-websites__explain">
 										HTML、CSS、JavaScriptの基礎を学ぶために活用しました。各技術の基礎から応用まで幅広く解説されており、非常に参考になりました。
 									</dd>
 									<dt class="tile-websites__item">
-										<a
-											href="https://typescriptbook.jp/"
-											 target="_blank">TypeScript入門『サバイバルTypeScript』〜実務で使うなら最低限ここだけはおさえておきたいこと〜</a
+										<a href="https://typescriptbook.jp/" target="_blank"
+											>TypeScript入門『サバイバルTypeScript』〜実務で使うなら最低限ここだけはおさえておきたいこと〜</a
 										>
 									</dt>
 									<dd class="tile-websites__explain">
@@ -235,12 +268,12 @@
 							</li>
 						</ul>
 					</section>
+				</section>
 
 				<section class="portfolio-section">
 					<h2 id="portfolio-section__cta">Portfolio</h2>
 					<ul class="cards">
 						<li class="portfolio-section__item card">
-							<div class="portfolio-section__item-img">※サムネイル予定地</div>
 							<p>
 								各作品の仕様書については<a
 									href="https://github.com/CiderTechLab/cidertechlab.github.io/wiki"
@@ -249,27 +282,26 @@
 							</p>
 						</li>
 						<li class="portfolio-section__item card">
-							<div class="portfolio-section__item-img">※サムネイル予定地</div>
 							<h3 class="card__title">
 								<a href="portfolio/html/">HTML Knowledge Notes</a>
 							</h3>
-							<p>HTML学習の中で気づいた点や、注意点をまとめたページです。</p>
+							<p class="portfolio-section__item-explain">
+								HTML学習の中で気づいた点や、注意点をまとめたページです。
+							</p>
 						</li>
 						<li class="portfolio-section__item card">
-							<div class="portfolio-section__item-img">※サムネイル予定地</div>
 							<h3 class="card__title">
 								<a href="portfolio/contact/">Contact（モックアップ）</a>
 							</h3>
-							<p>
+							<p class="portfolio-section__item-explain">
 								Form関連タグ、バリデーション設計の練習として制作しました。入力チェックに手を焼きました。
 							</p>
 						</li>
 						<li class="portfolio-section__item card">
-							<div class="portfolio-section__item-img">※サムネイル予定地</div>
 							<h3 class="card__title">
 								<a href="RoadToTypeScript/">RoadToTypeScript</a>
 							</h3>
-							<p>
+							<p class="portfolio-section__item-explain">
 								「TypeScriptへの道」と題した、TypeScript学習の歩みを記録したサイトです。
 							</p>
 						</li>
@@ -279,21 +311,29 @@
 				<section class="career-section">
 					<h2 id="career-section__cta">Career</h2>
 					<dl class="career-section__table">
-						<dt class="career-section__table-title">1年目～2年目<br />商品・サービスの管理システム運用PJ</dt>
+						<dt class="career-section__table-title">
+							1年目～2年目<br />商品・サービスの管理システム運用PJ
+						</dt>
 						<dd class="career-section__table-content">
 							金額や有効期限の設定、新商品・新サービスの追加設定を担当しました。<br />
 							企画担当や連携システム担当との調整が多く、コミュニケーション力や調整力を鍛えることができました。
 							また、設定値の変更に伴う影響範囲の調査を通じて、システム全体の理解を深めることができました。
 							ドキュメント化の重要性も学びました。
 						</dd>
-						<dt class="career-section__table-title">3年目～4年目<br />通信システムのデータベース移行PJ</dt>
+						<dt class="career-section__table-title">
+							3年目～4年目<br />通信システムのデータベース移行PJ
+						</dt>
 						<dd class="career-section__table-content">
 							主にデータベース（Oracle）のデータ移行ツールの開発、実際の移行作業をを担当しました。<br />
 							RDBMSの基本的な動作原理、テーブル設計の思想やSQL、PL/SQLの知識を深めることができました。
 							またテスト工程にも携わり、テストケースの設計からソフトウェア品質の重要性を学びました。
-							<br>実業務に役立てたいと思い、<strong>Oracle Bronze DBA 2019</strong>の資格を取得しました。
+							<br />実業務に役立てたいと思い、<strong
+								>Oracle Bronze DBA 2019</strong
+							>の資格を取得しました。
 						</dd>
-						<dt class="career-section__table-title">5年目<br />顧客情報管理システムの運用</dt>
+						<dt class="career-section__table-title">
+							5年目<br />顧客情報管理システムの運用
+						</dt>
 						<dd class="career-section__table-content">
 							BIツールを使ったデータ抽出業務を担当しました。<br />
 							大量のデータの取り扱い方法や、データの精査方法を学びました。SQLではなく、BIツールの操作によりデータ抽出を行うため、ツールの特性を理解することの重要性を学びました。

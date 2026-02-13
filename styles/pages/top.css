@@ -132,16 +132,8 @@
 .portfolio-section__item {
 	background-color: var(--color-primary);
 }
-
-.portfolio-section__item-img {
-	padding: 2rem;
-	background-color: var(--color-bg-main);
-	border-radius: var(--radius-basic);
-	text-align: center;
-	min-height: 150px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.portfolio-section__item-explain {
+	color: var(--color-text-sub);
 }
 
 /** Career Section */
@@ -172,6 +164,8 @@
 	}
 	.hero-section__slogan {
 		margin: 0 0 2rem 2rem;
+		display: flex;
+		flex-direction: column;
 	}
 	.hero-section__slogan-main {
 		font-size: 4rem;
@@ -198,6 +192,9 @@
 	}
 	.hero-section__slogan {
 		margin: 0 0 2rem 0;
+		font-size: 3.5rem;
+		display: flex;
+		flex-direction: column;
 	}
 	.hero-section__slogan-main {
 		font-size: 3rem;

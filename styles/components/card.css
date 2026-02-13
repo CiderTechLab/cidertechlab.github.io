@@ -35,9 +35,6 @@
 	.card {
 		min-width: 30vw;
 	}
-	.card:hover {
-		pointer-events: none;
-	}
 }
 
 /** SP Contents */
@@ -45,8 +42,5 @@
 	.card {
 		width: 50vw;
 		min-width: 50vw;
-	}
-	.card:hover {
-		pointer-events: none;
 	}
 }

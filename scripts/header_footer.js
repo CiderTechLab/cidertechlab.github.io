@@ -44,7 +44,7 @@ const headerContent = `
 
 const footerContent = `
   <div class="footer-copy">
-    <a href="/"><img class="footer-logo" src="https://cidertechlab.github.io/images/logo.svg" alt="S.K's Portfolio Logo"></a>
+    <a href="/"><img class="footer-logo" src="https://cidertechlab.github.io/images/logo.svg" alt="CiderTechLabo Logo"></a>
     <small>&#169; 2025-2026 S.K</small>
   </div>
   <div class="footer-menu">
