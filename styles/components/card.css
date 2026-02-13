@@ -29,6 +29,9 @@
 .card__title-section {
 	font-size: 1.5rem;
 }
+.portfolio-section__item-explain {
+	color: var(--color-text-sub);
+}
 
 /** TB Contents */
 @media screen and (max-width: 1280px) {
