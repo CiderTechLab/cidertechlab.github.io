@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ja">
+	<head>
+		<!-- meta info -->
+		<meta charset="UTF-8" />
+		<meta name="author" content="S.K" />
+		<meta name="description" content="S.KによるHTMLのナレッジノートです。" />
+
+		<!-- design info -->
+		<meta name="viewport" content="width=device-width" />
+		<link href="/styles/base/destyle.css" rel="stylesheet" />
+		<link href="/styles/base/base.css" rel="stylesheet" />
+		<link href="/styles/layout/layout.css" rel="stylesheet" />
+		<link href="/styles/layout/header.css" rel="stylesheet" />
+		<link href="/styles/layout/footer.css" rel="stylesheet" />
+		<link rel="icon" href="/images/favicon.ico" sizes="32x32" />
+		<link rel="apple-touch-icon" href="/images/favicon.png" />
+
+		<title>Road&nbsp;To&nbsp;HTML&amp;CSS - CiderTechLab</title>
+
+		<!-- scripts info -->
+		<script src="/scripts/header_footer.js" defer></script>
+		<script src="/scripts/toc.js" defer></script>
+	</head>
+	<body>
+		<div class="note-layout">
+			<header class="note-layout__header"></header>
+			<nav class="note-layout__breadcrumb"></nav>
+			<main class="note-layout__main main--with-breadcrumb">
+				<section class="note-layout__section">
+					<h2>Road&nbsp;To&nbsp;HTML&amp;CSS</h2>
+					<p>
+						HTML&amp;CSSの学習の中で気づいた点や、注意点をまとめたページです。
+					</p>
+				</section>
+				<article>
+					<h3>HTML</h3>
+					<section class="note-layout__section">
+						<h4 id="1" class="section__heading--numbered">DOCTYPE宣言</h4>
+						<h5>コード</h5>
+						<pre><code>&lt;!DOCTYPE html&gt;</code></pre>
+						<h5>解説</h5>
+						<ul>
+							<li>
+								大文字で書いても小文字で書いてもOK（「&lt;!doctype
+								html&gt;でもOK）
+							</li>
+							<li>
+								ただし、htmlの前後に空白を入れることはできるが、!DOCTYPEの部分はそのまま続けて書く必要がある。
+							</li>
+						</ul>
+					</section>
+					<section class="note-layout__section">
+						<h4 class="section__heading--numbered">CSS、JavaScriptのリンク</h4>
+						<h5>コード</h5>
+						<pre><code>
+&lt;head&gt;
+&nbsp;&nbsp;&lt;link rel="stylesheet" href="/styles/style.css"&gt;
+&nbsp;&nbsp;&lt;script src="/scripts/script.js" defer&gt;&lt;/script&gt;
+&lt;/head&gt;
+						</code></pre>
+						<h5>解説</h5>
+						<p>
+							リンクする際はルートから始まる<strong>絶対パス（※URL指定ではない）</strong>を使用することが推奨される。相対パス指定は開発者の認知負荷が掛かるため、なるべく避けたほうが安心。
+						</p>
+					</section>
+				</article>
+
+				<article>
+					<h3>CSS</h3>
+					<section class="note-layout__section">
+						<h4 id="2" class="section__heading--numbered">
+							border-radius一括指定時の順番
+						</h4>
+						<h5>コード</h5>
+						<pre><code>
+border-radius: [左上] [右上] [右下] [左下];
+						</code></pre>
+						<h5>解説</h5>
+						<p>
+							border-radiusの値を一括指定する際、順番は「左上 右上 右下 左下」
+						</p>
+					</section>
+					<section class="note-layout__section">
+						<h4 id="3" class="section__heading--numbered">border一括指定時</h4>
+						<h5>コード</h5>
+						<pre><code>
+border: [幅] [スタイル] [色];
+						</code></pre>
+						<h5>解説</h5>
+						<p>
+							borderの値を一括指定する際、paddingやmarginのように<strong>個別指定は出来ない</strong>ので注意。
+						</p>
+					</section>
+
+					<section class="note-layout__section">
+						<h4 id="4" class="section__heading--numbered">display: grid;</h4>
+						<h5>コード</h5>
+						<p>
+							<b>Grid</b
+							>が効くのは<strong>「直下の子要素」</strong>だけ。例えば、
+						</p>
+						<pre><code>
+	&lt;section class="parent"&gt;
+		&lt;dl&gt;
+			&lt;dt class="child1"&gt;...&lt;/dt&gt;
+		&lt;/dl&gt;
+							</code></pre>
+						というHTMLに
+						<pre><code>
+	.parent {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+	}
+							</code></pre>
+						とCSSを指定しても、child1やchild2にはGridは効かない。<br />
+						Gridを効かせたい場合は、dlにdisplay: grid;を指定する必要がある。
+					</section>
+
+					<section class="note-layout__section">
+						<h4 id="5" class="section__heading--numbered">background-image</h4>
+						<p>background-imageはレイヤーで考えると分かりやすい。</p>
+						<pre><code>
+	background-image:
+		url("../../images/mountain.svg"),
+		linear-gradient(deepskyblue, green);
+
+	background-size:
+		50% auto,  /* 上のレイヤーの指定 */
+		cover;     /* 下のレイヤーの指定 */
+							</code></pre>
+					</section>
+
+					<section class="note-layout__section">
+						<h4 id="6" class="section__heading--numbered">
+							flexレイアウトとgridレイアウトの違い
+						</h4>
+						<p>
+							<b>flex</b>は一次元（横または縦）の並びにおいて、
+							各要素がどのように伸縮・配置されるかといった<strong>「要素の振る舞い」</strong>を指定する。
+							一方、<b>grid</b>は行と列を持つ二次元レイアウトを前提とし、<strong>「全体の構造を定義」</strong>するためのプロパティが中心となる。
+						</p>
+					</section>
+
+					<section class="note-layout__section">
+						<h4 id="7" class="section__heading--numbered">
+							リンクを滑らかにする
+						</h4>
+						<p>
+							transition: [秒数]s;をa:hoverに適用すると、滑らかな演出ができる。
+						</p>
+						<p>
+							scroll-behavior:smooth;
+							は:rootやhtml要素に指定する必要がある。aタグがトリガーとなってhtml要素に動きを与えていくため、
+						</p>
+					</section>
+
+					<section class="note-layout__section">
+						<h4 id="8" class="section__heading--numbered">
+							vw、svw、vh、svhのまとめ
+						</h4>
+						<table>
+							<thead>
+								<tr>
+									<th>単位</th>
+									<th>正式名</th>
+									<th>説明</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>vw</td>
+									<td>Viewport Width</td>
+									<td>ビューポート幅の100%（スクロールバーを含む）</td>
+								</tr>
+								<tr>
+									<td>svw</td>
+									<td>Small Viewport Width</td>
+									<td>
+										ビューポート幅の100%<strong
+											>（スクロールバーを除く）</strong
+										>
+									</td>
+								</tr>
+								<tr>
+									<td>vh</td>
+									<td>Viewport Height</td>
+									<td>ビューポート高さの100%（スクロールバーを含む）</td>
+								</tr>
+								<tr>
+									<td>svh</td>
+									<td>Small Viewport Height</td>
+									<td>
+										ビューポート高さの100%<strong
+											>（スクロールバーを除く）</strong
+										>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</section>
+				</article>
+			</main>
+
+			<aside></aside>
+			<footer class="note-layout__footer"></footer>
+		</div>
+	</body>
+</html>

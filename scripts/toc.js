@@ -36,7 +36,7 @@ function generateTableOfContents() {
 		}
 
 		// section内のh2とh3を取得
-		const sectionHeadings = section.querySelectorAll('h2, h3');
+		const sectionHeadings = section.querySelectorAll('h3, h4');
 		sectionHeadings.forEach((heading) => {
 			headings.push(heading);
 		});
