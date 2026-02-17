@@ -164,15 +164,9 @@
 	}
 	.hero-section__slogan {
 		margin: 0 0 2rem 2rem;
+		font-size: 4rem;
 		display: flex;
 		flex-direction: column;
-	}
-	.hero-section__slogan-main {
-		font-size: 4rem;
-		font-weight: bold;
-	}
-	.hero-section__slogan-sub {
-		font-size: 3rem;
 	}
 	.hero-section__slogan-explain {
 		margin: 0 0 0 2rem;
@@ -195,13 +189,6 @@
 		font-size: 3.5rem;
 		display: flex;
 		flex-direction: column;
-	}
-	.hero-section__slogan-main {
-		font-size: 3rem;
-		font-weight: bold;
-	}
-	.hero-section__slogan-sub {
-		font-size: 2rem;
 	}
 	.hero-section__slogan-explain {
 		margin: 0;

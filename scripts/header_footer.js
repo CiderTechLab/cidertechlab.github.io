@@ -10,7 +10,7 @@ const icons = `
 `;
 
 const headerContent = `
-  <h1><a href="/"><img class="logo" src="https://cidertechlab.github.io/images/logo.svg" alt="CiderTechLabo Logo"></a></h1>
+  <h1><a href="/"><img class="logo" src="/images/logo.svg" alt="CiderTechLabo Logo"></a></h1>
   <div class="header-nav">
     <input type="checkbox" id="header-nav__toggle" hidden>
     <label class="header-nav__icon" for="header-nav__toggle">
@@ -44,7 +44,7 @@ const headerContent = `
 
 const footerContent = `
   <div class="footer-copy">
-    <a href="/"><img class="footer-logo" src="https://cidertechlab.github.io/images/logo.svg" alt="CiderTechLabo Logo"></a>
+    <a href="/"><img class="footer-logo" src="/images/logo.svg" alt="CiderTechLabo Logo"></a>
     <small>&#169; 2025-2026 S.K</small>
   </div>
   <div class="footer-menu">
