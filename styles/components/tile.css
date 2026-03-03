@@ -1,13 +1,8 @@
 @charset "UTF-8";
+.tiles--2col,
 .tiles--3col {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	width: 100%;
-}
-.tiles--2col {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	width: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .tile {
@@ -24,15 +19,16 @@
 	font-size: 1.5rem;
 }
 
-/** TB Contents */
-@media screen and (max-width: 1280px) {
-}
-
 /** SP Contents */
-@media screen and (max-width: 500px) {
-	.tiles--2col,
+@media screen and (min-width: 1280px) {
 	.tiles--3col {
-		display: flex;
-		flex-direction: column;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		width: 100%;
+	}
+	.tiles--2col {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		width: 100%;
 	}
 }
