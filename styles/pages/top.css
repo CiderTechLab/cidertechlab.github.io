@@ -1,9 +1,8 @@
 @charset "UTF-8";
 /** 
- * hero-Section
- * @description
- * min-height: ビューポートMAX高さ - ヘッダー高さ + ヘッダー半径を確保する
- * ことで、ヘッダー半径分だけ重なるようにする。
+ * @description hero-Section
+ * - min-height: ビューポートMAX高さ - ヘッダー高さ + ヘッダー半径を確保する
+ * 	 ことで、ヘッダー半径分だけ重なるようにする。
  */
 .hero-section {
 	padding: 0 1rem 5rem 1rem;
@@ -55,6 +54,7 @@
 	align-items: center;
 	border-radius: var(--radius-basic);
 	background-color: white;
+	box-shadow: 10px 10px 10px 10px lightgray;
 }
 
 .tile--html {
@@ -150,7 +150,8 @@
 	flex-direction: column;
 }
 .career-section__table-title {
-	margin: 2rem;
+	margin: 2rem 0 0 2rem;
+	text-align: left;
 	font-weight: bold;
 }
 .career-section__table-content {
@@ -173,12 +174,11 @@
 		font-size: 1.5rem;
 	}
 
-	.portfolio-section__table {
-		grid-template-columns: 1fr 2fr;
-	}
-
 	.career-section__table {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: 1fr 3fr;
+	}
+	.career-section__table-title {
+		text-align: right;
 	}
 }

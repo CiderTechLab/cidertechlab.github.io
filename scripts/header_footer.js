@@ -46,11 +46,26 @@ const icons = `
       <clipPath id="clip1_147_36">
       <rect width="59" height="59" fill="white" transform="translate(0 15)"/>
       </clipPath>
-    </defs>
+      </defs>
+    </symbol>
+    <symbol id="pagetopscroll" width="24" height="24" viewBox="0 0 24 24">
+      <g clip-path="url(#clip0_178_25)">
+      <rect x="1.5" y="1.5" width="21" height="21" rx="3.5" stroke="white" stroke-width="3"/>
+      <path d="M12 6L18.9282 18H5.0718L12 6Z" fill="white"/>
+      </g>
+      <defs>
+      <clipPath id="clip0_178_25">
+      <rect width="24" height="24" fill="white"/>
+      </clipPath>
+      </defs>
+    </symbol>
   </svg>
 `;
 
 const headerContent = `
+  <button class="header-nav-hamburger" aria-label="目次を開く" aria-expanded="false">
+    <span class="header-nav-hamburger__line"></span>
+  </button>
   <h1>    
     <a href="/">
       <svg class="logo" aria-hidden="true">
@@ -59,12 +74,6 @@ const headerContent = `
     </a>
   </h1>
   <div class="header-nav">
-    <input type="checkbox" id="header-nav__toggle" hidden>
-    <label class="header-nav__icon" for="header-nav__toggle">
-      <span class="header-nav__line"></span>
-      <span class="header-nav__line"></span>
-      <span class="header-nav__line"></span>
-    </label>
     <div class="header-nav--overlay"></div>
     <nav>
       <div class="header-nav__menu">
@@ -95,30 +104,15 @@ const headerContent = `
 
 const footerContent = `
   <div class="footer-copy">
-    <a href="/">
-      <svg class="logo" aria-hidden="true">
-        <use href="#logo"></use>
-      </svg>
-    </a>
+    <a href="/">CiderTechLab</a>
     <small>&copy;&nbsp;2025-2026&nbsp;S.K</small>
   </div>
-  <div class="footer-menu">
-    <a class="footer-link" href="/index.html#aboutme-section__cta">About Me</a>
-    <a class="footer-link" href="/index.html#skills-section__cta">Skills</a>
-    <a class="footer-link" href="/index.html#portfolio-section__cta">Portfolio</a>
-    <a class="footer-link" href="/index.html#career-section__cta">Career</a>
-    <div class="footer-nav__external">
-      <a class="footer-nav__external-link" href="https://github.com/cidertechlab/">
-        <svg class="icon" aria-hidden="true">
-          <use href="#icon-github"></use>
-        </svg>  
-      </a>
-      <a class="footer-nav__external-link" href="https://forms.gle/CALFLhAjRGj49LZC6">
-        <svg class="icon" aria-hidden="true">
-          <use href="#icon-mail"></use>
-        </svg>
-      </a>
-    </div>
+  <div class="footer-external">
+    <a href="/sitepolicy.html">サイトポリシー</a>
+    <a href="#">
+      <svg class="icon-pagetopscroll" aria-hidden="true">
+        <use href="#pagetopscroll"></use>
+    </svg></a>
   </div>
 `;
 
@@ -193,18 +187,16 @@ document.addEventListener('DOMContentLoaded', () => {
 		footerPlaceholder.innerHTML = footerContent;
 	}
 
-	/**
-	 * ハンバーガーメニューのページ内リンクでオーバーレイを閉じるためのスクリプト
-	 */
-	const toggle = document.querySelector('#header-nav__toggle');
-	const nav = document.querySelector('nav');
-
-	if (!toggle || !nav) return;
-
-	nav.addEventListener('click', (e) => {
-		const a = e.target.closest('a[href*="#"]');
-		if (!a) return;
-
-		toggle.checked = false;
-	});
+	// ハンバーガーボタンのクリックハンドラー
+	const hamburger = document.querySelector('.header-nav-hamburger');
+	if (hamburger) {
+		hamburger.addEventListener('click', () => {
+			const isOpen = aside.classList.toggle('is-open');
+			hamburger.setAttribute('aria-expanded', String(isOpen));
+			hamburger.setAttribute(
+				'aria-label',
+				isOpen ? '目次を閉じる' : '目次を開く'
+			);
+		});
+	}
 });

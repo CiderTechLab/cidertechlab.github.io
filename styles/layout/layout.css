@@ -13,8 +13,6 @@
 
 	/** radius var*/
 	--radius-basic: 1rem;
-	--radius-header-basic: 1rem;
-	--radius-header-sub: 0;
 }
 
 /**
@@ -34,6 +32,9 @@ section {
 }
 
 .basic-layout {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .note-layout {
@@ -49,11 +50,11 @@ section {
 }
 
 .basic-layout__header {
-	border-radius: var(--radius-header-basic);
+	border-radius: var(--radius-basic);
 }
 
 .note-layout__header {
-	border-radius: var(--radius-header-sub);
+	border-radius: var(--radius-basic);
 	justify-content: flex-start;
 }
 
