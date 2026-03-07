@@ -27,18 +27,18 @@
 	</head>
 	<body>
 		<div class="basic-layout">
-			<header class="basic-layout__header"></header>
+			<header class="header basic-layout__header"></header>
 			<nav class="basic-layout__header breadcrumb"></nav>
 
 			<main class="main--with-breadcrumb">
 				<section class="top content__block">
 					<h2>Contact</h2>
-					<p class="contactForm_explain">
-						お問い合わせフォームのモックアップです。入力内容の送信は行いません。
-						<br />一番下の「確認」ボタンを押すと、送信内容（入力内容ではありません。）のダイアログが表示されます。
-					</p>
 
-					<form id="contactForm">
+					<form class="contact-form">
+						<p class="contact-form__explain">
+							お問い合わせフォームのモックアップです。入力内容の送信は行いません。
+							<br />一番下の「確認」ボタンを押すと、送信内容（入力内容ではありません。）のダイアログが表示されます。
+						</p>
 						<div class="form__field">
 							<label for="name">
 								<span class="required">（必須）</span>名前
@@ -201,7 +201,7 @@
 				</section>
 			</main>
 
-			<footer class="basic-layout__footer"></footer>
+			<footer class="footer basic-layout__footer"></footer>
 		</div>
 	</body>
 </html>

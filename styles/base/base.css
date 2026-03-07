@@ -11,6 +11,7 @@
 	--color-bg-main: whitesmoke;
 	--color-bg-sub: dimgray;
 	--color-bg-aside: white;
+	--color-bg-header: rgba(255, 255, 255, 0.9);
 	--color-border-main: dimgray;
 	--color-border-sub: whitesmoke;
 	--color-text-main: dimgray;
@@ -28,6 +29,8 @@
 body {
 	margin: 0;
 	padding: 0;
+	word-break: break-all; /* MEMO: 下位互換のため */
+	overflow-wrap: anywhere;
 	background-color: var(--color-bg-main);
 }
 
@@ -41,10 +44,15 @@ p {
 	font-size: 1rem;
 }
 h1 {
-	margin: 0.5rem;
+	margin: 0 auto;
 }
 h2 {
 	margin: 1rem 0.5rem 0.5rem 0;
+	font-size: 3rem;
+}
+
+.headding-two {
+	margin: 10rem 0.5rem 0.5rem 0;
 	font-size: 3rem;
 }
 h3 {
@@ -59,6 +67,14 @@ h4 {
 h5 {
 	font-size: 1rem;
 	text-align: center;
+}
+
+span {
+	display: block;
+}
+
+small {
+	font-size: 1rem;
 }
 
 /** headeing numbered */
@@ -127,7 +143,13 @@ input {
 	height: 24px;
 	display: block;
 	justify-content: center;
-	color: #000;
+	color: black;
+}
+
+.icon-pagetopscroll {
+	width: 24px;
+	height: 24px;
+	color: white;
 }
 
 #svg-sprite svg {
@@ -135,4 +157,10 @@ input {
 	width: 0;
 	height: 0;
 	overflow: hidden;
+}
+
+@media screen and (min-width: 1024px) {
+	h1 {
+		margin: 0;
+	}
 }

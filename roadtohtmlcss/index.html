@@ -24,7 +24,7 @@
 	</head>
 	<body>
 		<div class="note-layout">
-			<header class="note-layout__header"></header>
+			<header class="header note-layout__header"></header>
 			<nav class="note-layout__breadcrumb"></nav>
 			<main class="note-layout__main main--with-breadcrumb">
 				<section class="note-layout__section">
@@ -199,11 +199,44 @@ border: [幅] [スタイル] [色];
 							</tbody>
 						</table>
 					</section>
+					<section class="note-layout__section">
+						<h4 id="8" class="section__heading--numbered">
+							疑似要素はJavaScriptで読め・・・
+						</h4>
+						<p>
+							ない！実DOM要素しか読み込めない。そのため、例えば::before{ counter-increment: section; content: counter(section) ". "; }のように、疑似要素で生成したコンテンツはJavaScriptで取得できない。
+						</p>
+					</section>
+					<section class="note-layout__section">
+						<h4 id="9" class="section__heading--numbered">ブラウザ間の差異
+						</h4>
+						<h3>改行アルゴリズム</h3>
+						<p>
+							<ul>
+								<li>Chrome：改行しない</li>
+								<li>Safari：改行しない</li>
+								<li>Firefox：積極的に改行する</li>
+							</ul>
+						</p>
+						<p>
+							対策：&lt;wbr&gt;を適切な位置に入れる。overflow-wrap: anywhere;を入れる。word-break: break-all;は非推奨だが、下位互換のため念のため併用した方が良い。Safari 15.4（2022年）から対応のため。
+						</p>
 				</article>
+				<section class="note-layout__section">
+					<h4 id="10" class="section__heading--numbered">
+						デバッグ方法
+					</h4>
+					<p>以下のコードではみ出ている要素を赤い線で表示することができる。</p>
+					<pre><code>
+* {
+  outline: 1px solid red;
+}
+					</code></pre>
+				</section>
 			</main>
 
 			<aside></aside>
-			<footer class="note-layout__footer"></footer>
+			<footer class="footer note-layout__footer"></footer>
 		</div>
 	</body>
 </html>

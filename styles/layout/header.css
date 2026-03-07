@@ -1,52 +1,140 @@
 @charset "UTF-8";
-header {
+.header {
 	grid-area: header;
-	width: 100%;
+	top: 1rem;
+	left: 50%;
+	width: 95%;
 	max-width: 100vw;
 	height: var(--height-header);
-	background-color: white;
+	padding: 0 1rem 0 1rem;
+	background-color: var(--color-bg-header);
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 	position: fixed;
+	transform: translateX(-50%);
 	z-index: 100;
 	overflow: hidden;
 }
 
-.logo {
-	border: 0;
+/**
+ * ハンバーガーメニュー
+ */
+.header-nav {
+	position: relative;
+}
+.header-nav-hamburger {
+	width: 40px;
+	height: 30px;
+	cursor: pointer;
+	display: inline-block;
+	background: none;
+	border: none;
 	padding: 0;
-	width: auto;
-	color: inherit;
-	transform: scale(1);
+	margin-right: auto;
+}
+/** 三本線 */
+.header-nav-hamburger__line {
+	position: relative;
+	display: block;
+	height: 4px;
+	width: 40px;
+	background: var(--color-bg-sub);
+	border-radius: 1rem;
+	transition: 0.4s;
 }
 
+.header-nav-hamburger__line::before {
+	content: '';
+	position: absolute;
+	top: -10px;
+	left: 0;
+	width: 40px;
+	height: 4px;
+	background: var(--color-bg-sub);
+	border-radius: 1rem;
+	transition: 0.4s;
+}
+
+.header-nav-hamburger__line::after {
+	content: '';
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 40px;
+	height: 4px;
+	background: var(--color-bg-sub);
+	border-radius: 1rem;
+	transition: 0.4s;
+}
+
+/** X線に変形 */
+
+.header-nav--overlay {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: white;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.4s;
+	z-index: 1;
+}
+
+/** メニュー本体 */
+nav {
+	margin: var(--top-nav-icon) 0 0 0;
+	padding: var(--top-nav-icon) 0 0 0;
+	position: fixed;
+	right: 100%;
+	width: 100%;
+	height: 100%;
+	background: white;
+	transition: right 0.5s ease;
+	z-index: 2;
+}
 .header-nav__menu,
 .header-nav__external {
 	display: flex;
+	flex-direction: column;
+}
+#header-nav__toggle:checked ~ nav {
+	right: 0;
 }
 
 .header-nav-link {
-	border: 1px solid dimgray;
-	border-radius: 2rem;
+	border-top: 1px solid var(--color-border-main);
 	padding: 0.5rem;
-	min-width: 6rem;
-	color: dimgray;
+	width: 100%;
+	font-size: 2rem;
+	color: var(--color-text-main);
 	text-align: center;
 	text-decoration: none;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: 0.5s;
+	font-weight: normal;
 }
+
 .header-nav-link:hover {
-	border-radius: 2rem;
 	color: white;
-	background-color: dimgrey;
+	background-color: dimgray;
 	font-weight: bold;
 }
 
-.header-nav__external {
+.logo {
+	width: 400px;
+	height: 100px;
+	transform: scale(0.5);
+}
+
+.icon {
+	width: 24px;
+	height: 24px;
+	margin: 0.5rem 0 0.5rem 0;
+	transform: scale(1.2);
 }
 
 /** nav breadcrumb */
@@ -68,7 +156,7 @@ header {
 	padding: var(--height-breadcrumb) 0 0 1rem;
 	min-height: var(--height-header);
 	background-color: var(--color-secondary);
-	border-radius: var(--radius-header-sub);
+	border-radius: var(--radius-basic);
 	position: fixed;
 	display: flex;
 	justify-content: left;
@@ -81,131 +169,62 @@ header {
 	display: inline-block;
 }
 
-/** TB Contents */
-@media screen and (max-width: 1280px) {
-	.logo {
-		transform: scale(0.8);
+/** PC Edition */
+@media screen and (min-width: 1280px) {
+	.header {
+		justify-content: space-between;
 	}
-
-	.header-nav {
-		display: block;
-	}
-	.header-nav-link {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: white;
-		font-weight: normal;
-	}
-}
-
-/** SP Contents */
-@media screen and (max-width: 500px) {
-	:root {
-		--top-nav-icon: 15px;
-	}
-
-	h1 {
-		padding: 0;
-		margin: 0;
+	.header-nav-hamburger {
+		display: none;
 	}
 
 	.logo {
-		transform: scale(0.5);
+		transform: scale(1);
 	}
 
-	/**
-   * ハンバーガーメニュー
-   */
-	.header-nav {
-		position: relative;
-	}
-	.header-nav__icon {
-		width: 40px;
-		height: 30px;
-		position: fixed;
-		top: var(--top-nav-icon);
-		left: 20px;
-		cursor: pointer;
-		z-index: 3;
-		display: inline-block;
-	}
-	/** 三本線 */
-	.header-nav__line {
-		display: block;
-		height: 4px;
-		margin: 6px 0;
-		background: var(--color-bg-sub);
-		border-radius: 2px;
-		transition: 0.4s;
-	}
-	/** X線に変形 */
-	#header-nav__toggle:checked + .header-nav__icon span:nth-child(1) {
-		transform: translateY(10px) rotate(45deg);
-	}
-	#header-nav__toggle:checked + .header-nav__icon span:nth-child(2) {
-		opacity: 0;
-	}
-	#header-nav__toggle:checked + .header-nav__icon span:nth-child(3) {
-		transform: translateY(-10px) rotate(-45deg);
-	}
 	.header-nav--overlay {
-		width: 100%;
-		max-width: 100vw;
-		position: fixed;
-		inset: 0;
-		background: white;
-		opacity: 0;
-		pointer-events: none;
-		transition: 0.4s;
-		z-index: 1;
+		display: none;
 	}
-	#header-nav__toggle:checked ~ .header-nav--overlay {
-		opacity: 1;
-		pointer-events: auto;
-	}
-	/** メニュー本体 */
 	nav {
-		margin: var(--top-nav-icon) 0 0 0;
-		padding: var(--top-nav-icon) 0 0 0;
-		position: fixed;
-		right: 100%;
-		width: 100%;
-		height: 100%;
-		background: white;
-		transition: right 0.5s ease;
-		z-index: 2;
+		position: static;
+		right: auto;
+		width: auto;
+		height: auto;
+		background: transparent;
 	}
 	.header-nav__menu,
 	.header-nav__external {
 		display: flex;
-		flex-direction: column;
-	}
-	#header-nav__toggle:checked ~ nav {
-		right: 0;
+		flex-direction: row;
 	}
 
 	.header-nav-link {
-		border-top: 1px solid var(--color-border-main);
+		border-top: 0;
 		border-right: 0;
-		border-bottom: 0;
 		border-left: 0;
-		border-radius: 0;
-		padding: 0.5rem;
-		width: 100%;
-		font-size: 2rem;
-		color: var(--color-text-main);
-		text-align: center;
-		text-decoration: none;
+		border-bottom: 0;
+		min-width: 6rem;
+		font-size: 1.1rem;
+		transition: 0.5s;
 	}
+
 	.header-nav-link:hover {
 		border-radius: inherit;
 		background-color: inherit;
 		color: inherit;
 		font-weight: inherit;
 	}
-	.icon {
-		margin: 0.5rem 0 0.5rem 0;
-		transform: scale(1.2);
+
+	.header-nav__external-link {
+		padding: 0.5rem;
+		min-width: 6rem;
+		font-size: 1rem;
+		text-align: center;
+		text-decoration: none;
+		color: dimgray;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: 0.5s;
 	}
 }

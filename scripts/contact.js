@@ -1,4 +1,4 @@
-const form = document.getElementById('contactForm');
+const form = document.querySelector('.contact-form');
 const formStatus = document.getElementById('form-status');
 
 const fields = {
