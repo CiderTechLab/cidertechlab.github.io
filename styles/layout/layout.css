@@ -5,7 +5,7 @@
 	 */
 
 	/** height var*/
-	--height-header: 8svh;
+	--height-header: 10svh;
 	--height-breadcrumb: 10svh;
 
 	scroll-padding-top: var(--height-header);

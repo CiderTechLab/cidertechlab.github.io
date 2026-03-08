@@ -74,7 +74,6 @@ const headerContent = `
     </a>
   </h1>
   <div class="header-nav">
-    <div class="header-nav--overlay"></div>
     <nav>
       <div class="header-nav__menu">
         <a class="header-nav-link" 
@@ -85,13 +84,13 @@ const headerContent = `
         href="/index.html#portfolio-section__cta">Portfolio</a>
         <a class="header-nav-link" 
         href="/index.html#career-section__cta">Career</a>
-        <a class="header-nav__external-link" 
+        <a class="header-nav-link--external" 
         href="https://github.com/cidertechlab/">
           <svg class="icon" aria-hidden="true">
              <use href="#icon-github"></use>
           </svg>
         </a>
-        <a class="header-nav__external-link" 
+        <a class="header-nav-link--external" 
         href="https://forms.gle/CALFLhAjRGj49LZC6">
           <svg class="icon" aria-hidden="true">
              <use href="#icon-mail"></use>
@@ -121,7 +120,7 @@ const footerContent = `
  * @returns {HTMLElement}
  */
 function ensureSpriteRoot() {
-	let spriteRoot = document.getElementById('svg-sprite');
+	let spriteRoot = document.querySelector('#svg-sprite');
 	if (!spriteRoot) {
 		spriteRoot = document.createElement('div');
 		spriteRoot.id = 'svg-sprite';
@@ -166,7 +165,7 @@ function createBreadcrumbContent() {
  */
 document.addEventListener('DOMContentLoaded', () => {
 	const spritePlaceholder = ensureSpriteRoot();
-	if (!document.getElementById('icon-github')) {
+	if (!document.querySelector('#icon-github')) {
 		spritePlaceholder.innerHTML = icons;
 	}
 
@@ -187,11 +186,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		footerPlaceholder.innerHTML = footerContent;
 	}
 
+	// オーバーレイをbody直下に作成・挿入（position: fixedが正常に機能するように）
+	const overlay = document.createElement('div');
+	overlay.className = 'header-nav--overlay';
+	document.body.appendChild(overlay);
+
 	// ハンバーガーボタンのクリックハンドラー
 	const hamburger = document.querySelector('.header-nav-hamburger');
+	const nav = document.querySelector('nav');
 	if (hamburger) {
 		hamburger.addEventListener('click', () => {
-			const isOpen = aside.classList.toggle('is-open');
+			const isOpen = hamburger.classList.toggle('is-open');
+			overlay.classList.toggle('is-open');
+			if (nav) {
+				nav.classList.toggle('is-open');
+			}
 			hamburger.setAttribute('aria-expanded', String(isOpen));
 			hamburger.setAttribute(
 				'aria-label',

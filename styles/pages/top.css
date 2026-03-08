@@ -95,14 +95,14 @@
 }
 
 .tile-other__item {
-	margin: 1rem 0 0 0;
-	padding: 0 0 0 0.1rem;
-	background-color: var(--color-bg-main);
+	margin-top: 1rem;
+	border-top: 1px solid var(--color-border-sub);
 	font-size: 1.2rem;
 	font-weight: normal;
-	color: var(--color-text-main);
+	color: var(--color-text-sub);
 }
 .tile-other__explain {
+	margin-top: 0.5rem;
 	font-weight: normal;
 }
 .tile-websites,
