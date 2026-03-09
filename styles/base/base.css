@@ -26,6 +26,44 @@
 	line-height: 1.5;
 }
 
+/** language-image color */
+.color--html {
+	color: var(--color-text-sub);
+	background-color: mediumseagreen;
+}
+.color--css {
+	color: var(--color-text-sub);
+	background-color: #663399;
+}
+.color--md {
+	color: var(--color-text-sub);
+	background-color: #303030;
+}
+.color--js {
+	color: var(--color-text-main);
+	background-color: #f3df49;
+}
+.color--ts {
+	color: var(--color-text-sub);
+	background-color: DodgerBlue;
+}
+.color--sql {
+	color: var(--color-text-sub);
+	background-color: darkred;
+}
+.color--twcss {
+	color: var(--color-text-sub);
+	background-color: #38bdf8;
+}
+.color--react {
+	color: DeepSkyBlue;
+	background-color: var(--color-bg-sub);
+}
+.color--other {
+	color: var(--color-text-sub);
+	background-color: var(--color-bg-sub);
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -60,6 +98,7 @@ h3 {
 	font-size: 2rem;
 	text-align: center;
 }
+
 h4 {
 	font-size: 1.5rem;
 	text-align: center;
@@ -75,14 +114,6 @@ span {
 
 small {
 	font-size: 1rem;
-}
-
-/** headeing numbered */
-.section__heading--numbered {
-	counter-increment: section-counter;
-}
-.section__heading--numbered::before {
-	content: counter(section-counter) '. ';
 }
 
 /** List */
@@ -157,10 +188,4 @@ input {
 	width: 0;
 	height: 0;
 	overflow: hidden;
-}
-
-@media screen and (min-width: 1024px) {
-	h1 {
-		margin: 0;
-	}
 }

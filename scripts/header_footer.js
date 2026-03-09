@@ -139,7 +139,7 @@ function createBreadcrumbContent() {
 	const pathSegments = path.split('/').filter((segment) => segment.length > 0);
 
 	let currentPath = '/';
-	let breadcrumbHTML = '<ol>';
+	let breadcrumbHTML = '<ol class="breadcrumb__links">';
 
 	breadcrumbHTML += '<li><a href="/">Home</a></li>&nbsp;&gt;&nbsp;';
 

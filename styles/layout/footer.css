@@ -4,7 +4,7 @@
 	padding: 1rem;
 	width: 95%;
 	max-width: 100vw;
-	margin: 2rem auto 1rem auto;
+	margin: 1rem auto;
 	border-radius: var(--radius-basic);
 	background-color: var(--color-bg-sub);
 	color: white;
@@ -14,10 +14,11 @@
 	align-items: center;
 }
 
-.footer-copy {
-}
-
-.footer-external {
+.footer-link:hover {
+	border-radius: 2rem;
+	color: var(--color-text-main);
+	background-color: white;
+	font-weight: bold;
 }
 
 .footer__external-link {
@@ -26,21 +27,8 @@
 	transform: scale(1);
 }
 
-.footer-link:hover {
-	border-radius: 2rem;
-	color: var(--color-text-main);
-	background-color: white;
-	font-weight: bold;
-}
-
 /** PC Edition */
 @media screen and (min-width: 1280px) {
-	.footer-copy {
-	}
-
-	.footer-external {
-	}
-
 	.footer-link:hover {
 		border-radius: 2rem;
 		color: inherit;

@@ -48,50 +48,11 @@
 
 /** Skills Section */
 .skills-section {
-	margin: 1rem 0 1rem 0;
+	margin: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border-radius: var(--radius-basic);
 	background-color: white;
-	box-shadow: 10px 10px 10px 10px lightgray;
-}
-
-.tile--html {
-	color: var(--color-text-sub);
-	background-color: mediumseagreen;
-}
-.tile--css {
-	color: var(--color-text-sub);
-	background-color: #663399;
-}
-.tile--md {
-	color: var(--color-text-sub);
-	background-color: #303030;
-}
-.tile--js {
-	color: var(--color-text-main);
-	background-color: #f3df49;
-}
-.tile--ts {
-	color: var(--color-text-sub);
-	background-color: DodgerBlue;
-}
-.tile--sql {
-	color: var(--color-text-sub);
-	background-color: darkred;
-}
-.tile--twcss {
-	color: var(--color-text-sub);
-	background-color: #38bdf8;
-}
-.tile--react {
-	color: DeepSkyBlue;
-	background-color: var(--color-bg-sub);
-}
-.tile-other {
-	color: var(--color-text-sub);
-	background-color: var(--color-bg-sub);
 }
 
 .tile-other__item {
@@ -172,6 +133,11 @@
 	.hero-section__slogan-explain {
 		margin: 0 0 0 5rem;
 		font-size: 1.5rem;
+	}
+
+	.skills-section {
+		border-radius: var(--radius-basic);
+		box-shadow: 10px 10px 10px 10px lightgray;
 	}
 
 	.career-section__table {
