@@ -33,6 +33,15 @@
 	text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
 	letter-spacing: 0.05em;
 }
+
+.hero-section__slogan span {
+	display: block;
+}
+
+.hero-section__slogan-break {
+	display: block;
+}
+
 .hero-section__slogan-explain {
 	margin: 0;
 	font-size: 1rem;
@@ -129,6 +138,14 @@
 	.hero-section__slogan {
 		margin: 0 0 2rem 5rem;
 		font-size: 6rem;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.hero-section__slogan span {
+		display: inline;
+	}
+	.hero-section__slogan-break {
+		display: none;
 	}
 	.hero-section__slogan-explain {
 		margin: 0 0 0 5rem;

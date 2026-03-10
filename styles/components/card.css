@@ -13,8 +13,7 @@
 	cursor: grabbing;
 }
 .card {
-	width: 50vw;
-	min-width: 50px;
+	width: 100%;
 	margin: 1rem;
 	padding: 1rem;
 	box-shadow: 10px 10px 10px 10px lightgray;
@@ -22,6 +21,7 @@
 	text-align: center;
 	font-size: 1rem;
 	font-weight: bold;
+	box-sizing: border-box;
 }
 
 .card__title {
@@ -38,6 +38,8 @@
 /** PC Contents */
 @media screen and (min-width: 1280px) {
 	.card {
+		width: 50vw;
+		max-width: 50vw;
 		min-width: 20vw;
 	}
 }

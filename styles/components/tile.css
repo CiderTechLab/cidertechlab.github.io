@@ -8,9 +8,9 @@
 .tile {
 	margin: 0.5rem;
 	padding: 1rem;
-	width: calc(100% - 1rem);
-	min-width: 20vw;
-	min-height: 20vh;
+	width: 90%;
+	min-width: 80vw;
+	min-height: 30vh;
 	border-radius: 0.5em;
 	text-align: left;
 }
@@ -22,13 +22,33 @@
 /** SP Contents */
 @media screen and (min-width: 1280px) {
 	.tiles--3col {
+		margin: 0 auto;
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
 		width: 100%;
+		max-width: 90rem;
+		place-items: center;
 	}
 	.tiles--2col {
+		margin: 0 auto;
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
 		width: 100%;
+		max-width: 90rem;
+		place-items: center;
+	}
+
+	.tile {
+		width: 100%;
+		margin: 0;
+		min-width: initial; /* PCではmin-widthをリセットして、親の幅に合わせる */
+		min-height: 30vh;
+		box-sizing: border-box;
+	}
+
+	.tile--long {
+		min-height: 100vh;
 	}
 }
