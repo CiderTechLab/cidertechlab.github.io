@@ -176,15 +176,15 @@ input {
 	color: black;
 }
 
-.icon-pagetopscroll {
-	width: 24px;
-	height: 24px;
-	color: white;
-}
-
 #svg-sprite svg {
 	position: absolute;
 	width: 0;
 	height: 0;
 	overflow: hidden;
+}
+
+@media screen and (min-width: 1280px) {
+	.line-break {
+		display: none;
+	}
 }

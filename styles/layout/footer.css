@@ -9,9 +9,32 @@
 	background-color: var(--color-bg-sub);
 	color: white;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	flex-direction: column;
 	align-items: center;
+}
+
+/**
+ * TODO: Reserved class.
+ * .footer-copy {
+ *
+ * }
+ */
+
+/**
+ * TODO: Reserved class.
+ * .footer-external {
+ *
+ * }
+ */
+
+.icon-pagetopscroll {
+	grid-area: icon-pagetopscroll;
+	width: 24px;
+	height: 24px;
+	transform: scale(2);
+	margin: 2rem;
+	color: white;
+	align-self: end;
 }
 
 .footer-link:hover {
@@ -29,10 +52,29 @@
 
 /** PC Edition */
 @media screen and (min-width: 1280px) {
+	.footer {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
 	.footer-link:hover {
 		border-radius: 2rem;
 		color: inherit;
 		background-color: inherit;
 		font-weight: inherit;
 	}
+	/**
+	 * TODO: Reserved class.
+	 * .footer-copy {
+	 * }
+	 */
+
+	.footer-external {
+		margin-left: auto;
+	}
+	/**
+	 * TODO: Reserved class.
+	 * .icon-pagetopscroll {
+	 * }
+	 */
 }

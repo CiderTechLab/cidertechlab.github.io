@@ -50,8 +50,8 @@ const icons = `
     </symbol>
     <symbol id="pagetopscroll" width="24" height="24" viewBox="0 0 24 24">
       <g clip-path="url(#clip0_178_25)">
-      <rect x="1.5" y="1.5" width="21" height="21" rx="3.5" stroke="white" stroke-width="3"/>
-      <path d="M12 6L18.9282 18H5.0718L12 6Z" fill="white"/>
+      <rect width="24" height="24" rx="5" fill="#F5F5F5"/>
+      <path d="M12.7071 3.29289C12.3166 2.90237 11.6834 2.90237 11.2929 3.29289L4.92893 9.65685C4.53841 10.0474 4.53841 10.6805 4.92893 11.0711C5.31946 11.4616 5.95262 11.4616 6.34315 11.0711L12 5.41421L17.6569 11.0711C18.0474 11.4616 18.6805 11.4616 19.0711 11.0711C19.4616 10.6805 19.4616 10.0474 19.0711 9.65685L12.7071 3.29289ZM12 20H13V4H12H11L11 20H12Z" fill="black"/>
       </g>
       <defs>
       <clipPath id="clip0_178_25">
@@ -108,11 +108,12 @@ const footerContent = `
   </div>
   <div class="footer-external">
     <a href="/sitepolicy.html">サイトポリシー</a>
-    <a href="#">
-      <svg class="icon-pagetopscroll" aria-hidden="true">
-        <use href="#pagetopscroll"></use>
-    </svg></a>
   </div>
+  <a href="#">
+    <svg class="icon-pagetopscroll" aria-hidden="true">
+      <use href="#pagetopscroll"></use>
+    </svg>
+  </a>
 `;
 
 /**

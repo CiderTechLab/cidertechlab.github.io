@@ -16,8 +16,8 @@
 
 /**
 * MEMO: section
-* width を 100% にしておき、max-width で最大幅を指定することで、
-* 画面幅が狭い場合に自動的に縮むようにする。
+* - width を 100% にしておき、max-width で最大幅を指定することで、
+* 	画面幅が狭い場合に自動的に縮むようにする。
 */
 section {
 	padding: 1rem;
@@ -39,7 +39,6 @@ section {
 .note-layout {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: auto auto 1fr auto auto;
 	grid-template-areas:
 		'header'
 		'aside'
@@ -60,8 +59,13 @@ section {
 }
 
 .note-layout__header {
+	grid-area: header;
 	border-radius: var(--radius-basic);
 	justify-content: flex-start;
+}
+
+.note-layout__breadcrumb {
+	grid-area: breadcrumb;
 }
 
 .note-layout__section {
@@ -71,8 +75,6 @@ section {
 
 main {
 	grid-area: main;
-	border-top: 1px solid lightgray;
-	border-bottom: 1px solid lightgray;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -88,15 +90,23 @@ main {
  */
 
 .note-layout__main {
+	grid-area: main;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
 	background-color: white;
 }
 
 aside {
 	grid-area: aside;
 	padding: 0 1rem;
-	margin-top: calc(var(--height-breadcrumb) + 5vh);
+	margin-top: var(--height-breadcrumb);
 	width: 100%;
+	box-sizing: border-box;
 	background-color: var(--color-bg-aside);
+}
+
+.note-layout__footer {
+	grid-area: footer;
 }
 
 .sidebar__ol {
@@ -131,6 +141,7 @@ pre {
 	}
 
 	aside {
+		margin-top: calc(var(--height-breadcrumb) + 5vh);
 		border-top: 1px solid lightgray;
 		border-right: 1px solid lightgray;
 		border-bottom: 1px solid lightgray;
