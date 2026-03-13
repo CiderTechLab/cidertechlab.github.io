@@ -102,7 +102,7 @@
 }
 
 .portfolio-section__item {
-	background-color: var(--color-primary);
+	background: linear-gradient(to bottom right, var(--color-primary), pink);
 }
 .portfolio-section__item-explain {
 	color: var(--color-text-sub);

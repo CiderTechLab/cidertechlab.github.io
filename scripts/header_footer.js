@@ -107,7 +107,8 @@ const footerContent = `
     <small>&copy;&nbsp;2025-2026&nbsp;S.K</small>
   </div>
   <div class="footer-external">
-    <a href="/sitepolicy.html">サイトポリシー</a>
+    <a href="/policy.html">サイトポリシー</a>
+    <a href="/privacy.html">プライバシーポリシー</a>
   </div>
   <a href="#">
     <svg class="icon-pagetopscroll" aria-hidden="true">
@@ -175,9 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		headerPlaceholder.innerHTML = headerContent;
 	}
 
-	const breadcrumbPlaceholder = document.querySelector(
-		'.note-layout__breadcrumb'
-	);
+	const breadcrumbPlaceholder = document.querySelector('.breadcrumb');
 	if (breadcrumbPlaceholder) {
 		breadcrumbPlaceholder.innerHTML = createBreadcrumbContent();
 	}

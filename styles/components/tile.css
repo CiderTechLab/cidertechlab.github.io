@@ -19,6 +19,9 @@
 	font-weight: bold;
 	font-size: 1.5rem;
 }
+.tile--long {
+	min-height: 100vh;
+}
 
 /** SP Contents */
 @media screen and (min-width: 1280px) {
@@ -47,9 +50,5 @@
 		min-width: initial; /* PCではmin-widthをリセットして、親の幅に合わせる */
 		min-height: 30vh;
 		box-sizing: border-box;
-	}
-
-	.tile--long {
-		min-height: 100vh;
 	}
 }

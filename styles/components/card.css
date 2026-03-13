@@ -18,12 +18,9 @@
 	min-width: 40vw;
 	margin: 1rem;
 	padding: 1rem;
-	box-shadow: 10px 10px 10px 10px lightgray;
 	border-radius: 1rem;
-	text-align: center;
+	box-shadow: 10px 10px 10px 10px lightgray;
 	font-size: 1rem;
-	font-weight: bold;
-	box-sizing: border-box;
 }
 
 .card__title {
@@ -43,5 +40,6 @@
 		width: 50vw;
 		max-width: 50vw;
 		min-width: 20vw;
+		padding: 2rem;
 	}
 }

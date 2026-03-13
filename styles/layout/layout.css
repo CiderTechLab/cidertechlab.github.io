@@ -30,10 +30,22 @@ section {
 	flex-wrap: wrap;
 }
 
-.basic-layout {
+.top-layout {
+	width: 100%;
+	max-width: 100vw;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
+}
+
+.basic-layout {
+	width: 100%;
+	max-width: 100vw;
+	margin-top: var(--height-header);
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 .note-layout {
@@ -127,6 +139,10 @@ pre {
 		/** height var*/
 		--height-header: 15svh;
 		--height-breadcrumb: 15svh;
+	}
+
+	.basic-layout {
+		max-width: 80vw;
 	}
 
 	.note-layout {

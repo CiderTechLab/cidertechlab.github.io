@@ -19,6 +19,7 @@
 	--color-form-bg: ivory;
 	--color-form-error: red;
 	--color-form-hover: gray;
+	--color-gradient: linear-gradient(to bottom, dimgray, LightSkyBlue);
 
 	font-family:
 		-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial,
@@ -78,25 +79,32 @@ main {
 }
 
 /** Font */
+.text-left {
+	text-align: left;
+}
+.text-center {
+	text-align: center;
+}
+.text-right {
+	text-align: right;
+}
+
 p {
 	font-size: 1rem;
 }
+
 h1 {
 	margin: 0 auto;
 }
 h2 {
-	margin: 1rem 0.5rem 0.5rem 0;
-	font-size: 3rem;
-}
-
-.headding-two {
-	margin: 10rem 0.5rem 0.5rem 0;
-	font-size: 3rem;
+	margin: 0;
+	padding: 1rem;
+	font-size: 2rem;
+	font-weight: bold;
 }
 h3 {
 	margin: 2rem 0;
 	font-size: 2rem;
-	text-align: center;
 }
 
 h4 {
@@ -184,6 +192,9 @@ input {
 }
 
 @media screen and (min-width: 1280px) {
+	.headding-two {
+		font-size: 3rem;
+	}
 	.line-break {
 		display: none;
 	}
