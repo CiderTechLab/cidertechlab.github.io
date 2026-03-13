@@ -5,9 +5,8 @@
 	 */
 
 	/** height var*/
-	--height-header: 8svh;
-	--height-breadcrumb: 10svh;
-
+	--height-header: 10svh;
+	--height-breadcrumb: 12svh;
 	scroll-padding-top: var(--height-header);
 	scroll-behavior: smooth;
 
@@ -17,8 +16,8 @@
 
 /**
 * MEMO: section
-* width を 100% にしておき、max-width で最大幅を指定することで、
-* 画面幅が狭い場合に自動的に縮むようにする。
+* - width を 100% にしておき、max-width で最大幅を指定することで、
+* 	画面幅が狭い場合に自動的に縮むようにする。
 */
 section {
 	padding: 1rem;
@@ -31,16 +30,27 @@ section {
 	flex-wrap: wrap;
 }
 
-.basic-layout {
+.top-layout {
+	width: 100%;
+	max-width: 100vw;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
+}
+
+.basic-layout {
+	width: 100%;
+	max-width: 100vw;
+	margin-top: var(--height-header);
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 .note-layout {
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: auto auto 1fr auto auto;
 	grid-template-areas:
 		'header'
 		'aside'
@@ -49,16 +59,29 @@ section {
 		'footer';
 }
 
+.note-layout__headding-three {
+	margin: 1rem 0.5rem 0.5rem 1rem;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	text-align: left;
+}
+
 .basic-layout__header {
 	border-radius: var(--radius-basic);
 }
 
 .note-layout__header {
+	grid-area: header;
 	border-radius: var(--radius-basic);
 	justify-content: flex-start;
 }
 
+.note-layout__breadcrumb {
+	grid-area: breadcrumb;
+}
+
 .note-layout__section {
+	background-color: transparent;
 	align-items: flex-start;
 }
 
@@ -79,20 +102,23 @@ main {
  */
 
 .note-layout__main {
-	counter-reset: section-counter;
-}
-
-.main--with-breadcrumb {
-	padding-top: var(--height-breadcrumb);
+	grid-area: main;
+	border-top: 1px solid lightgray;
+	border-bottom: 1px solid lightgray;
+	background-color: white;
 }
 
 aside {
 	grid-area: aside;
-	padding: 1rem;
-	padding-top: calc(var(--height-breadcrumb) + 5vh);
+	padding: 0 1rem;
+	margin-top: var(--height-breadcrumb);
 	width: 100%;
-	border-right: 1px solid gray;
+	box-sizing: border-box;
 	background-color: var(--color-bg-aside);
+}
+
+.note-layout__footer {
+	grid-area: footer;
 }
 
 .sidebar__ol {
@@ -100,16 +126,12 @@ aside {
 	flex-direction: column;
 }
 
-.toc-h3 {
-	margin-left: 1rem;
-}
-
 pre {
-	padding: 1rem;
+	padding-left: 1rem;
 	color: white;
 	background-color: black;
 	font-family: Consolas, sans-serif;
-	border-radius: 1rem;
+	border-radius: 0.5rem;
 }
 
 @media screen and (min-width: 1280px) {
@@ -117,6 +139,10 @@ pre {
 		/** height var*/
 		--height-header: 15svh;
 		--height-breadcrumb: 15svh;
+	}
+
+	.basic-layout {
+		max-width: 80vw;
 	}
 
 	.note-layout {
@@ -128,6 +154,17 @@ pre {
 			'aside   main'
 			'footer  footer';
 		align-self: flex-start;
+	}
+
+	aside {
+		margin-top: calc(var(--height-breadcrumb) + 5vh);
+		border-top: 1px solid lightgray;
+		border-right: 1px solid lightgray;
+		border-bottom: 1px solid lightgray;
+	}
+
+	.main--with-breadcrumb {
+		margin-top: calc(var(--height-breadcrumb) + 5vh);
 	}
 
 	section {

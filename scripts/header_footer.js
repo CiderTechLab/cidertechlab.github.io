@@ -50,8 +50,8 @@ const icons = `
     </symbol>
     <symbol id="pagetopscroll" width="24" height="24" viewBox="0 0 24 24">
       <g clip-path="url(#clip0_178_25)">
-      <rect x="1.5" y="1.5" width="21" height="21" rx="3.5" stroke="white" stroke-width="3"/>
-      <path d="M12 6L18.9282 18H5.0718L12 6Z" fill="white"/>
+      <rect width="24" height="24" rx="5" fill="#F5F5F5"/>
+      <path d="M12.7071 3.29289C12.3166 2.90237 11.6834 2.90237 11.2929 3.29289L4.92893 9.65685C4.53841 10.0474 4.53841 10.6805 4.92893 11.0711C5.31946 11.4616 5.95262 11.4616 6.34315 11.0711L12 5.41421L17.6569 11.0711C18.0474 11.4616 18.6805 11.4616 19.0711 11.0711C19.4616 10.6805 19.4616 10.0474 19.0711 9.65685L12.7071 3.29289ZM12 20H13V4H12H11L11 20H12Z" fill="black"/>
       </g>
       <defs>
       <clipPath id="clip0_178_25">
@@ -74,7 +74,6 @@ const headerContent = `
     </a>
   </h1>
   <div class="header-nav">
-    <div class="header-nav--overlay"></div>
     <nav>
       <div class="header-nav__menu">
         <a class="header-nav-link" 
@@ -85,13 +84,13 @@ const headerContent = `
         href="/index.html#portfolio-section__cta">Portfolio</a>
         <a class="header-nav-link" 
         href="/index.html#career-section__cta">Career</a>
-        <a class="header-nav__external-link" 
+        <a class="header-nav-link--external" 
         href="https://github.com/cidertechlab/">
           <svg class="icon" aria-hidden="true">
              <use href="#icon-github"></use>
           </svg>
         </a>
-        <a class="header-nav__external-link" 
+        <a class="header-nav-link--external" 
         href="https://forms.gle/CALFLhAjRGj49LZC6">
           <svg class="icon" aria-hidden="true">
              <use href="#icon-mail"></use>
@@ -108,12 +107,14 @@ const footerContent = `
     <small>&copy;&nbsp;2025-2026&nbsp;S.K</small>
   </div>
   <div class="footer-external">
-    <a href="/sitepolicy.html">サイトポリシー</a>
-    <a href="#">
-      <svg class="icon-pagetopscroll" aria-hidden="true">
-        <use href="#pagetopscroll"></use>
-    </svg></a>
+    <a href="/policy.html">サイトポリシー</a>
+    <a href="/privacy.html">プライバシーポリシー</a>
   </div>
+  <a href="#">
+    <svg class="icon-pagetopscroll" aria-hidden="true">
+      <use href="#pagetopscroll"></use>
+    </svg>
+  </a>
 `;
 
 /**
@@ -121,7 +122,7 @@ const footerContent = `
  * @returns {HTMLElement}
  */
 function ensureSpriteRoot() {
-	let spriteRoot = document.getElementById('svg-sprite');
+	let spriteRoot = document.querySelector('#svg-sprite');
 	if (!spriteRoot) {
 		spriteRoot = document.createElement('div');
 		spriteRoot.id = 'svg-sprite';
@@ -140,7 +141,7 @@ function createBreadcrumbContent() {
 	const pathSegments = path.split('/').filter((segment) => segment.length > 0);
 
 	let currentPath = '/';
-	let breadcrumbHTML = '<ol>';
+	let breadcrumbHTML = '<ol class="breadcrumb__links">';
 
 	breadcrumbHTML += '<li><a href="/">Home</a></li>&nbsp;&gt;&nbsp;';
 
@@ -166,7 +167,7 @@ function createBreadcrumbContent() {
  */
 document.addEventListener('DOMContentLoaded', () => {
 	const spritePlaceholder = ensureSpriteRoot();
-	if (!document.getElementById('icon-github')) {
+	if (!document.querySelector('#icon-github')) {
 		spritePlaceholder.innerHTML = icons;
 	}
 
@@ -175,9 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		headerPlaceholder.innerHTML = headerContent;
 	}
 
-	const breadcrumbPlaceholder = document.querySelector(
-		'.note-layout__breadcrumb'
-	);
+	const breadcrumbPlaceholder = document.querySelector('.breadcrumb');
 	if (breadcrumbPlaceholder) {
 		breadcrumbPlaceholder.innerHTML = createBreadcrumbContent();
 	}
@@ -187,11 +186,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		footerPlaceholder.innerHTML = footerContent;
 	}
 
+	// オーバーレイをbody直下に作成・挿入（position: fixedが正常に機能するように）
+	const overlay = document.createElement('div');
+	overlay.className = 'header-nav--overlay';
+	document.body.appendChild(overlay);
+
 	// ハンバーガーボタンのクリックハンドラー
 	const hamburger = document.querySelector('.header-nav-hamburger');
+	const nav = document.querySelector('nav');
 	if (hamburger) {
 		hamburger.addEventListener('click', () => {
-			const isOpen = aside.classList.toggle('is-open');
+			const isOpen = hamburger.classList.toggle('is-open');
+			overlay.classList.toggle('is-open');
+			if (nav) {
+				nav.classList.toggle('is-open');
+			}
 			hamburger.setAttribute('aria-expanded', String(isOpen));
 			hamburger.setAttribute(
 				'aria-label',

@@ -33,6 +33,15 @@
 	text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
 	letter-spacing: 0.05em;
 }
+
+.hero-section__slogan span {
+	display: block;
+}
+
+.hero-section__slogan-break {
+	display: block;
+}
+
 .hero-section__slogan-explain {
 	margin: 0;
 	font-size: 1rem;
@@ -48,61 +57,22 @@
 
 /** Skills Section */
 .skills-section {
-	margin: 1rem 0 1rem 0;
+	margin: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	border-radius: var(--radius-basic);
 	background-color: white;
-	box-shadow: 10px 10px 10px 10px lightgray;
-}
-
-.tile--html {
-	color: var(--color-text-sub);
-	background-color: mediumseagreen;
-}
-.tile--css {
-	color: var(--color-text-sub);
-	background-color: #663399;
-}
-.tile--md {
-	color: var(--color-text-sub);
-	background-color: #303030;
-}
-.tile--js {
-	color: var(--color-text-main);
-	background-color: #f3df49;
-}
-.tile--ts {
-	color: var(--color-text-sub);
-	background-color: DodgerBlue;
-}
-.tile--sql {
-	color: var(--color-text-sub);
-	background-color: darkred;
-}
-.tile--twcss {
-	color: var(--color-text-sub);
-	background-color: #38bdf8;
-}
-.tile--react {
-	color: DeepSkyBlue;
-	background-color: var(--color-bg-sub);
-}
-.tile-other {
-	color: var(--color-text-sub);
-	background-color: var(--color-bg-sub);
 }
 
 .tile-other__item {
-	margin: 1rem 0 0 0;
-	padding: 0 0 0 0.1rem;
-	background-color: var(--color-bg-main);
-	font-size: 1.2rem;
+	margin-top: 1rem;
+	border-top: 1px solid var(--color-border-sub);
+	font-size: 1.5rem;
 	font-weight: normal;
-	color: var(--color-text-main);
+	color: var(--color-text-sub);
 }
 .tile-other__explain {
+	margin-top: 0.5rem;
 	font-weight: normal;
 }
 .tile-websites,
@@ -114,7 +84,7 @@
 .tile-books__item {
 	margin-top: 1rem;
 	border-top: 1px solid var(--color-border-main);
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	font-weight: normal;
 }
 .tile-websites__explain,
@@ -132,7 +102,7 @@
 }
 
 .portfolio-section__item {
-	background-color: var(--color-primary);
+	background: linear-gradient(to bottom right, var(--color-primary), pink);
 }
 .portfolio-section__item-explain {
 	color: var(--color-text-sub);
@@ -168,10 +138,23 @@
 	.hero-section__slogan {
 		margin: 0 0 2rem 5rem;
 		font-size: 6rem;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.hero-section__slogan span {
+		display: inline;
+	}
+	.hero-section__slogan-break {
+		display: none;
 	}
 	.hero-section__slogan-explain {
 		margin: 0 0 0 5rem;
 		font-size: 1.5rem;
+	}
+
+	.skills-section {
+		border-radius: var(--radius-basic);
+		box-shadow: 10px 10px 10px 10px lightgray;
 	}
 
 	.career-section__table {
