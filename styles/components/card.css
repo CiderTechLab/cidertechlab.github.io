@@ -24,14 +24,7 @@
 }
 
 .card__title {
-	font-weight: bold;
 	font-size: 1.2rem;
-}
-.card__title-section {
-	font-size: 1.5rem;
-}
-.portfolio-section__item-explain {
-	color: var(--color-text-sub);
 }
 
 /** PC Contents */

@@ -120,10 +120,6 @@ span {
 	display: block;
 }
 
-small {
-	font-size: 1rem;
-}
-
 /** List */
 ul {
 	list-style: square;

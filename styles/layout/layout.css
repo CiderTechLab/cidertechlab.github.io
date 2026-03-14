@@ -6,7 +6,7 @@
 
 	/** height var*/
 	--height-header: 10svh;
-	--height-breadcrumb: 12svh;
+	--height-header-plus-breadcrumb: 12svh;
 	scroll-padding-top: var(--height-header);
 	scroll-behavior: smooth;
 
@@ -76,10 +76,6 @@ section {
 	justify-content: flex-start;
 }
 
-.note-layout__breadcrumb {
-	grid-area: breadcrumb;
-}
-
 .note-layout__section {
 	background-color: transparent;
 	align-items: flex-start;
@@ -111,7 +107,6 @@ main {
 aside {
 	grid-area: aside;
 	padding: 0 1rem;
-	margin-top: var(--height-breadcrumb);
 	width: 100%;
 	box-sizing: border-box;
 	background-color: var(--color-bg-aside);
@@ -138,7 +133,7 @@ pre {
 	:root {
 		/** height var*/
 		--height-header: 15svh;
-		--height-breadcrumb: 15svh;
+		--height-header-plus-breadcrumb: 22svh;
 	}
 
 	.basic-layout {
@@ -157,14 +152,9 @@ pre {
 	}
 
 	aside {
-		margin-top: calc(var(--height-breadcrumb) + 5vh);
 		border-top: 1px solid lightgray;
 		border-right: 1px solid lightgray;
 		border-bottom: 1px solid lightgray;
-	}
-
-	.main--with-breadcrumb {
-		margin-top: calc(var(--height-breadcrumb) + 5vh);
 	}
 
 	section {

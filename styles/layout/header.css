@@ -125,7 +125,6 @@ nav {
 	height: calc(100vh - var(--height-header));
 	background: white;
 	transition: transform 0.5s ease;
-	z-index: 99;
 	overflow: hidden;
 	box-sizing: border-box;
 }
@@ -178,38 +177,19 @@ nav.is-open {
 	transform: scale(1.5);
 }
 
-/** nav breadcrumb */
-.basic-layout__breadcrumb {
+/** breadcrumb */
+.breadcrumb {
 	grid-area: breadcrumb;
-	padding: var(--height-breadcrumb) 0 0 2rem;
-	width: 95%;
-	max-width: 100vw;
-	min-height: var(--height-header);
-	background-color: whitesmoke;
-	border-radius: var(--radius-header-basic);
-	position: fixed;
-	display: flex;
-	justify-content: left;
-	z-index: 99;
-}
-.note-layout__breadcrumb {
-	grid-area: breadcrumb;
-	padding: var(--height-breadcrumb) 0 0 2rem;
 	width: 100%;
+	height: var(--height-header-plus-breadcrumb);
 	max-width: 100vw;
-	background-color: whitesmoke;
-	position: fixed;
+	padding-left: 2.5vw;
 	display: flex;
-	justify-content: left;
+	justify-content: flex-start;
+	align-items: flex-end;
 	z-index: 99;
 }
-.breadcrumb__links {
-	width: 100vw;
-	margin: 0 0 0 calc(-50vw + 50%);
-	padding: 0.5rem 0 0.5rem 2rem;
-	background-color: whitesmoke;
-	white-space: nowrap;
-}
+
 .breadcrumb__nav ol li {
 	padding: 0;
 	margin: 0;
@@ -224,10 +204,6 @@ nav.is-open {
 	}
 	.header h1 {
 		margin: 0;
-	}
-
-	.note-layout__breadcrumb {
-		height: calc(var(--height-breadcrumb) + 2svh);
 	}
 	.logo {
 		width: 400px;
