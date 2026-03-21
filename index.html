@@ -57,7 +57,7 @@
 					<img src="images/profile_pic.svg" alt="プロフィール画像" />
 					<h3>S.K</h3>
 					<dl class="aboutme-section__explain">
-						<dt>経歴</dt>
+						<dt class="aboutme-section__title">経歴</dt>
 						<dd>
 							大学の理工系学科卒業後、システムエンジニアとして6年間従事しました。<a
 								href="#career-section__cta"
@@ -65,26 +65,26 @@
 							>
 						</dd>
 
-						<dt>実務経験</dt>
+						<dt class="aboutme-section__title">実務経験</dt>
 						<dd>
 							主に業務系システムを担当、運用及び一部開発を経験。特にデータベース周りの知識を深めることができました。
 						</dd>
 
-						<dt>現在の目標</dt>
+						<dt class="aboutme-section__title">現在の目標</dt>
 						<dd>
 							フロントエンドエンジニアを目指し、HTML/CSS/JavaScript/TypeScriptを中心に学習し、Tailwind
 							CSSやReactも学習中です。また、SE経験を活かし、バックエンド領域（特にデータベース）の理解も深めたいと考えています。
 						</dd>
 
-						<dt>関心分野</dt>
+						<dt class="aboutme-section__title">関心分野</dt>
 						<dd>
 							構造化と体系的な設計に関心があります。BEM記法、Tailwindのユーティリティクラス設計、Reactのコンポーネント設計といった、体系的な設計アプローチに魅力を感じています。
 						</dd>
 
-						<dt>趣味</dt>
+						<dt class="aboutme-section__title">趣味</dt>
 						<dd>
-							<strong>登山</strong
-							>です。富士山登頂は5回経験済み。また、<strong>生成AIにも</strong>関心があり、プロンプトエンジニアリングやローカルLLM（gemma系）の実験など、楽しみながら技術を深めています。
+							<b>登山</b
+							>です。ピークハンターで主に丹沢山系、高尾山系の大半は登頂しています。富士山登頂は5回成功しています。（吉田口、富士宮口ルート）<br />また、最近は<b>生成AI</b>にも興味があり、プロンプトエンジニアリングやローカルLLM（gemma系）の実験など、楽しみながら技術を深めています。
 						</dd>
 					</dl>
 				</section>
@@ -297,44 +297,40 @@
 				<section class="portfolio-section">
 					<h2 class="headding-two" id="portfolio-section__cta">Portfolio</h2>
 					<ul class="cards">
-						<li class="portfolio-section__item card">
-							<p>
-								各作品の仕様書については<a
+						<li class="card portfolio-section__item">
+							<p class="portfolio-section__item-explain">
+								各作品の仕様書については<br /><a
 									href="https://github.com/CiderTechLab/cidertechlab.github.io/wiki"
 									>GitHub Wiki</a
-								>をご覧ください
+								><br />をご覧ください
 							</p>
 						</li>
-						<li class="portfolio-section__item card">
+						<li class="card portfolio-section__item">
 							<h3 class="card__title">
-								<a href="/roadtohtmlcss/"
-									>Road&nbsp;To&nbsp;<br
-										class="line-break"
-									/>HTML&nbsp;&amp;&nbsp;CSS</a
+								<a href="/htmlcssnotes/"
+									>HTML&nbsp;&amp;&nbsp;CSS<br />学習まとめノート</a
 								>
 							</h3>
 							<p class="portfolio-section__item-explain">
-								「HTML&amp;CSSへの道」と題した、HTMLとCSSの学習で気が付いた点や注意点をまとめたサイトです。
+								HTMLとCSSの学習で気が付いた点や注意点をまとめたサイトです。
 							</p>
 						</li>
-						<li class="portfolio-section__item card">
+						<li class="card portfolio-section__item">
 							<h3 class="card__title">
-								<a href="/roadtojsts/"
-									>Road&nbsp;To&nbsp;<br
-										class="line-break"
-									/>JS&nbsp;&amp;&nbsp;TS</a
+								<a href="/jstsnotes/"
+									>JS&nbsp;&amp;&nbsp;TS<br />学習まとめノート</a
 								>
 							</h3>
-							<p class="portfolio-section__item-explain"></p>
 							<p class="portfolio-section__item-explain">
-								「JavaScript&amp;TypeScriptへの道」と題した、JavaScriptとTypeScript学習の歩みと、気が付いた点や注意点をまとめたサイトです。
+								JavaScriptとTypeScript学習の歩みと、気が付いた点や注意点をまとめたサイトです。
 							</p>
 						</li>
-						<li class="portfolio-section__item card">
+						<li class="card portfolio-section__item">
 							<h3 class="card__title">
-								<a href="/portfolio/contact/">Contact（モックアップ）</a>
+								<a href="/portfolio/contact/"
+									>お問い合わせフォームモックアップ（Contact）</a
+								>
 							</h3>
-							<p class="portfolio-section__item-explain"></p>
 							<p class="portfolio-section__item-explain">
 								Form関連タグ、バリデーション設計の練習として制作しました。入力チェックに手を焼きました。
 							</p>
@@ -346,7 +342,7 @@
 					<h2 class="headding-two" id="career-section__cta">Career</h2>
 					<dl class="career-section__table">
 						<dt class="career-section__table-title">
-							1年目～2年目<br />商品・サービスの管理システム運用PJ
+							1年目～2年目<br />商品・サービス管理システム運用PJ
 						</dt>
 						<dd class="career-section__table-content">
 							金額や有効期限の設定、新商品・新サービスの追加設定を担当しました。<br />
@@ -355,7 +351,7 @@
 							ドキュメント化の重要性も学びました。
 						</dd>
 						<dt class="career-section__table-title">
-							3年目～4年目<br />通信システムのデータベース移行PJ
+							3年目～4年目<br />通信システムデータベース移行PJ
 						</dt>
 						<dd class="career-section__table-content">
 							主にデータベース（Oracle）のデータ移行ツールの開発、実際の移行作業を担当しました。<br />
@@ -366,7 +362,7 @@
 							>の資格を取得しました。
 						</dd>
 						<dt class="career-section__table-title">
-							5年目<br />顧客情報管理システムの運用
+							5年目～6年目<br />顧客情報管理システム運用PJ
 						</dt>
 						<dd class="career-section__table-content">
 							BIツールを使ったデータ抽出業務を担当しました。<br />
