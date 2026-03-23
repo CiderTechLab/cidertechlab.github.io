@@ -14,6 +14,11 @@
 	--radius-basic: 1rem;
 }
 
+article {
+	width: 100%;
+	max-width: 100vw;
+}
+
 /**
 * MEMO: section
 * - width を 100% にしておき、max-width で最大幅を指定することで、
@@ -49,12 +54,14 @@ section {
 }
 
 .note-layout {
+	margin-top: var(--height-header-plus-breadcrumb);
 	display: grid;
 	grid-template-columns: 1fr;
+	grid-template-rows: auto auto auto 1fr auto;
 	grid-template-areas:
 		'header'
-		'aside'
 		'main'
+		'aside'
 		'breadcrumb'
 		'footer';
 }
@@ -127,13 +134,17 @@ pre {
 	background-color: black;
 	font-family: Consolas, sans-serif;
 	border-radius: 0.5rem;
+	max-width: 100%;
+	overflow-x: auto;
+	box-sizing: border-box;
 }
 
+/** PC Edition */
 @media screen and (min-width: 1280px) {
 	:root {
 		/** height var*/
 		--height-header: 15svh;
-		--height-header-plus-breadcrumb: 22svh;
+		--height-header-plus-breadcrumb: 15svh;
 	}
 
 	.basic-layout {
@@ -144,7 +155,7 @@ pre {
 		grid-template-columns: 250px 1fr;
 		grid-template-rows: auto auto 1fr auto;
 		grid-template-areas:
-			'header  header'
+			'header header'
 			'breadcrumb breadcrumb'
 			'aside   main'
 			'footer  footer';
@@ -155,6 +166,14 @@ pre {
 		border-top: 1px solid lightgray;
 		border-right: 1px solid lightgray;
 		border-bottom: 1px solid lightgray;
+	}
+	.toc-accordion {
+		display: block;
+	}
+	.toc-accordion summary {
+		pointer-events: none;
+		list-style: none;
+		cursor: default;
 	}
 
 	section {

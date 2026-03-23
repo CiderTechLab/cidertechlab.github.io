@@ -17,8 +17,6 @@
 	overflow: visible;
 }
 .header-nav-hamburger {
-	position: absolute;
-	left: 1rem;
 	width: 30px;
 	height: 30px;
 	cursor: pointer;
@@ -26,6 +24,7 @@
 	background: none;
 	border: none;
 	padding: 0;
+	flex-shrink: 0;
 }
 .header h1 {
 	margin: 0;
@@ -33,6 +32,7 @@
 	justify-content: center;
 	align-items: center;
 	min-width: 0;
+	flex: 1;
 }
 
 .header h1 a {
@@ -88,11 +88,11 @@
 }
 .is-open .header-nav-hamburger__line::before {
 	top: 0;
-	transform: rotate(45deg);
+	transform: rotate(-45deg);
 }
 .is-open .header-nav-hamburger__line::after {
 	top: 0;
-	transform: rotate(-45deg);
+	transform: rotate(45deg);
 }
 
 .header-nav--overlay {
@@ -100,11 +100,11 @@
 	height: 100vh;
 	position: fixed;
 	top: 0;
-	left: 0;
+	right: 0;
 	background: white;
 	opacity: 0;
 	pointer-events: none;
-	transition: 0.4s;
+	transition: 0.5s;
 	z-index: 99;
 }
 
@@ -114,13 +114,13 @@
 }
 
 /** メニュー本体 */
-nav {
+.header-nav nav {
 	margin: 0;
 	padding: var(--height-header) 0 0 0;
 	position: fixed;
 	top: var(--height-header);
-	left: 50%;
-	transform: translateX(-156%);
+	right: 50%;
+	transform: translateX(156%);
 	width: 95%;
 	height: calc(100vh - var(--height-header));
 	background: white;
@@ -129,8 +129,8 @@ nav {
 	box-sizing: border-box;
 }
 
-nav.is-open {
-	transform: translateX(-50%);
+.header-nav nav.is-open {
+	transform: translateX(50%);
 }
 .header-nav__menu {
 	margin-top: 0;
@@ -181,12 +181,13 @@ nav.is-open {
 .breadcrumb {
 	grid-area: breadcrumb;
 	width: 100%;
-	height: var(--height-header-plus-breadcrumb);
 	max-width: 100vw;
 	padding-left: 2.5vw;
+	padding-top: 1rem;
+	padding-bottom: 0.5rem;
+	font-size: 0.9rem;
 	display: flex;
 	justify-content: flex-start;
-	align-items: flex-end;
 	z-index: 99;
 }
 
@@ -222,7 +223,7 @@ nav.is-open {
 	.header-nav--overlay {
 		display: none;
 	}
-	nav {
+	.header-nav nav {
 		position: static;
 		top: auto;
 		left: auto;
