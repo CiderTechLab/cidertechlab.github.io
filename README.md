@@ -1,14 +1,19 @@
 # README.md
 
-## CiderTechLab（当サイト）について
+![License](https://img.shields.io/badge/License-MIT-blue.svg?logo=github)
+![HTML](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 
-当サイトはS.K（以下、私）のプロフィール、スキル、経歴、並びに制作したポートフォリオ作品の紹介サイトです。サイト名は私の本名をもじり命名しました。また「Lab(ラボ)」をつけ、プログラムを読んで学ぶだけではなく、実験の場とすることで実践的なスキルを身につけることを目指しました。
+ようこそ！**CiderTechLab**へ！！
+
+CiderTechLab（当サイト）はS.K（以下、私）のプロフィール、スキル、経歴、並びに制作したポートフォリオ作品の紹介サイトです。サイト名は私の本名をもじり命名しました。また「Lab(ラボ)」をつけ、プログラムを読んで学ぶだけではなく、実験の場とすることで実践的なスキルを身につけることを目指しました。
 
 ## サイト要件
 
 ### 目的
 
-私がフロントエンド開発に必要なスキルの学習を進めるためです。学習を進める中で制作したプロフィール、スキル、経歴、並びに制作したポートフォリオ作品を知って頂きたいと思い公開しております。当初はHTML/CSS/JavaScriptといった基礎学習を目的としていましたが、現在はより実践的な設計（セマンティクス要素の徹底、BEM記法、コンポーネント化）を意識しながら制作を行い、保守性・拡張性を高めています。
+私が、フロントエンド開発に必要な実践的なスキルの習得を目的に、制作いたしました。その中で、プロフィール・スキル・経歴・制作した作品を知って頂きたいと思い、ポートフォリオサイトとして公開しています。当初はHTML/CSS/JavaScriptといった基礎学習を目的としていましたが、現在はより実践的な設計（セマンティクス要素の徹底、BEM記法、コンポーネント化）を意識しながら制作を行い、保守性・拡張性を高めています。
 また、TypeScriptやTailwind CSSなどにも挑戦しています。
 
 ### 対象ユーザー
@@ -25,9 +30,10 @@
 
 **具体的な実装手段**
 
-- セマンティックHTML設計：ブラウザとスクリーン・リーダーの両方で正確に解釈でき、後の変更や拡張時にも構造が崩れない設計
-- コンポーネント化：ヘッダー、フッター、パンくずリストをJavaScript化し共通部品化。変更時に複数ファイルを修正する必要をなくしています。また、CSSをbase / components / layout / pages で責任を分けることで、コードの意図を瞬時に理解できるように工夫しています
-- BEM記法・CSS変数の利用：BEM記法とCSS変数で命名規則を統一し、機能追加時にスタイルの競合や予期しない影響を防げるようにしています
+- セマンティックHTML設計：ブラウザとスクリーン・リーダーの両方で正確に解釈でき、後の変更や拡張時にも構造が崩れない設計。
+- コンポーネント化：ヘッダー、フッター、パンくずリストをJavaScript化し共通部品化。変更時に複数ファイルを修正する必要をなくしています。また、CSSをbase / components / layout / pages で責任を分けることで、コードの意図を瞬時に理解できるように工夫しています。
+- BEM記法・CSS変数の利用：BEM記法とCSS変数で命名規則を統一し、機能追加時にスタイルの競合や予期しない影響を防げるようにしています。
+- 本プロジェクトでは、ブラウザ間のスタイル差異を排除するために[destyle.css](https://github.com/nicolas-cusan/destyle.css) を使用しています。
 
 これらの工夫により、機能追加が必要な場合にも既存コードへの影響を最小限に抑え、**運用保守を見据えた設計**になっています。
 
@@ -90,6 +96,8 @@
 
 [Wikiをご覧ください](https://github.com/CiderTechLab/cidertechlab.github.io/wiki)
 
-# License
+# ライセンス
 
-This project is licensed under the MIT License, see the LICENSE file for details
+このプロジェクトはMITライセンスの下で公開されています。詳細については[LICENSEファイル](LICENSE)をご覧ください。
+
+This project is licensed under the MIT License, see the [LICENSE file](LICENSE) for details.

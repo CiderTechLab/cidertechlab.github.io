@@ -64,16 +64,16 @@ const icons = `
 `;
 
 const headerContent = `
-  <button class="header-nav-hamburger" aria-label="目次を開く" aria-expanded="false">
-    <span class="header-nav-hamburger__line"></span>
-  </button>
-  <h1>    
+  <h1 class="headding-one">    
     <a href="/">
       <svg class="logo" aria-hidden="true">
         <use href="#logo"></use>
       </svg>
     </a>
   </h1>
+  <button class="header-nav-hamburger" aria-label="目次を開く" aria-expanded="false">
+    <span class="header-nav-hamburger__line"></span>
+  </button>
   <div class="header-nav">
     <nav>
       <div class="header-nav__menu">

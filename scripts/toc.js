@@ -1,12 +1,12 @@
 /**
- * 目次自動生成スクリプト (toc.js)
+ * 目次(TableOfContents:toc)自動生成スクリプト (toc.js)
  * - note-layoutのmain内のh3, h4タグから自動的に目次を生成します。
  */
 
 /**
  * 目次を生成する関数
  */
-function generateTableOfContents() {
+function createToc() {
 	// note-layoutが存在するかチェック
 	const noteLayout = document.querySelector('.note-layout');
 	if (!noteLayout) {
@@ -46,8 +46,10 @@ function generateTableOfContents() {
 		return;
 	}
 
-	// 目次のHTMLを生成
-	let tocHTML = '<nav><ol class="sidebar__ol">';
+	// 目次のHTMLを生成（PC版のみopenを付与）
+	const isPC = window.innerWidth >= 1280;
+	const openAttribute = isPC ? ' open' : '';
+	let tocHTML = `<nav><details class="toc-accordion"${openAttribute}><summary class="toc-accordion"><h3>目次</h3></summary><ol class="sidebar__ol">`;
 
 	headings.forEach((heading, index) => {
 		const headingText = heading.textContent.trim();
@@ -58,7 +60,7 @@ function generateTableOfContents() {
 		}
 		tocHTML += `<li><a href="#${heading.id}">${headingText}</a></li>`;
 	});
-	tocHTML += '</ol></nav>';
+	tocHTML += '</ol></details></nav>';
 	asideElement.innerHTML = tocHTML;
 }
 
@@ -66,5 +68,5 @@ function generateTableOfContents() {
  * ページ読み込み完了後に目次を生成
  */
 document.addEventListener('DOMContentLoaded', () => {
-	generateTableOfContents();
+	createToc();
 });

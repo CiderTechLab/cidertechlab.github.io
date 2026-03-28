@@ -78,6 +78,11 @@ main {
 	color: var(--color-text-main);
 }
 
+/** Utility */
+.padding-one-quarter {
+	padding: 0.25rem;
+}
+
 /** Font */
 .text-left {
 	text-align: left;
@@ -93,10 +98,10 @@ p {
 	font-size: 1rem;
 }
 
-h1 {
+.headding-one {
 	margin: 0 auto;
 }
-h2 {
+.headding-two {
 	margin: 0;
 	padding: 1rem;
 	font-size: 2rem;
@@ -114,10 +119,6 @@ h4 {
 h5 {
 	font-size: 1rem;
 	text-align: center;
-}
-
-span {
-	display: block;
 }
 
 /** List */
