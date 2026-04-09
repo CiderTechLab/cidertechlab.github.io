@@ -1,3 +1,8 @@
+/**
+ * @author S.K
+ */
 export {};
 
-function measuteTime() {}
+function measuteTime() {
+	((setTimeout) => {}, 3000);
+}
