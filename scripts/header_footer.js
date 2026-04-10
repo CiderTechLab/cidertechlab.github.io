@@ -1,3 +1,7 @@
+/**
+ * ヘッダー・フッター用スクリプト
+ * @author S.K
+ */
 const icons = `
   <svg xmlns="http://www.w3.org/2000/svg">
     <symbol id="icon-github" viewBox="0 0 24 24">

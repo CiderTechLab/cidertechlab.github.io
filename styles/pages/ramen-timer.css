@@ -1,0 +1,24 @@
+@charset "UTF-8";
+.start-button {
+	width: 30vw;
+	padding: 0.5rem;
+	border-radius: 10rem;
+	background-color: red;
+	color: white;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.progress-bar {
+	width: 30vw;
+	height: 1rem;
+	margin: 1rem;
+	border-radius: 10rem;
+	background-color: pink;
+}
+
+@media screen and (min-width: 1280px) {
+	.start-button:hover {
+		background-color: salmon;
+	}
+}
