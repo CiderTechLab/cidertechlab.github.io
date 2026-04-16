@@ -182,8 +182,8 @@
 	grid-area: breadcrumb;
 	width: 100%;
 	max-width: 100vw;
+	padding-top: var(--height-header);
 	padding-left: 2.5vw;
-	padding-top: 1rem;
 	padding-bottom: 0.5rem;
 	font-size: 0.9rem;
 	display: flex;

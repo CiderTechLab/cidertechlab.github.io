@@ -7,45 +7,78 @@ export {};
 /**
  * タイマー時間設定
  */
-let setTime = 3;
+let setSecondTime = 10;
 
+/**
+ * タイマーID
+ */
+let progressBarIntervalId = null;
+let remainingTimeIntervalId = null;
+
+/**
+ * プログレスバー用関数
+ */
 function progressBarCount() {
 	const progressBar = document.querySelector('.progress-bar');
-	const maxTime = new Date().getSeconds() + setTime;
-	progressBar.max = maxTime;
+	progressBar.max = setSecondTime;
+	let count = 0;
 
-	setInterval(() => {
-		progressBar.value = maxTime - new Date().getSeconds();
-		console.log(progressBar.value);
-	}, 100);
+	progressBarIntervalId = setInterval(() => {
+		count += 1;
+		progressBar.value = count;
 
-	if (progressBar.value === 0) {
-		clearInterval();
-	}
-}
-
-function remainingTimeCount() {
-	const remainingTimeText = document.querySelector('.remaining-time');
-	const maxTime = new Date().getSeconds() + setTime;
-
-	setInterval(() => {
-		remainingTimeText.textContent = maxTime - new Date().getSeconds();
-		console.log(remainingTimeText.textContent);
-	}, 100);
-
-	if (remainingTimeText.textContent === '0') {
-		clearInterval();
-	}
+		if (count >= setSecondTime) {
+			clearInterval(progressBarIntervalId);
+		}
+	}, 1000);
 }
 
 /**
- * スタートボタンを取得し、タイマーイベントを追加
+ * 残り時間表示用関数
+ */
+function remainingTimeCount() {
+	let remainingTimeText = document.querySelector('.remaining-time');
+	let count = setSecondTime;
+	remainingTimeText.textContent = count;
+
+	remainingTimeIntervalId = setInterval(() => {
+		count -= 1;
+		remainingTimeText.textContent = count;
+
+		if (count <= 0) {
+			clearInterval(remainingTimeIntervalId);
+		}
+	}, 1000);
+}
+
+/**
+ * スタートボタン
+ * - スタートボタンを取得し、タイマーイベントを追加
  */
 const startButton = document.querySelector('.start-button');
 startButton.addEventListener('click', () => {
+	// 既に実行中のタイマーがあれば停止
+	if (progressBarIntervalId !== null) clearInterval(progressBarIntervalId);
+	if (remainingTimeIntervalId !== null) clearInterval(remainingTimeIntervalId);
+
 	progressBarCount();
 	remainingTimeCount();
 	setTimeout(() => {
 		alert('ラーメンが完成しました！');
-	}, setTime);
+	}, setSecondTime * 1000);
 });
+
+/**
+ * リセットボタン
+ * - プログレスバーと残り時間をリセットする
+ */
+function resetTimer() {
+	clearInterval(progressBarIntervalId);
+	clearInterval(remainingTimeIntervalId);
+	const progressBar = document.querySelector('.progress-bar');
+	const remainingTimeText = document.querySelector('.remaining-time');
+	progressBar.value = 0;
+	remainingTimeText.textContent = '0';
+}
+const resetButton = document.querySelector('.reset-button');
+resetButton.addEventListener('click', resetTimer);
