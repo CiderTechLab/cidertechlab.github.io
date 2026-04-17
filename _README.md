@@ -21,6 +21,10 @@
 
 サイト制作に終わりはありません。コンポーネント化（部品化）、モジュール化を常に意識し、将来の修正や機能追加が容易な構造を心がけました。
 
+## メインサイトはVanilla実装で基礎力強化。その他はフレームワーク実装で効率化。
+
+メインサイトはあえてVanilla CSS/JavaScriptで実装することにより、基礎力の向上を目指しました。一方で、ポートフォリオ作品の一部ではTypeScriptの使用、Tailwind CSSやReactなどのフレームワークも使用し、モダンな開発手法で効率化を図りました。
+
 # 設計書・サイトマップ
 
 [Wikiをご覧ください](https://github.com/CiderTechLab/cidertechlab.github.io/wiki)

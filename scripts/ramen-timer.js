@@ -7,7 +7,14 @@ export {};
 /**
  * タイマー時間設定
  */
-let setSecondTime = 10;
+const selectTimeForm = document.querySelector('.select-time');
+const radioList = selectTimeForm.querySelectorAll('input[name="time"]');
+let setTime = radioList[1].value;
+for (const time of radioList) {
+	time.addEventListener('change', () => {
+		setTime = time.value;
+	});
+}
 
 /**
  * タイマーID
@@ -20,14 +27,14 @@ let remainingTimeIntervalId = null;
  */
 function progressBarCount() {
 	const progressBar = document.querySelector('.progress-bar');
-	progressBar.max = setSecondTime;
+	progressBar.max = setTime;
 	let count = 0;
 
 	progressBarIntervalId = setInterval(() => {
 		count += 1;
 		progressBar.value = count;
 
-		if (count >= setSecondTime) {
+		if (count >= setTime) {
 			clearInterval(progressBarIntervalId);
 		}
 	}, 1000);
@@ -38,7 +45,7 @@ function progressBarCount() {
  */
 function remainingTimeCount() {
 	let remainingTimeText = document.querySelector('.remaining-time');
-	let count = setSecondTime;
+	let count = setTime;
 	remainingTimeText.textContent = count;
 
 	remainingTimeIntervalId = setInterval(() => {
@@ -63,22 +70,35 @@ startButton.addEventListener('click', () => {
 
 	progressBarCount();
 	remainingTimeCount();
+
 	setTimeout(() => {
-		alert('ラーメンが完成しました！');
-	}, setSecondTime * 1000);
+		const remainingText = document.querySelector('.remaining-text');
+		remainingText.textContent = 'ラーメンが完成しました！';
+	}, setTime * 1000);
 });
 
 /**
  * リセットボタン
  * - プログレスバーと残り時間をリセットする
  */
-function resetTimer() {
+const resetButton = document.querySelector('.reset-button');
+resetButton.addEventListener('click', () => {
 	clearInterval(progressBarIntervalId);
 	clearInterval(remainingTimeIntervalId);
 	const progressBar = document.querySelector('.progress-bar');
 	const remainingTimeText = document.querySelector('.remaining-time');
+	const remainingText = document.querySelector('.remaining-text');
 	progressBar.value = 0;
 	remainingTimeText.textContent = '0';
-}
-const resetButton = document.querySelector('.reset-button');
-resetButton.addEventListener('click', resetTimer);
+	remainingText.innerHTML = '残り<span class="remaining-time">0</span>秒';
+});
+
+/**
+ * 一時停止ボタン
+ * - タイマーを一時停止する
+ */
+const stopButton = document.querySelector('.stop-button');
+stopButton.addEventListener('click', () => {
+	clearInterval(progressBarIntervalId);
+	clearInterval(remainingTimeIntervalId);
+});
