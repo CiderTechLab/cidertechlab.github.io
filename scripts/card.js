@@ -1,5 +1,6 @@
 /**
- * カードリストのドラッグスクロール機能
+ * カードスタイル用スクリプト
+ * @author S.K
  */
 /** .cards要素の取得 */
 const cardLists = document.querySelectorAll('.cards');

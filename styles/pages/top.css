@@ -162,8 +162,8 @@
 		display: none;
 	}
 	.hero-section__slogan-explain {
-		margin: 0 0 0 5rem;
-		font-size: 1.5rem;
+		margin-left: 6rem;
+		font-size: 1.2rem;
 	}
 
 	.skills-section {

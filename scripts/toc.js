@@ -1,8 +1,8 @@
 /**
  * 目次(TableOfContents:toc)自動生成スクリプト (toc.js)
  * - note-layoutのmain内のh3, h4タグから自動的に目次を生成します。
+ * @author S.K
  */
-
 /**
  * 目次を生成する関数
  */

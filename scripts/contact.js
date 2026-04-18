@@ -1,3 +1,7 @@
+/**
+ * お問い合わせフォームのバリデーションとインタラクション
+ * @author S.K
+ */
 const form = document.querySelector('.contact-form');
 const formStatus = document.getElementById('form-status');
 
