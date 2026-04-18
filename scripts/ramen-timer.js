@@ -8,13 +8,29 @@ export {};
  * タイマー時間設定
  */
 const selectTimeForm = document.querySelector('.select-time');
-const radioList = selectTimeForm.querySelectorAll('input[name="time"]');
+const radioList = selectTimeForm.querySelectorAll(
+	'input[type="radio"][name="time"]'
+);
+const customInput = document.querySelector('#custom-time');
 let setTime = radioList[1].value;
-for (const time of radioList) {
-	time.addEventListener('change', () => {
-		setTime = time.value;
+
+for (const radio of radioList) {
+	radio.addEventListener('change', () => {
+		if (radio.value === 'custom') {
+			customInput.disabled = false;
+			customInput.focus();
+			setTime = customInput.value || '60';
+		} else {
+			customInput.disabled = true;
+			setTime = radio.value;
+		}
 	});
 }
+
+customInput.addEventListener('input', () => {
+	customInput.value = customInput.value.replace(/[^0-9]/g, '');
+	setTime = customInput.value || '60';
+});
 
 /**
  * タイマーID
@@ -73,7 +89,8 @@ startButton.addEventListener('click', () => {
 
 	setTimeout(() => {
 		const remainingText = document.querySelector('.remaining-text');
-		remainingText.textContent = 'ラーメンが完成しました！';
+		remainingText.innerHTML =
+			'<span class="remaining-time--end">&#x1f35c;&#x1f973;完成&#x1f973;&#x1f35c;</span>';
 	}, setTime * 1000);
 });
 
