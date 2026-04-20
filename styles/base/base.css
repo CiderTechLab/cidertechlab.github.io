@@ -22,7 +22,7 @@
 	--color-gradient: linear-gradient(to bottom, dimgray, LightSkyBlue);
 
 	font-family:
-		-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial,
+		-apple-system, BlinkMacSystemFont, 'BIZ UDP ゴシック', Arial,
 		'Hiragino Kaku Gothic ProN', 'Noto Sans JP', メイリオ, sans-serif;
 	line-height: 1.5;
 }
@@ -126,10 +126,6 @@ ul {
 	list-style: square;
 	display: flex;
 	flex-direction: column;
-}
-ol {
-	list-style-type: decimal;
-	padding: 0.5rem;
 }
 li {
 	width: auto;

@@ -7,7 +7,7 @@
 		<meta name="author" content="S.K" />
 		<meta
 			name="description"
-			content="カップラーメンの完成時間を計測するタイマーです。"
+			content="カップラーメンの完成時間を計測するタイマーWebアプリです。Vanilla JavaScriptで制作されています。"
 		/>
 		<title>ラーメンタイマー - CiderTechLab</title>
 		<!-- style info -->
@@ -33,12 +33,36 @@
 					<h2 class="hero-section__title">
 						&#x1f35c;ラーメンタイマー&#x1f365;
 					</h2>
+					<ol class="hero-section__ol">
+						<li class="hero-section__li">
+							<b>「時間を選択してください」</b>の欄から待ち時間を選択します。
+						</li>
+						<li class="hero-section__li">
+							<b>［スタート］</b>ボタンを押すとタイマーが開始されます。
+						</li>
+						<li class="hero-section__li">
+							時間が0になると<b>「完成」</b>のダイアログが表示されます。
+						</li>
+						<li class="hero-section__li">
+							<b>［リセット］</b>ボタンを押すとタイマーがリセットされます。
+						</li>
+					</ol>
 				</section>
 				<section class="timer-section">
 					<progress class="progress-bar" value="0" max="100"></progress>
 					<p class="remaining-text">
 						残り<span class="remaining-time">0</span>秒
 					</p>
+
+					<dialog class="timer-section__modal">
+						<form method="dialog">
+							<p class="timer-section__modal-message">
+								&#x1f973;完成&#x1f973;<br />召し上がれ
+							</p>
+							<button class="timer-section__modal-close-button">閉じる</button>
+						</form>
+					</dialog>
+
 					<form class="select-time">
 						<fieldset class="select-time__fieldset">
 							<legend class="select-time__legend">
@@ -85,9 +109,6 @@
 								/>
 							</div>
 							<div class="timer-buttons">
-								<button type="button" class="button stop-button">
-									<span class="button-emoji">&#x23f8;</span><br />一時停止
-								</button>
 								<button type="button" class="button reset-button">
 									<span class="button-emoji">&#x23f9;</span><br />リセット
 								</button>

@@ -88,9 +88,8 @@ startButton.addEventListener('click', () => {
 	remainingTimeCount();
 
 	setTimeout(() => {
-		const remainingText = document.querySelector('.remaining-text');
-		remainingText.innerHTML =
-			'<span class="remaining-time--end">&#x1f35c;&#x1f973;完成&#x1f973;&#x1f35c;</span>';
+		const timerSectionModal = document.querySelector('.timer-section__modal');
+		timerSectionModal.showModal();
 	}, setTime * 1000);
 });
 
@@ -103,19 +102,7 @@ resetButton.addEventListener('click', () => {
 	clearInterval(progressBarIntervalId);
 	clearInterval(remainingTimeIntervalId);
 	const progressBar = document.querySelector('.progress-bar');
-	const remainingTimeText = document.querySelector('.remaining-time');
 	const remainingText = document.querySelector('.remaining-text');
 	progressBar.value = 0;
-	remainingTimeText.textContent = '0';
 	remainingText.innerHTML = '残り<span class="remaining-time">0</span>秒';
-});
-
-/**
- * 一時停止ボタン
- * - タイマーを一時停止する
- */
-const stopButton = document.querySelector('.stop-button');
-stopButton.addEventListener('click', () => {
-	clearInterval(progressBarIntervalId);
-	clearInterval(remainingTimeIntervalId);
 });
