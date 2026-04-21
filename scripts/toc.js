@@ -1,18 +1,12 @@
 /**
  * 目次(TableOfContents:toc)自動生成スクリプト (toc.js)
- * - note-layoutのmain内のh3, h4タグから自動的に目次を生成します。
+ * - main内のh3, h4タグから自動的に目次を生成します。
  * @author S.K
  */
 /**
  * 目次を生成する関数
  */
 function createToc() {
-	// note-layoutが存在するかチェック
-	const noteLayout = document.querySelector('.note-layout');
-	if (!noteLayout) {
-		return; // note-layoutがない場合は何もしない
-	}
-
 	// main要素を取得
 	const mainElement = document.querySelector('main');
 	if (!mainElement) {

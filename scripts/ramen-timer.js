@@ -1,5 +1,5 @@
 /**
- * ラーメンタイマー用スクリプト
+ * カップラーメンタイマー用スクリプト
  * @author S.K
  */
 export {};
@@ -33,7 +33,7 @@ customInput.addEventListener('input', () => {
 });
 
 /**
- * タイマーID
+ * タイマーID初期化
  */
 let progressBarIntervalId = null;
 let remainingTimeIntervalId = null;

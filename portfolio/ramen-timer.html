@@ -9,7 +9,7 @@
 			name="description"
 			content="カップラーメンの完成時間を計測するタイマーWebアプリです。Vanilla JavaScriptで制作されています。"
 		/>
-		<title>ラーメンタイマー - CiderTechLab</title>
+		<title>カップラーメンタイマー - CiderTechLab</title>
 		<!-- style info -->
 		<link href="/styles/base/destyle.css" rel="stylesheet" />
 		<link href="/styles/base/base.css" rel="stylesheet" />
@@ -31,7 +31,7 @@
 			<article class="ramen-timer-layout">
 				<section class="hero-section">
 					<h2 class="hero-section__title">
-						&#x1f35c;ラーメンタイマー&#x1f365;
+						カップラーメン<br class="br-sp" />タイマー
 					</h2>
 					<ol class="hero-section__ol">
 						<li class="hero-section__li">
@@ -57,7 +57,7 @@
 					<dialog class="timer-section__modal">
 						<form method="dialog">
 							<p class="timer-section__modal-message">
-								&#x1f973;完成&#x1f973;<br />召し上がれ
+								&#x1f973;&nbsp;完成&nbsp;&#x1f973;<br />さあ、召し上がれ！
 							</p>
 							<button class="timer-section__modal-close-button">閉じる</button>
 						</form>
@@ -75,7 +75,7 @@
 									class="select-time__option"
 									value="120"
 								/>
-								<label>2分</label>
+								<label class="select-time__label">2分</label>
 								<input
 									type="radio"
 									name="time"
@@ -83,14 +83,14 @@
 									value="180"
 									checked
 								/>
-								<label>3分</label>
+								<label class="select-time__label">3分</label>
 								<input
 									type="radio"
 									name="time"
 									class="select-time__option"
 									value="300"
 								/>
-								<label>5分</label>
+								<label class="select-time__label">5分</label>
 								<input
 									type="radio"
 									name="time"
@@ -98,7 +98,9 @@
 									id="custom-radio"
 									value="custom"
 								/>
-								<label for="custom-radio">カスタム</label>
+								<label for="custom-radio" class="select-time__label"
+									>カスタム</label
+								>
 								<input
 									type="text"
 									id="custom-time"

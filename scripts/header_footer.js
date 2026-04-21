@@ -145,9 +145,10 @@ function createBreadcrumbContent() {
 	const pathSegments = path.split('/').filter((segment) => segment.length > 0);
 
 	let currentPath = '/';
-	let breadcrumbHTML = '<ol>';
+	let breadcrumbHTML = '<ul class="breadcrumb__ul">';
 
-	breadcrumbHTML += '<li><a href="/">Home</a></li>&nbsp;&gt;&nbsp;';
+	breadcrumbHTML +=
+		'<li class="breadcrumb__li"><a href="/">Home</a></li>&nbsp;&gt;&nbsp;';
 
 	pathSegments.forEach((segment, index) => {
 		currentPath += segment + '/';
@@ -155,14 +156,16 @@ function createBreadcrumbContent() {
 		const linkText = document.title.replace(' - CiderTechLab', '');
 
 		if (!isLast) {
-			breadcrumbHTML += `<li><a href="${currentPath}">${linkText}</a></li>&nbsp;&gt;&nbsp;`;
+			breadcrumbHTML += `<li class="breadcrumb__li"><a href="${currentPath}">${linkText}</a></li>&nbsp;&gt;&nbsp;`;
 		} else {
 			breadcrumbHTML +=
-				`<li>` + document.title.replace(' - CiderTechLab', '') + `</li>`;
+				`<li class="breadcrumb__li">` +
+				document.title.replace(' - CiderTechLab', '') +
+				`</li>`;
 		}
 	});
 
-	breadcrumbHTML += '</ol>';
+	breadcrumbHTML += '</ul>';
 	console.log('breadcrumbHTML:', breadcrumbHTML);
 	return breadcrumbHTML;
 }

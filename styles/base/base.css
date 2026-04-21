@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /**
  * 「どのページか分からないと意味が変わるCSS」はbaseに置かない
- *  ex) .note-layout__content
+ *  ex) .basic-layout__content
  */
 :root {
 	/** color var*/
@@ -189,6 +189,9 @@ input {
 		font-size: 3rem;
 	}
 	.line-break {
+		display: none;
+	}
+	.br-sp {
 		display: none;
 	}
 }
