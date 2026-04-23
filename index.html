@@ -54,39 +54,43 @@
 
 				<section class="aboutme-section">
 					<h2 class="headding-two" id="aboutme-section__cta">About Me</h2>
-					<img src="images/profile_pic.svg" alt="プロフィール画像" />
-					<h3>S.K</h3>
-					<dl class="aboutme-section__explain">
-						<dt class="aboutme-section__title">経歴</dt>
-						<dd>
-							大学の理工系学科卒業後、システムエンジニアとして6年間従事しました。<a
-								href="#career-section__cta"
-								>詳細はCareerをご覧ください。</a
-							>
-						</dd>
+					<div class="aboutme-section__layout">
+						<div class="aboutme-section__profile">
+							<img src="images/profile_pic.svg" alt="プロフィール画像" />
+							<h3>S.K</h3>
+						</div>
+						<dl class="aboutme-section__explain">
+							<dt class="aboutme-section__title">経歴</dt>
+							<dd>
+								大学の理工系学科卒業後、システムエンジニアとして6年間従事しました。<a
+									href="#career-section__cta"
+									>詳細はCareerをご覧ください。</a
+								>
+							</dd>
 
-						<dt class="aboutme-section__title">実務経験</dt>
-						<dd>
-							主に業務系システムを担当、運用及び一部開発を経験。特にデータベース周りの知識を深めることができました。
-						</dd>
+							<dt class="aboutme-section__title">実務経験</dt>
+							<dd>
+								主に業務系システムを担当し、運用保守からツール開発、テストまでを一貫して経験しました。特にデータベース周りの知識を深めることができたのは良い経験だと思っています。
+							</dd>
 
-						<dt class="aboutme-section__title">現在の目標</dt>
-						<dd>
-							フロントエンドエンジニアを目指し、HTML/CSS/JavaScript/TypeScriptを中心に学習し、Tailwind
-							CSSやReactも学習中です。また、SE経験を活かし、バックエンド領域（特にデータベース）の理解も深めたいと考えています。
-						</dd>
+							<dt class="aboutme-section__title">現在の目標</dt>
+							<dd>
+								ITを深めることを目指し、現在はフロントエンド分野(HTML/CSS/JavaScript/TypeScript)を中心にTailwind
+								CSSやReactも学習中です。また、バックエンド分野の経験も活かしデータベースへの理解も深めたいと考えています。
+							</dd>
 
-						<dt class="aboutme-section__title">関心分野</dt>
-						<dd>
-							構造化と体系的な設計に関心があります。BEM記法、Tailwindのユーティリティクラス設計、Reactのコンポーネント設計といった、体系的な設計アプローチに魅力を感じています。
-						</dd>
+							<dt class="aboutme-section__title">関心分野</dt>
+							<dd>
+								構造化と体系的な設計に関心があります。CSSのBEM記法、Tailwindのユーティリティクラス設計、Reactのコンポーネント設計といった、体系的な設計アプローチに魅力を感じています。
+							</dd>
 
-						<dt class="aboutme-section__title">趣味</dt>
-						<dd>
-							<b>登山</b
-							>です。ピークハンターで主に丹沢山系、高尾山系の大半は登頂しています。富士山登頂は5回成功しています。（吉田口、富士宮口ルート）<br />また、最近は<b>生成AI</b>にも興味があり、プロンプトエンジニアリングやローカルLLM（gemma系）の実験など、楽しみながら技術を深めています。
-						</dd>
-					</dl>
+							<dt class="aboutme-section__title">趣味</dt>
+							<dd>
+								<b>登山</b
+								>です。ピークハンターで主に丹沢山系、高尾山系によく登頂しています。また、富士山登頂は吉田口ルート、富士宮口ルートで5回成功しています。最近は<b>生成AI</b>に興味があり、プロンプトの実験など試行錯誤しながら楽しみつつ技術を深めています。
+							</dd>
+						</dl>
+					</div>
 				</section>
 
 				<section class="skills-section">
@@ -143,7 +147,7 @@
 						<h3>Query&nbsp;Languages</h3>
 						<ul class="tiles--3col">
 							<li class="tile color--sql">
-								<h4 class="tile__title">SQL（Oracle/PostgreSQL）</h4>
+								<h4 class="tile__title">SQL（Oracle/MS Access）</h4>
 								<ul>
 									<li>#CRUD操作</li>
 									<li>#JOIN句</li>
@@ -325,11 +329,14 @@
 					<h2 class="headding-two" id="portfolio-section__cta">Portfolio</h2>
 					<ul class="cards">
 						<li class="card portfolio-section__item">
-							<p class="portfolio-section__item-explain">
-								各作品の仕様書については<br /><a
+							<h3 class="card__title">
+								<a
 									href="https://github.com/CiderTechLab/cidertechlab.github.io/wiki"
-									>GitHub Wiki</a
-								><br />をご覧ください
+									>CiderTechLab Wiki<br />(GitHub Wiki)</a
+								>
+							</h3>
+							<p class="portfolio-section__item-explain">
+								当サイトの設計書・仕様書をまとめたwikiです。開発後の保守性や拡張性を高めるため、周辺ドキュメントの整備にも力を入れました。共通コンポーネント（ヘッダー、フッター）からポートフォリオの各作品まで、こちらにまとめています。
 							</p>
 						</li>
 						<li class="card portfolio-section__item">
