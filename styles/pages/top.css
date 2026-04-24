@@ -52,17 +52,31 @@
 .aboutme-section {
 	padding: 1.5rem;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	flex-direction: column;
 }
-.aboutme-section__explain {
-	padding: 1.5rem;
-	width: 100%;
-	max-width: 60rem;
+.aboutme-section__layout {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+}
+.aboutme-section__profile {
+	flex: 1;
+	margin-top: 5vh;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	text-align: center;
 }
+.aboutme-section__explain {
+	flex: 1;
+	width: 100%;
+	max-width: 60rem;
+}
 .aboutme-section__title {
-	margin: 0.5rem;
+	font-size: 1.2rem;
+	margin: 1rem 0 0.2rem 0;
 }
 
 /** Skills Section */
@@ -77,12 +91,11 @@
 .tile-other__item {
 	margin-top: 1rem;
 	border-top: 1px solid var(--color-border-sub);
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: normal;
 	color: var(--color-text-sub);
 }
 .tile-other__explain {
-	margin-top: 0.5rem;
 	font-weight: normal;
 }
 .tile-websites,
@@ -164,6 +177,11 @@
 	.hero-section__slogan-explain {
 		margin-left: 6rem;
 		font-size: 1.2rem;
+	}
+
+	.aboutme-section__layout {
+		flex-direction: row;
+		align-items: flex-start;
 	}
 
 	.skills-section {
