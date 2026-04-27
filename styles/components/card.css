@@ -16,24 +16,35 @@
 }
 .card {
 	width: 100%;
-	min-width: 40vw;
+	min-width: 60vw;
 	margin: 1rem;
 	padding: 1rem;
 	border-radius: 1rem;
-	box-shadow: 10px 10px 10px 10px lightgray;
-	font-size: 1rem;
+	box-shadow: 5px 5px 5px 5px lightgray;
+	font-size: 0.8rem;
 }
-
 .card__title {
+	padding: 0.5rem;
+	border-radius: 0.5rem;
 	font-size: 1.2rem;
+	color: navy;
+	background-color: white;
+	font-weight: bold;
+}
+.card__subtitle {
+	margin: 0.5rem 0 0.5rem 0;
+	font-size: 1rem;
+	color: lightgray;
+	font-weight: bold;
+	text-align: left;
 }
 
 /** PC Contents */
 @media screen and (min-width: 1280px) {
 	.card {
-		width: 50vw;
-		max-width: 50vw;
-		min-width: 20vw;
+		max-width: 60vw;
+		min-width: 30vw;
+		margin: 1rem;
 		padding: 2rem;
 	}
 }

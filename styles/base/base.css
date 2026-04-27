@@ -62,7 +62,7 @@
 }
 .color--other {
 	color: var(--color-text-sub);
-	background-color: var(--color-bg-sub);
+	background-color: navy;
 }
 
 body {

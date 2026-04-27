@@ -56,7 +56,11 @@
 					<h2 class="headding-two" id="aboutme-section__cta">About Me</h2>
 					<div class="aboutme-section__layout">
 						<div class="aboutme-section__profile">
-							<img src="images/profile_image.png" alt="プロフィール画像" />
+							<img
+								class="aboutme-section__profile-image"
+								src="images/profile_image.png"
+								alt="プロフィール画像"
+							/>
 							<h3>S.K</h3>
 						</div>
 						<dl class="aboutme-section__explain">
@@ -96,7 +100,9 @@
 				<section class="skills-section">
 					<h2 class="headding-two" id="skills-section__cta">Skills</h2>
 					<section class="skills-section__languages">
-						<h3>Markup&nbsp;&amp;&nbsp;Styling&nbsp;Languages</h3>
+						<h3>
+							Markup&nbsp;&amp;&nbsp;Styling&nbsp;<br class="br-sp" />Languages
+						</h3>
 						<ul class="tiles--3col">
 							<li class="tile color--html">
 								<h4 class="tile__title">HTML</h4>
@@ -119,14 +125,14 @@
 							<li class="tile color--md">
 								<h4 class="tile__title">Markdown</h4>
 								<ul>
-									<li>#見出し、リスト、表</li>
-									<li>#README記述</li>
+									<li>#見出し、リスト、表の記述</li>
+									<li>#README.mdの記述</li>
 									<li>#Mermaid</li>
 									<li>#GitHub Wiki</li>
 								</ul>
 							</li>
 						</ul>
-						<h3>Programming&nbsp;Languages</h3>
+						<h3>Programming&nbsp;<br class="br-sp" />Languages</h3>
 						<ul class="tiles--3col">
 							<li class="tile color--js">
 								<h4 class="tile__title">JavaScript</h4>
@@ -147,7 +153,9 @@
 						<h3>Query&nbsp;Languages</h3>
 						<ul class="tiles--3col">
 							<li class="tile color--sql">
-								<h4 class="tile__title">SQL（Oracle/MS Access）</h4>
+								<h4 class="tile__title">
+									SQL<br class="br-sp" />（Oracle/MS Access）
+								</h4>
 								<ul>
 									<li>#CRUD操作</li>
 									<li>#JOIN句</li>
@@ -160,19 +168,19 @@
 					<section class="skills-section__frameworks">
 						<h3>Frameworks</h3>
 						<ul class="tiles--3col">
-							<li class="tile color--react">
-								<h4 class="tile__title">React（学習中）</h4>
-								<ul>
-									<li>#基礎学習（公式ドキュメント）</li>
-									<li>#コンポーネント設計（予定）</li>
-								</ul>
-							</li>
 							<li class="tile color--twcss">
 								<h4 class="tile__title">Tailwind CSS</h4>
 								<ul>
 									<li>#生成AI&times;ペアプログラミング</li>
 									<li>#生成AI&times;プロトタイプ制作</li>
 									<li>#ユーティリティクラス設計</li>
+								</ul>
+							</li>
+							<li class="tile color--react">
+								<h4 class="tile__title">React（学習中）</h4>
+								<ul>
+									<li>#基礎学習（公式ドキュメント）</li>
+									<li>#コンポーネント設計（予定）</li>
 								</ul>
 							</li>
 						</ul>
@@ -332,49 +340,73 @@
 							<h3 class="card__title">
 								<a
 									href="https://github.com/CiderTechLab/cidertechlab.github.io/wiki"
-									>CiderTechLab Wiki<br />(GitHub Wiki)</a
+									>CiderTechLab Wiki(GitHub Wiki)</a
 								>
 							</h3>
+							<h4 class="card__subtitle">概要</h4>
 							<p class="portfolio-section__item-explain">
-								当サイトの設計書・仕様書をまとめたwikiです。開発後の保守性や拡張性を高めるため、周辺ドキュメントの整備にも力を入れました。共通コンポーネント（ヘッダー、フッター）からポートフォリオの各作品まで、こちらにまとめています。
+								当サイトの設計書・仕様書をまとめたwikiです。共通コンポーネント（ヘッダー、フッター）からポートフォリオの各作品まで、こちらにまとめています。
+							</p>
+							<h4 class="card__subtitle">ポイント</h4>
+							<p class="portfolio-section__item-explain">
+								開発後の保守性や拡張性を高めるため、制作物に関するドキュメントの整備にも力を入れようと考え制作しました。また、Markdownが使用できるGitHub
+								Wikiを利用することで、ドキュメントの記述や管理のコストを下げました。
 							</p>
 						</li>
 						<li class="card portfolio-section__item">
 							<h3 class="card__title">
-								<a href="/htmlcssnotes/"
-									>HTML&nbsp;&amp;&nbsp;CSS<br />Learn&nbsp;Notes</a
-								>
+								<a href="/htmlcssnotes/">HTML&amp;CSS&nbsp;Learn&nbsp;Notes</a>
 							</h3>
+							<h4 class="card__subtitle">概要</h4>
 							<p class="portfolio-section__item-explain">
 								HTMLとCSSの学習で気が付いた点や注意点をまとめたサイトです。
 							</p>
+							<h4 class="card__subtitle">ポイント</h4>
+							<p class="portfolio-section__item-explain">
+								CSSでPCレイアウト時は2カラム、モバイルレイアウト時は1カラムで表示するようにし、レスポンシブ対応の練習にもなりました。
+							</p>
 						</li>
 						<li class="card portfolio-section__item">
 							<h3 class="card__title">
-								<a href="/jstsnotes/"
-									>JS&nbsp;&amp;&nbsp;TS<br />Learn&nbsp;Notes</a
-								>
+								<a href="/jstsnotes/">JS&amp;TS&nbsp;Learn&nbsp;Notes</a>
 							</h3>
+							<h4 class="card__subtitle">概要</h4>
 							<p class="portfolio-section__item-explain">
 								JavaScriptとTypeScript学習の歩みと、気が付いた点や注意点をまとめたサイトです。
+							</p>
+							<h4 class="card__subtitle">ポイント</h4>
+							<p class="portfolio-section__item-explain">
+								CSSでPCレイアウト時は3カラム、モバイルレイアウト時は1カラムで表示し、かつハンバーガーメニューを導入することで、レスポンシブ対応の練習にもなりました。またTailWind
+								CSSとGitHub
+								Copilot（Claude系）を組み合わせたペアプログラミングで制作し、生成AIを活用した制作の練習にもなりました。
 							</p>
 						</li>
 						<li class="card portfolio-section__item">
 							<h3 class="card__title">
 								<a href="/portfolio/ramen-timer.html">カップラーメンタイマー</a>
 							</h3>
+							<h4 class="card__subtitle">概要</h4>
 							<p class="portfolio-section__item-explain">
-								JavaScriptのタイマー関数を学ぶために制作した、カップラーメンの待ち時間を測るタイマーアプリです。時間を選択してスタートボタンを押すと、カウントダウンが始まります。文字列とインジケーターの両方で残り時間を表示することで視覚的に分かりやすく、また精神的な負荷も減らしました。
+								カップラーメンの待ち時間を測るタイマーアプリです。時間を選択してスタートボタンを押すと、カウントダウンが始まります。
+							</p>
+							<h4 class="card__subtitle">ポイント</h4>
+							<p class="portfolio-section__item-explain">
+								JavaScriptのタイマー関数の練習のために制作しました。UIとしては、文字列とインジケーターの両方で時間を表現することで、精神的な負荷を減らしました。内部実装としては、スタートボタンを押した後、文字列はカウントダウン、インジケーターはカウントアップするように工夫しました。
 							</p>
 						</li>
 						<li class="card portfolio-section__item">
 							<h3 class="card__title">
 								<a href="/portfolio/contact/"
-									>お問い合わせフォームモックアップ（Contact）</a
+									>お問い合わせフォーム（モックアップ）</a
 								>
 							</h3>
+							<h4 class="card__subtitle">概要</h4>
 							<p class="portfolio-section__item-explain">
-								Form関連タグ、バリデーション設計の練習として制作しました。入力チェックに手を焼きました。
+								企業サイト等で多く用いられるお問い合わせフォームを、1から制作し再現しました。モックアップなので、フォームに情報を入力しても送信処理はされません。
+							</p>
+							<h4 class="card__subtitle">ポイント</h4>
+							<p class="portfolio-section__item-explain">
+								Form関連タグの練習と、バリデーション設計の練習として制作しました。入力チェックの設計に手を焼き、チェックに引っかかった際のメッセージもどれが見やすいか何回も試行錯誤しました。お問い合わせフォーム自体は良く見ますが、UIからセキュリティー面まで考慮する点が多く、奥が深く難しいなと感じました。
 							</p>
 						</li>
 					</ul>
