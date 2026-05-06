@@ -33,93 +33,101 @@
 					<h2 class="hero-section__title">
 						カップラーメン<br class="br-sp" />タイマー
 					</h2>
-					<ol class="hero-section__ol">
-						<li class="hero-section__li">
-							<b>「時間を選択してください」</b>の欄から待ち時間を選択します。
-						</li>
-						<li class="hero-section__li">
-							<b>［スタート］</b>ボタンを押すとタイマーが開始されます。
-						</li>
-						<li class="hero-section__li">
-							時間が0になると<b>「完成」</b>のダイアログが表示されます。
-						</li>
-						<li class="hero-section__li">
-							<b>［リセット］</b>ボタンを押すとタイマーがリセットされます。
-						</li>
-					</ol>
 				</section>
+
 				<section class="timer-section">
-					<progress class="progress-bar" value="0" max="100"></progress>
-					<p class="remaining-text">
-						残り<span class="remaining-time">0</span>秒
-					</p>
+					<div class="timer-section__explain">
+						<ol class="hero-section__ol">
+							<li class="hero-section__li">
+								<b>「時間を選択してください」</b>の欄から待ち時間を選択します。
+							</li>
+							<li class="hero-section__li">
+								<b>［スタート］</b>ボタンを押すとタイマーが開始されます。
+							</li>
+							<li class="hero-section__li">
+								時間が0になると<b>「完成」</b>のダイアログが表示されます。
+							</li>
+							<li class="hero-section__li">
+								<b>［リセット］</b>ボタンを押すとタイマーがリセットされます。
+							</li>
+						</ol>
+					</div>
 
-					<dialog class="timer-section__modal">
-						<form method="dialog">
-							<p class="timer-section__modal-message">
-								&#x1f973;&nbsp;完成&nbsp;&#x1f973;<br />さあ、召し上がれ！
-							</p>
-							<button class="timer-section__modal-close-button">閉じる</button>
+					<div class="timer-section__contents">
+						<progress class="progress-bar" value="0" max="100"></progress>
+						<p class="remaining-text">
+							残り<span class="remaining-time">0</span>秒
+						</p>
+
+						<dialog class="timer-section__modal">
+							<form method="dialog">
+								<p class="timer-section__modal-message">
+									&#x1f973;&nbsp;完成&nbsp;&#x1f973;<br />さあ、召し上がれ！
+								</p>
+								<button class="timer-section__modal-close-button">
+									閉じる
+								</button>
+							</form>
+						</dialog>
+
+						<form class="select-time">
+							<fieldset class="select-time__fieldset">
+								<legend class="select-time__legend">
+									時間を選択してください
+								</legend>
+								<div class="select-time__radiobuttons">
+									<input
+										type="radio"
+										name="time"
+										class="select-time__option"
+										value="120"
+									/>
+									<label class="select-time__label">2分</label>
+									<input
+										type="radio"
+										name="time"
+										class="select-time__option"
+										value="180"
+										checked
+									/>
+									<label class="select-time__label">3分</label>
+									<input
+										type="radio"
+										name="time"
+										class="select-time__option"
+										value="300"
+									/>
+									<label class="select-time__label">5分</label>
+									<input
+										type="radio"
+										name="time"
+										class="select-time__option"
+										id="custom-radio"
+										value="custom"
+									/>
+									<label for="custom-radio" class="select-time__label"
+										>カスタム</label
+									>
+									<input
+										type="text"
+										id="custom-time"
+										class="select-time__custom-input"
+										inputmode="numeric"
+										placeholder="秒数"
+										disabled
+									/>
+								</div>
+								<div class="timer-buttons">
+									<button type="button" class="button reset-button">
+										<span class="button-emoji">&#x23f9;</span><br />リセット
+									</button>
+									<button type="button" class="button start-button">
+										<span class="button-emoji">&#x25b6;</span><br />スタート
+									</button>
+								</div>
+							</fieldset>
 						</form>
-					</dialog>
-
-					<form class="select-time">
-						<fieldset class="select-time__fieldset">
-							<legend class="select-time__legend">
-								時間を選択してください
-							</legend>
-							<div class="select-time__radiobuttons">
-								<input
-									type="radio"
-									name="time"
-									class="select-time__option"
-									value="120"
-								/>
-								<label class="select-time__label">2分</label>
-								<input
-									type="radio"
-									name="time"
-									class="select-time__option"
-									value="180"
-									checked
-								/>
-								<label class="select-time__label">3分</label>
-								<input
-									type="radio"
-									name="time"
-									class="select-time__option"
-									value="300"
-								/>
-								<label class="select-time__label">5分</label>
-								<input
-									type="radio"
-									name="time"
-									class="select-time__option"
-									id="custom-radio"
-									value="custom"
-								/>
-								<label for="custom-radio" class="select-time__label"
-									>カスタム</label
-								>
-								<input
-									type="text"
-									id="custom-time"
-									class="select-time__custom-input"
-									inputmode="numeric"
-									placeholder="秒数"
-									disabled
-								/>
-							</div>
-							<div class="timer-buttons">
-								<button type="button" class="button reset-button">
-									<span class="button-emoji">&#x23f9;</span><br />リセット
-								</button>
-								<button type="button" class="button start-button">
-									<span class="button-emoji">&#x25b6;</span><br />スタート
-								</button>
-							</div>
-						</fieldset>
-					</form>
+					</div>
 				</section>
 			</article>
 		</main>

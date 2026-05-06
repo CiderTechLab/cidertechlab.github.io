@@ -84,7 +84,6 @@
 
 /** Skills Section */
 .skills-section {
-	margin: 1rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -121,18 +120,15 @@
 
 /** portfolio Section */
 .portfolio-section {
-	padding: 2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-
-.cards {
-	scrollbar-color: var(--color-primary) var(--color-bg-main);
+	background-color: lightgreen;
 }
 
 .portfolio-section__item {
-	background: linear-gradient(to bottom right, var(--color-primary), navy);
+	background: linear-gradient(to bottom right, var(--color-tertiary), green);
+	filter: drop-shadow(5px 5px 5px green);
 }
 .portfolio-section__item-explain {
 	color: var(--color-text-sub);
@@ -193,11 +189,16 @@
 		flex: 3;
 	}
 
-	.skills-section {
-		border-radius: var(--radius-basic);
-		box-shadow: 10px 10px 10px 10px lightgray;
+	.skills-section__languages,
+	.skills-section__frameworks,
+	.skills-section__others,
+	.skills-section__learn {
+		max-width: 80vw;
 	}
 
+	.career-section {
+		max-width: 90vw;
+	}
 	.career-section__table {
 		display: grid;
 		grid-template-columns: 1fr 3fr;

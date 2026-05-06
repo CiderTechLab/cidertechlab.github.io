@@ -9,8 +9,9 @@
 .hero-section {
 	width: 100%;
 	max-width: 100vw;
-	min-height: 30vh;
-	background: linear-gradient(to bottom, brown, darkred);
+	height: 20%;
+	min-height: 20vh;
+	background: black;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -24,7 +25,7 @@
 	margin-top: 3vh;
 	padding-left: 2em;
 	list-style-type: decimal;
-	color: white;
+	color: black;
 	text-align: left;
 }
 .hero-section__li {
@@ -35,10 +36,19 @@
 
 .timer-section {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
+	justify-content: center;
+}
+.timer-section__explain {
+	text-align: left;
 }
 
+.timer-section__contents {
+	margin: 1rem;
+	padding: 1rem;
+	background-color: white;
+}
 .progress-bar {
 	width: 80vw;
 	height: 3vh;
