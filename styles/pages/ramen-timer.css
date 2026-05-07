@@ -43,12 +43,15 @@
 .timer-section__explain {
 	text-align: left;
 }
-
 .timer-section__contents {
 	margin: 1rem;
 	padding: 1rem;
+	border: 1px solid lightgray;
+	border-radius: 1rem;
 	background-color: white;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
+
 .progress-bar {
 	width: 80vw;
 	height: 3vh;

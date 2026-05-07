@@ -6,7 +6,7 @@
 	max-width: 100vw;
 	height: var(--height-header);
 	margin: 10px 0;
-	background-color: var(--color-bg-header);
+	background: linear-gradient(to bottom right, white, Gainsboro);
 	display: flex;
 	justify-content: center;
 	align-items: center;

@@ -22,7 +22,7 @@
 	align-items: center;
 }
 .hero-section__title {
-	font-size: 4rem;
+	font-size: 2rem;
 	font-weight: bold;
 	color: white;
 	text-shadow: 0 0 10px darkmagenta;
@@ -30,7 +30,7 @@
 }
 .hero-section__caption {
 	margin: 1rem;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	color: darkmagenta;
 	text-align: center;
 }
@@ -86,6 +86,12 @@
 
 /** PC Edition */
 @media screen and (min-width: 1280px) {
+	.hero-section__title {
+		font-size: 4rem;
+	}
+	.hero-section__caption {
+		font-size: 1.5rem;
+	}
 	.contents-section__button--apply:hover {
 		background-color: magenta;
 	}

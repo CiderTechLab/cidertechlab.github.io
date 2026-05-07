@@ -4,7 +4,7 @@
 	width: 100%;
 	max-width: 100vw;
 	padding: 1rem;
-	background-color: SaddleBrown;
+	background: linear-gradient(to bottom right, maroon, brown);
 	font-size: 0.9rem;
 	color: white;
 	display: flex;
