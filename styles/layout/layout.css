@@ -123,8 +123,4 @@ pre {
 		list-style: none;
 		cursor: default;
 	}
-
-	section {
-		max-width: 90vw;
-	}
 }

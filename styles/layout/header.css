@@ -6,7 +6,7 @@
 	max-width: 100vw;
 	height: var(--height-header);
 	margin: 10px 0;
-	background-color: var(--color-bg-header);
+	background: linear-gradient(to bottom right, white, Gainsboro);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -242,20 +242,13 @@
 	}
 	.header-nav-link,
 	.header-nav-link--external {
-		border-top: 0;
-		border-right: 0;
-		border-left: 0;
-		border-bottom: 0;
 		min-width: 6rem;
 		background-color: transparent;
 		font-size: 1.1rem;
-		transition: 0.5s;
+		white-space: nowrap;
 	}
 
 	.header-nav-link:hover {
-		border-radius: inherit;
-		background-color: inherit;
-		color: inherit;
 		font-weight: bold;
 	}
 

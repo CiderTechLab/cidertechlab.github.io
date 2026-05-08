@@ -11,7 +11,7 @@
 	padding: 1rem;
 	width: 90%;
 	min-width: 80vw;
-	min-height: 50vh;
+	min-height: 30vh;
 	border-radius: 0.5em;
 	text-align: left;
 }
@@ -47,7 +47,6 @@
 		height: 100%; /* ul.tiles--3col と同じ高さに揃える */
 		margin: 0;
 		min-width: initial; /* PCではmin-widthをリセットして、親の幅に合わせる */
-		min-height: 30vh;
 		box-sizing: border-box;
 	}
 	.tile--long {

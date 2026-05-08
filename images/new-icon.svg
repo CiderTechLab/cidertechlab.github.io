@@ -1,0 +1,27 @@
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- テキスト用グラデーション -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0B4FA3"/>
+      <stop offset="100%" stop-color="#1FB6E9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 背景（透明） -->
+  <rect width="400" height="100" fill="none"/>
+
+  <!-- アイコン -->
+  <image href="icon.png" x="10" y="10" width="80" height="80" />
+
+  <!-- テキスト -->
+  <text 
+    x="100" 
+    y="62" 
+    font-family="Arial Nova, Arial, sans-serif" 
+    font-size="32" 
+    font-weight="bold"
+    fill="url(#textGradient)"
+  >
+    CiderTechLab
+  </text>
+</svg>
