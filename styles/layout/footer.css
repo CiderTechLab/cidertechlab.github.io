@@ -4,9 +4,8 @@
 	width: 100%;
 	max-width: 100vw;
 	padding: 1rem;
-	background: linear-gradient(to bottom right, maroon, brown);
+	background-color: var(--color-bg-sub);
 	font-size: 0.9rem;
-	color: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -33,7 +32,7 @@ small {
 .footer-link:hover {
 	border-radius: 2rem;
 	color: var(--color-text-main);
-	background-color: white;
+	background-color: var(--color-bg-main);
 	font-weight: bold;
 }
 .pagetopscroll-icon__link {
