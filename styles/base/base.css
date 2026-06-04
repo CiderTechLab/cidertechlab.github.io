@@ -39,6 +39,10 @@
 	color: var(--color-text-sub);
 	background-color: #303030;
 }
+.color--vba {
+	color: var(--color-text-sub);
+	background-color: green;
+}
 .color--js {
 	color: var(--color-text-main);
 	background-color: #f3df49;
